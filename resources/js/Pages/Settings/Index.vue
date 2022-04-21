@@ -205,7 +205,6 @@ onMounted(() => {
     minDate: 'today',
     dateFormat: "Y-m-d",
   })
-
 })
 
 const updateAvatar = (e) => {

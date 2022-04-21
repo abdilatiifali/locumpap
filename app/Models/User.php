@@ -103,12 +103,12 @@ class User extends Authenticatable implements CanResetPassword
 
     public function profilePhotoUrl(): Attribute
     {
-        $path = $this->profile_photo_path
+        $photoUrl = $this->profile_photo_path
                 ? \Storage::url($this->profile_photo_path)
                 : $this->defaultProfilePhotoUrl();
 
         return new Attribute(
-            get: fn () => $path
+            get: fn () => $photoUrl
         );
     }
 
@@ -153,6 +153,15 @@ class User extends Authenticatable implements CanResetPassword
             if ($specialist == 'all') return;
             $query->whereHas('profile', function ($query) use ($specialist) {
                 $query->filter('speciality', $specialist);
+            });
+        });
+
+        $query->when($filters['availability'] ?? 'all', function ($query, $availability) {
+            if ($availability == 'all') return;
+
+            $query->whereHas('profile', function ($query) use ($availability) {
+
+                $query->WhereDate('to', '>=', $availability);
             });
         });
     }

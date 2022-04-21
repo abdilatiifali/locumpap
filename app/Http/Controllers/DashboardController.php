@@ -27,14 +27,15 @@ class DashboardController extends Controller
         $users = User::doctors()->with('profile')->filters([
             'city' => request('city'),
             'specialist' => request('specialist'),
+            'availability' => request('availability'),
         ])->get();
-
+        
         $doctors = UserResource::collection($users);
 
         return Inertia::render("Dashboard/Doctors", [
             'doctors' => $doctors,
             'specials' => Speciality::all(),
-            'filters' => request()->only('city', 'specialist'),
+            'filters' => request()->only('city', 'specialist', 'availability'),
         ]);
     }
 }

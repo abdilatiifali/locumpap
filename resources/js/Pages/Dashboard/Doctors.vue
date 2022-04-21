@@ -19,10 +19,13 @@
                 :options="specials"
             />
 
-            <select-filter
-                modelName="Available Doctors"
-                :options="professions"
+            <input 
+              class="mt-1 block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-cyan-500 focus:outline-none focus:ring-cyan-500 sm:text-sm" 
+              ref="availability" 
+              placeholder="Available Doctors" 
+              v-model="form.availability"
             />
+
           </div>
           
         </div>
@@ -118,12 +121,15 @@
 </template>
 
 <script setup>
-import { ref, reactive, watch } from 'vue'
+import { ref, onMounted, reactive, watch } from 'vue'
 
 import { ScaleIcon } from '@heroicons/vue/outline'
 import {  ChevronRightIcon } from '@heroicons/vue/solid'
 import SelectFilter from "@/components/SelectFilter"
+import TextInput from "@/components/TextInput"
 import { Inertia } from "@inertiajs/inertia";
+import flatpickr from "flatpickr";
+import "flatpickr/dist/themes/airbnb.css"
 
 let props = defineProps({
   doctors: Array,
@@ -131,9 +137,18 @@ let props = defineProps({
   filters: Object,
 })
 
+const availability = ref(null)
+
 const form = reactive({
   city: props.filters.city || 'all',
-  specialist: props.filters.specialist || 'all'
+  specialist: props.filters.specialist || 'all',
+  availability: props.filters.availability || 'all'
+})
+
+onMounted(() => {
+  flatpickr(availability.value, {
+    minDate: 'today',
+  })
 })
 
 const professions = ['doctor', 'nurse', 'dentist']
