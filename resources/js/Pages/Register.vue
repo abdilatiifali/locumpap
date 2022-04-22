@@ -2,10 +2,10 @@
     <Header title="Register" />
 
     <div
-        class="psm:px-6 mx-auto flex max-w-7xl justify-center py-16 px-4 lg:px-8"
+        class="psm:px-2 mx-auto flex max-w-7xl justify-center py-16 px-4 lg:px-8"
     >
         <div class="relative">
-            <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="relative z-10 mx-auto max-w-7xl  lg:px-8">
                 <div
                     class="mx-auto max-w-md space-y-4 lg:grid lg:max-w-5xl lg:grid-cols-2 lg:gap-5 lg:space-y-0"
                 >
