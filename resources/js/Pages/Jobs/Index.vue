@@ -1,5 +1,5 @@
 <template>
-    <div class="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:max-w-7xl">
+    <div class="overflow-hidden mx-auto max-w-3xl  py-10 sm:px-6 lg:max-w-7xl">
         <div class="flex w-full justify-between space-x-4 px-4 md:px-0">
             <select-filter
                 modelName="Location"
@@ -25,7 +25,7 @@
                 <Sidebar :counties="counties" />
             </div>
 
-            <main class="px-4 md:px-0 lg:col-span-9 xl:col-span-9">
+            <main class="px-3 overflow-hidden md:px-0 lg:col-span-9 xl:col-span-9">
                 <jobs-listing :jobs="jobs" />
             </main>
         </div>
