@@ -30,7 +30,7 @@ class Profile extends Model
 
     public function speciality()
     {
-        return $this->belongsTo(speciality::class, 'speciality_id');
+        return $this->belongsTo(Speciality::class, 'speciality_id');
     }
 
     public function scopeFilter($query, $table, $filter)
