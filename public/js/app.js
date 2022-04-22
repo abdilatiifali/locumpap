@@ -29151,7 +29151,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     description: "Locum pap makes it easy for you"
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
     href: "/locum/register",
-    "class": "mt-4 block w-1/4 rounded-md bg-cyan-500 py-3 px-4 text-center text-lg font-bold leading-relaxed text-white no-underline shadow-lg hover:bg-cyan-700"
+    "class": "py-3 hover:bg-cyan-700 px-6 bg-cyan-500 text-white rounded-md shadow-lg"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_5];
@@ -29454,7 +29454,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     description: "At Locumit, we want to make your life easy"
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
     href: "/practices/register",
-    "class": "mt-4 block w-1/4 rounded-md bg-cyan-500 py-3 px-4 text-center text-lg font-bold leading-relaxed text-white no-underline shadow-lg hover:bg-cyan-700"
+    "class": "py-3 hover:bg-cyan-700 px-6 bg-cyan-500 text-white rounded-md shadow-lg"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_5];

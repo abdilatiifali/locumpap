@@ -34,7 +34,7 @@
             <div class="mt-8">
                 <Link
                     href="/locum/register"
-                    class="mt-4 block w-1/4 rounded-md bg-cyan-500 py-3 px-4 text-center text-lg font-bold leading-relaxed text-white no-underline shadow-lg hover:bg-cyan-700"
+                    class="py-3 hover:bg-cyan-700 px-6 bg-cyan-500 text-white rounded-md shadow-lg"
                 >
                     Register Now
                 </Link>
