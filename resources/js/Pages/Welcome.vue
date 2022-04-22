@@ -5,11 +5,11 @@
     </div>
 
     <About />
-    <About />
 
     <Contact />
 
     <NewsLetter />
+
 </template>
 
 <script setup>

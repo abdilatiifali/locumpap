@@ -8,8 +8,8 @@
 
         <slot />
 
-<!--         <Footer />
- -->    </div>
+        <Footer />
+    </div>
 </template>
 
 <script setup>
