@@ -135,7 +135,9 @@
                 </div>
               </div>
 
-              <loading-button :loading="form.processing">Update</loading-button>
+              <div class="p-4">
+                <loading-button :loading="form.processing">Update</loading-button>
+              </div>
 
             </form>
           </div>
