@@ -63,10 +63,18 @@
                     <dd class="mt-1 text-sm text-gray-900" v-text="applicant.profile.registrationNumber"></dd>
                   </div>
 
-                  <div class="sm:col-span-2">
+                  <div class="sm:col-span-1">
                     <dt class="text-sm font-medium text-gray-500">About</dt>
                     <dd class="mt-1 text-sm text-gray-900" v-text="applicant.profile.about"></dd>
                   </div>
+
+                  <div class="sm:col-span-1">
+                    <dt class="text-sm font-medium text-gray-500">Available</dt>
+                    <dd class="mt-1 text-sm text-gray-900">
+                      {{ applicant.profile.availability }}
+                    </dd>
+                  </div>
+
                   <div class="sm:col-span-2">
                     <dt class="text-sm font-medium text-gray-500">Attachments</dt>
                     <dd class="mt-1 text-sm text-gray-900">

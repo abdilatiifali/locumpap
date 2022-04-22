@@ -35,7 +35,7 @@
         <!-- Projects list (only on smallest breakpoint) -->
         <div class="mt-10 sm:hidden">
           <div class="px-4 sm:px-6">
-            <h2 class="text-gray-500 text-xs font-medium uppercase tracking-wide">Jobs</h2>
+            <h2 class="text-gray-500 text-xs font-medium uppercase tracking-wide">All Doctors</h2>
           </div>
           <ul role="list" class="mt-3 border-t border-gray-200 divide-y divide-gray-100">
             <li v-for="doctor in doctors" :key="doctor.id">
