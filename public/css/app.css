@@ -1448,9 +1448,6 @@ select {
 .gap-8 {
   gap: 2rem;
 }
-.gap-3 {
-  gap: 0.75rem;
-}
 .gap-5 {
   gap: 1.25rem;
 }
@@ -1873,18 +1870,6 @@ select {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
 }
-.py-40 {
-  padding-top: 10rem;
-  padding-bottom: 10rem;
-}
-.py-24 {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-}
-.py-32 {
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-}
 .pt-6 {
   padding-top: 1.5rem;
 }
@@ -1942,6 +1927,9 @@ select {
 .pr-4 {
   padding-right: 1rem;
 }
+.pb-32 {
+  padding-bottom: 8rem;
+}
 .pt-4 {
   padding-top: 1rem;
 }
@@ -1950,9 +1938,6 @@ select {
 }
 .pb-16 {
   padding-bottom: 4rem;
-}
-.pb-32 {
-  padding-bottom: 8rem;
 }
 .text-left {
   text-align: left;
@@ -2905,10 +2890,6 @@ select {
 
   .md\:mt-0 {
     margin-top: 0px;
-  }
-
-  .md\:block {
-    display: block;
   }
 
   .md\:flex {

@@ -28692,10 +28692,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:max-w-7xl"
+  "class": "overflow-hidden mx-auto max-w-3xl px-4 pt-10 pb-16 sm:px-6 lg:max-w-7xl"
 };
 var _hoisted_2 = {
-  "class": "flex w-full justify-between space-x-4 px-4 md:px-0"
+  "class": "flex w-full justify-between space-x-4 md:px-0"
 };
 var _hoisted_3 = {
   "class": "mt-8 lg:grid lg:grid-cols-12 lg:gap-8"
@@ -28704,11 +28704,10 @@ var _hoisted_4 = {
   "class": "hidden lg:col-span-2 lg:block xl:col-span-3"
 };
 var _hoisted_5 = {
-  "class": "px-4 md:px-0 lg:col-span-9 xl:col-span-9"
+  "class": "md:px-0 lg:col-span-9 xl:col-span-9"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["SelectFilter"], {
-    modelName: "Location",
     options: $props.counties,
     modelValue: $setup.form.city,
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
@@ -28717,7 +28716,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8
   /* PROPS */
   , ["options", "modelValue"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["SelectFilter"], {
-    modelName: "Department",
     options: $props.departments,
     modelValue: $setup.form.department,
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
@@ -28726,7 +28724,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8
   /* PROPS */
   , ["options", "modelValue"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["SelectFilter"], {
-    modelName: "Profession",
     options: $props.professions,
     modelValue: $setup.form.profession,
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
