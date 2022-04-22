@@ -20,11 +20,11 @@
 		              </div>
 		            </TransitionChild>
 		            <div class="flex-shrink-0 flex items-center px-4">
-		              <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/easywire-logo-cyan-300-mark-white-text.svg" alt="Easywire logo" />
+		              <img class="h-8 w-auto" src="/logo.png" alt="Locum Pap logo" />
 		            </div>
 		            <nav class="mt-5 flex-shrink-0 h-full divide-y divide-cyan-800 overflow-y-auto" aria-label="Sidebar">
 		              <div class="px-2 space-y-1">
-		                <Link v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-cyan-800 text-white' : 'text-cyan-100 hover:text-white hover:bg-cyan-600', 'group flex items-center px-2 py-2 text-base font-medium rounded-md']" :aria-current="item.current ? 'page' : undefined">
+		                <Link @click="sidebarOpen = false;" v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-cyan-800 text-white' : 'text-cyan-100 hover:text-white hover:bg-cyan-600', 'group flex items-center px-2 py-2 text-base font-medium rounded-md']" :aria-current="item.current ? 'page' : undefined">
 		                  <component :is="item.icon" class="mr-4 flex-shrink-0 h-6 w-6 text-cyan-200" aria-hidden="true" />
 		                  {{ item.name }}
 		                </Link>
@@ -75,7 +75,7 @@
 	    </div>
 
 	    <div class="lg:pl-64 flex flex-col flex-1">
-	      <div class="relative z-10 flex-shrink-0 flex bg-white border-b border-gray-200 lg:border-none">
+	      <div class="relative py-4 px-2 z-10 flex-shrink-0 flex bg-white border-b border-gray-200 lg:border-none">
 	        <button type="button" class="px-4 border-r border-gray-200 text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-500 lg:hidden" @click="sidebarOpen = true">
 	          <span class="sr-only">Open sidebar</span>
 	          <MenuAlt1Icon class="h-6 w-6" aria-hidden="true" />
@@ -129,7 +129,7 @@ import {
 
 
 const navigation = [
-  { name: 'Home', href: '/dashboard', icon: HomeIcon, current: true },
+  { name: 'Home', href: '/', icon: HomeIcon, current: true },
   { name: 'Jobs You Posted', href: '/dashboard', icon: ClockIcon, current: false },
   { name: 'Doctors', href: '/dashboard/doctors', icon: ScaleIcon, current: false },
   // { name: 'Cards', href: '#', icon: CreditCardIcon, current: false },
