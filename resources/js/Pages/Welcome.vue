@@ -4,9 +4,19 @@
         <Hero />
     </div>
 
+     <div v-if="! $page.props.user.name" class="relative pt-4 pb-32">
+        <div class="px-4 sm:px-0 relative z-10 mx-auto max-w-7xl">
+            <Features />
+        </div>
+    </div>
+
     <About />
 
     <Contact />
+
+    
+
+
 
     <NewsLetter />
 
@@ -16,5 +26,7 @@
 import About from "@/components/About";
 import Hero from "@/components/Hero";
 import Contact from "@/components/Contact";
+import Features from "@/components/Features";
+
 import NewsLetter from "@/components/NewsLetter";
 </script>

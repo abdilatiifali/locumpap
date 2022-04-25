@@ -50,7 +50,7 @@ class DashboardTest extends TestCase
     {
         $this->loginAsOrganization();
 
-        $this->get("/dashboard/doctors")
+        $this->get("/dashboard/healthcare-professionals")
             ->assertOk();
     }
 }

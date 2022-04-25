@@ -43,16 +43,14 @@
                                 <div
                                     class="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0"
                                 >
+                                
                                     <Link
-                                        href="#"
-                                        class="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-cyan-700 shadow-sm hover:bg-cyan-50 sm:px-8"
-                                        >Join Our Team</Link
-                                    >
-                                    <Link
-                                        href="/jobs"
+                                        :href="$page.props.user.name ? '/jobs' : '/register'"
                                         class="flex items-center justify-center rounded-md border border-transparent bg-cyan-500 bg-opacity-60 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-70 sm:px-8"
-                                        >Find Job</Link
+                                        v-text="$page.props.user.name ? 'Locums' : 'Sign Up'"
                                     >
+                                            
+                                   </Link>
                                 </div>
                             </div>
                         </div>

@@ -129,33 +129,7 @@
                     </div>
                 </div>
 
-                <!-- Stats section -->
-                <div class="mt-10">
-                    <dl class="grid grid-cols-2 gap-x-4 gap-y-8">
-                        <div
-                            v-for="stat in stats"
-                            :key="stat.label"
-                            class="border-t-2 border-gray-100 pt-6"
-                        >
-                            <dt class="text-base font-medium text-gray-500">
-                                {{ stat.label }}
-                            </dt>
-                            <dd
-                                class="text-3xl font-extrabold tracking-tight text-gray-900"
-                            >
-                                {{ stat.value }}
-                            </dd>
-                        </div>
-                    </dl>
-                    <div class="mt-10">
-                        <a href="#" class="text-base font-medium text-cyan-600"
-                            >Find a job that's relevent to you<span
-                                aria-hidden="true"
-                                >&rarr;</span
-                            >
-                        </a>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>

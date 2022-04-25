@@ -131,7 +131,7 @@ import {
 const navigation = [
   { name: 'Home', href: '/', icon: HomeIcon, current: true },
   { name: 'Jobs You Posted', href: '/dashboard', icon: ClockIcon, current: false },
-  { name: 'Doctors', href: '/dashboard/doctors', icon: ScaleIcon, current: false },
+  { name: 'Healthcare professionals', href: '/dashboard/healthcare-professionals', icon: ScaleIcon, current: false },
   // { name: 'Cards', href: '#', icon: CreditCardIcon, current: false },
   // { name: 'Recipients', href: '#', icon: UserGroupIcon, current: false },
   // { name: 'Reports', href: '#', icon: DocumentReportIcon, current: false },

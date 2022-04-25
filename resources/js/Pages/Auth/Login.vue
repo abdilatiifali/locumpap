@@ -73,8 +73,8 @@
         <div class="relative hidden w-0 flex-1 lg:block">
             <img
                 class="absolute inset-0 h-full w-full object-cover"
-                src="https://media.istockphoto.com/photos/man-applying-for-a-job-on-the-internet-picture-id475352876?b=1&k=20&m=475352876&s=170667a&w=0&h=_rPqnILkaNt9Dl_UaUbHLycp03X8sYoV1pCxJwvfaOg="
-                alt=""
+                src="/man-applying-job.jpeg"
+                alt="Man applying job"
             />
         </div>
     </div>

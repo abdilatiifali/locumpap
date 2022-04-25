@@ -22,7 +22,7 @@ class DashboardController extends Controller
         ]);
     }
 
-    public function doctors()
+    public function professions()
     {
         $users = User::doctors()->with('profile')->filters([
             'city' => request('city'),

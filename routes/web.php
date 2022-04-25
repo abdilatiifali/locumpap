@@ -12,6 +12,7 @@ use App\Http\Controllers\LocumController;
 use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\ApplicantsController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SupportController;
 
 Route::controller(AuthController::class)->group(function () {
     Route::get("/login", 'create')->name('login')->middleware('guest');
@@ -55,7 +56,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     // applicants
     Route::get("/dashboard", [DashboardController::class, 'index'])->can('post-jobs');
-    Route::get("/dashboard/doctors", [DashboardController::class, 'doctors'])->can('post-jobs');
+    Route::get("/dashboard/healthcare-professionals", [DashboardController::class, 'professions'])->can('post-jobs');
 
     Route::get("/applicants", [ApplicantsController::class, 'index'])->can('post-jobs');
     Route::get("/applicants/{applicant}", [ApplicantsController::class, 'show'])->can('post-jobs');
@@ -104,3 +105,11 @@ Route::get("/privacy-policy", function () {
 Route::get("/success", function () {
     return Inertia::render('Success');
 })->middleware('auth');
+
+
+// contact support
+Route::get("/support", function () {
+    return Inertia::render('Support');
+});
+
+Route::post("/support", [SupportController::class, 'contact']);

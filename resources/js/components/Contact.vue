@@ -40,7 +40,7 @@
                                     class="h-6 w-6 flex-shrink-0 text-gray-400"
                                     aria-hidden="true"
                                 />
-                                <span class="ml-3"> +254 (796 001 001) </span>
+                                <a href="tel:+254 (796 001 001)" class="ml-3"> +254 (796 001 001) </a>
                             </dd>
                         </div>
                         <div class="mt-3">
@@ -50,23 +50,12 @@
                                     class="h-6 w-6 flex-shrink-0 text-gray-400"
                                     aria-hidden="true"
                                 />
-                                <span class="ml-3">
-                                    support@kazimtaani.co.ke
-                                </span>
+                                <a href="mailto:info@locumpap.com" class="ml-3">
+                                    info@locumpap.com
+                                </a>
                             </dd>
                         </div>
-                        <div class="mt-3">
-                            <dt class="sr-only">Email</dt>
-                            <dd class="flex">
-                                <MailIcon
-                                    class="h-6 w-6 flex-shrink-0 text-gray-400"
-                                    aria-hidden="true"
-                                />
-                                <span class="ml-3">
-                                    mail@kazimtaani.co.ke
-                                </span>
-                            </dd>
-                        </div>
+                       
                     </dl>
                     <p class="mt-6 text-base text-gray-500">
                         Looking for careers?
@@ -84,63 +73,35 @@
             >
                 <div class="mx-auto max-w-lg lg:max-w-none">
                     <form
-                        action="#"
-                        method="POST"
+                        @submit.prevent="submit"
                         class="grid grid-cols-1 gap-y-6"
                     >
                         <div>
-                            <label for="full-name" class="sr-only"
-                                >Full name</label
-                            >
-                            <input
-                                type="text"
-                                name="full-name"
-                                id="full-name"
-                                autocomplete="name"
-                                class="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-cyan-500 focus:ring-cyan-500"
-                                placeholder="Full name"
-                            />
+                            <text-input :errors="form.errors.name" v-model="form.name" class="py-3 px-4" label="Full Name" />
                         </div>
                         <div>
-                            <label for="email" class="sr-only">Email</label>
-                            <input
-                                id="email"
-                                name="email"
-                                type="email"
-                                autocomplete="email"
-                                class="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-cyan-500 focus:ring-cyan-500"
-                                placeholder="Email"
-                            />
+                            <text-input :errors="form.errors.email" v-model="form.email" type="email" label="Email Address" />
                         </div>
                         <div>
-                            <label for="phone" class="sr-only">Phone</label>
-                            <input
-                                type="text"
-                                name="phone"
-                                id="phone"
-                                autocomplete="tel"
-                                class="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-cyan-500 focus:ring-cyan-500"
-                                placeholder="Phone"
-                            />
+                            <text-input :errors="form.errors.phone" v-model="form.phone" label="Phone" />
                         </div>
+
                         <div>
                             <label for="message" class="sr-only">Message</label>
                             <textarea
+
+                                v-model="form.message"
                                 id="message"
                                 name="message"
                                 rows="4"
                                 class="block w-full rounded-md border border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-cyan-500 focus:ring-cyan-500"
                                 placeholder="Message"
                             />
+                            <p class="mt-1 italic text-red-500" v-if="form.errors.message">
+                                {{ form.errors.message }}
+                            </p>
                         </div>
-                        <div>
-                            <button
-                                type="submit"
-                                class="inline-flex justify-center rounded-md border border-transparent bg-cyan-600 py-3 px-6 text-base font-medium text-white shadow-sm hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
-                            >
-                                Submit
-                            </button>
-                        </div>
+                        <loading-button class="inline-flex text-base font-medium justify-center w-1/5  py-3 px-6" :loading="form.processing">Submit</loading-button>
                     </form>
                 </div>
             </div>
@@ -149,9 +110,23 @@
 </template>
 
 <script setup>
+import TextInput from '@/components/TextInput'
+import LoadingButton from '@/components/LoadingButton'
+import { useForm } from "@inertiajs/inertia-vue3";
+
 import {
     MailIcon,
     PhoneIcon,
     LocationMarkerIcon,
 } from "@heroicons/vue/outline";
+
+const form = useForm({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+})
+
+const submit = () => form.post('/support', {preserveScroll: true});
+
 </script>

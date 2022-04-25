@@ -141,7 +141,7 @@ class User extends Authenticatable implements CanResetPassword
     }
 
     public function scopeFilters($query, array $filters)
-    {        
+    {                
         $query->when($filters['city'] ?? 'all', function ($query, $city) {
             if ($city == 'all') return;
             $query->whereHas('profile', function ($query) use ($city) {
