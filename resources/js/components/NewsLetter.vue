@@ -8,7 +8,7 @@
                     <h2
                         class="text-2xl font-extrabold tracking-tight text-white sm:text-3xl"
                     >
-                        Want product news and updates?
+                        Want Latest News And Updates?
                     </h2>
                     <p class="mt-3 max-w-3xl text-lg leading-6 text-cyan-200">
                         Sign up for our newsletter to stay up to date.
@@ -38,9 +38,9 @@
                     <p class="mt-3 text-sm text-cyan-200">
                         We care about the protection of your data. Read our
                         {{ " " }}
-                        <a href="#" class="font-medium text-white underline">
+                        <Link href="/privacy-policy" class="font-medium text-white underline">
                             Privacy Policy.
-                        </a>
+                        </Link>
                     </p>
                 </div>
             </div>

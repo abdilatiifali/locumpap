@@ -112,34 +112,19 @@
                     </h2>
                     <div class="mt-6 space-y-6 text-gray-500">
                         <p class="text-lg">
-                            Locum pap strive to improve the quality of lives of
-                            our communities by providing healthcare facilities
-                            with access to a pool of qualfied medical
-                            practitioners at a click of a button.
+                            Locum pap is a resource platform built for health institutions and medical practitioners countrywide
                         </p>
                         <p class="text-base leading-7">
-                            Our mission to bridge the existing gap in the human
-                            resources in the medical sector.
+                            Our platform’s core mission is connecting healthcare workers to medical facilities countrywide.
                         </p>
                         <p class="text-base leading-7">
-                            Locum pap primarly focuses on connecting healthy
-                            workers to medical facilities country wide at an
-                            affordable rate.
+                            Our mission is to bridge the existing gap in the medical sector through offering real time human resource assistance where needed.
                         </p>
                     </div>
                 </div>
-
-                
             </div>
         </div>
     </div>
 </template>
 
-<script setup>
-const stats = [
-    { label: "Founded", value: "2021" },
-    { label: "Employees", value: "5" },
-    { label: "Active Doctors", value: "521" },
-    { label: "Active Hospitals", value: "75" },
-];
-</script>
+

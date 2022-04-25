@@ -26,10 +26,7 @@
                                     class="h-6 w-6 flex-shrink-0 text-gray-400"
                                     aria-hidden="true"
                                 />
-                                <span class="ml-3"
-                                    >Mombasa Central Business District -
-                                    Kenya</span
-                                >
+                                <span class="ml-3">Nairobi, Kenya</span>
                             </dd>
                         </div>
 
@@ -40,7 +37,7 @@
                                     class="h-6 w-6 flex-shrink-0 text-gray-400"
                                     aria-hidden="true"
                                 />
-                                <a href="tel:+254 (796 001 001)" class="ml-3"> +254 (796 001 001) </a>
+                                <a href="tel:+254 (778 214 656)" class="ml-3">+254 (778214656)</a>
                             </dd>
                         </div>
                         <div class="mt-3">

@@ -59,7 +59,7 @@
                   </div>
 
                   <div class="sm:col-span-1">
-                    <dt class="text-sm font-medium text-gray-500">Profesional Registraion Number</dt>
+                    <dt class="text-sm font-medium text-gray-500">Profesional Registration Number</dt>
                     <dd class="mt-1 text-sm text-gray-900" v-text="applicant.profile.registrationNumber"></dd>
                   </div>
 

@@ -24,18 +24,16 @@
                                 class="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl"
                             >
                                 <span class="block text-white"
-                                    >Improving Health Outcomes</span
+                                    >Connecting Healthcare Workers Through</span
                                 >
                                 <span class="block text-cyan-200"
-                                    >Through Digital</span
+                                    >Innovative Digital Alternatives</span
                                 >
                             </h1>
                             <p
                                 class="mx-auto mt-6 max-w-lg text-center text-xl text-cyan-200 sm:max-w-3xl"
                             >
-                                We strive to provide healthcare facilities with
-                                access to a pool of qualified medical
-                                practitioners at a click of a button.
+                                A digital platform that provides access to a pool of qualified medical practitioners.
                             </p>
                             <div
                                 class="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center"
@@ -43,14 +41,32 @@
                                 <div
                                     class="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0"
                                 >
-                                
-                                    <Link
-                                        :href="$page.props.user.name ? '/jobs' : '/register'"
+                                    <Link 
                                         class="flex items-center justify-center rounded-md border border-transparent bg-cyan-500 bg-opacity-60 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-70 sm:px-8"
-                                        v-text="$page.props.user.name ? 'Locums' : 'Sign Up'"
+                                        v-if="! $page.props.user.name"
+                                        href="/register"
                                     >
-                                            
-                                   </Link>
+                                        Sign Up
+                                    </Link>
+
+                                    <div v-if="$page.props.user.name">
+                                        <Link 
+                                            class="flex items-center justify-center rounded-md border border-transparent bg-cyan-500 bg-opacity-60 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-70 sm:px-8"
+                                            v-if="$page.props.user.is.doctor"
+                                            href="/jobs"
+                                        >
+                                            Available Jobs
+                                        </Link>
+                                        <Link
+                                            class="flex items-center justify-center rounded-md border border-transparent bg-cyan-500 bg-opacity-60 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-70 sm:px-8"
+                                            v-if="! $page.props.user.is.doctor"
+                                            href="/dashboard/healthcare-professionals"
+                                        >
+                                            Available Doctors
+                                        </Link>
+                                    </div>
+                                    
+                                                    
                                 </div>
                             </div>
                         </div>

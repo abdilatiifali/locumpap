@@ -74,10 +74,10 @@ const tiers = [
         linkText: "I am looking for a locum",
         features: [
             "Free to sign up",
-            "30p per SMS",
-            "No commission fees",
+            "3 months free trial version",
+            "Access to highly skilled medical professionals",
             "Eliminate expensive recruitment agency fees",
-            "Negotiate rate of pay directly with the locum",
+            "Discounted rates for staff trainings",
         ],
     },
     {
@@ -88,9 +88,9 @@ const tiers = [
         linkText: "I'm a locum",
         features: [
             "Free to sign up",
-            "No charges to receive an SMS and email",
-            "No commission fees",
-            "Negotiate your fee directly with the healthcare organisation",
+            "No commission or fees charges",
+            "User friendly platform",
+            "Affordable training courses for healthcare workers",
         ],
     },
 ];

@@ -93,7 +93,7 @@ const navigation = {
             href: "/terms-and-conditions-locums",
         },
         {
-            name: "Terms & condition for healthy insititution",
+            name: "Terms & condition for health insititution",
             href: "/terms-and-conditions",
         },
         { name: "Privacy & Policy", href: "/privacy-policy" },

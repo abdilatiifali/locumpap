@@ -1,17 +1,16 @@
 <template>
     <Header
         title="Looking for a Locum"
-        description="At Locumit, we want to make your life easy"
+        description="At Locum Pap, we want to make your life easy"
     />
 
     <div class="bg-white pb-12">
         <div class="mx-auto max-w-7xl px-4 py-6 pt-16 sm:px-6 lg:px-8">
             <div class="prose">
                 <p>
-                    At Locumit we want to make your life easy as possible when
-                    it comes to finding locums.
+                    Locum Pap wants to make it easy for you to access locums when need arises. <br>Register by following these 3 simple steps.
                 </p>
-                <p><strong>Step 1 - </strong>Register for your free account.</p>
+                <p><strong>Step 1 - </strong>Register your FREE locum pap account.</p>
                 <p>
                     <strong>Step 2 - </strong> Search for locums using our
                     interactive calendar.

@@ -5,31 +5,17 @@
         <div class="mx-auto max-w-7xl px-4 py-6 pt-16 sm:px-6 lg:px-8">
             <div class="prose">
                 <p>
-                    Finding locum work can be stressful and challenging but
-                    Locum pap will connect you with kenya healthcare
-                    organisations easily and efficiently. All you need to do is
-                    complete our simple registration process and select the
-                    geographical areas you want to work in. Locum Pap will match
-                    your profile with healthcare organisations relevant to your
-                    profession and geographical area(s). You will receive an SMS
-                    and Email from a relevant healthcare organisation looking
-                    for a locum and you can contact them directly if interested.
+                   Finding locums can be challenging but Locum Pap is here to help solve that for you. All you need to do is complete our simple registration steps. Locum Pap will match your profile with healthcare institutions relevant to your profession and counties. You will receive an SMS, Email or phone call from an interested institution, comply and you’re good to go.&nbsp; Register by following these 2 simple steps.
                 </p>
 
                 <p>
-                    <strong>Step 1 - </strong> Register for your free account
-                    and modify your profile / availability in secure members
-                    area.
+                    <strong>Step 1 - </strong> Register your FREE locum pap account and modify your profile as you go.
                 </p>
                 <p>
                     <strong>Step 2 - </strong> Wait to receive an SMS and Email
-                    from healthcare organisations looking for a locum.
+                    from healthcare institutions looking for a locum.
                 </p>
-                <p>
-                    <strong>Step 3 - </strong> Contact the healthcare
-                    organisation directly if you are interested and negotiate
-                    your own pay rate.
-                </p>
+               
             </div>
             <div class="mt-8">
                 <Link

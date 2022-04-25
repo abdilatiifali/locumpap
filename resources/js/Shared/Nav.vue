@@ -108,6 +108,9 @@
                             </Link>
                             <Link v-if="user.can.postJobs" href="/dashboard" :class="[active ? 'bg-gray-100' : '', 'block py-2 px-4 text-sm text-gray-700']">Dashboard
                             </Link>
+                            
+                            <Link v-if="user.can.postJobs" href="/events" :class="[active ? 'bg-gray-100' : '', 'block py-2 px-4 text-sm text-gray-700']">Trainings
+                            </Link>
 
                           </MenuItem>
 

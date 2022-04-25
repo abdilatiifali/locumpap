@@ -1,7 +1,7 @@
 <template>
     <Header
         title="Terms & Conditions - Locums"
-        description="Terms of Use - Locumit Limited"
+        description="Terms of Use - Locum Pap Limited"
     />
 
     <div class="bg-gray-100">
