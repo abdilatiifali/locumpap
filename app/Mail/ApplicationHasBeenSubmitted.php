@@ -15,20 +15,9 @@ class ApplicationHasBeenSubmitted extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $job;
-    public $user;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
-    public function __construct(JobListing $job, User $user)
-    {
+    public function __construct(public JobListing $job, public User $user) {}
 
-        $this->job = $job;
-        $this->user = $user;
-    }
 
     /**
      * Build the message.

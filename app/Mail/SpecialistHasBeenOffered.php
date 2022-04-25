@@ -11,18 +11,14 @@ class SpecialistHasBeenOffered extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $name;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($name)
-    {
-        $this->name = $name;
-    }
-
+    public function __construct(public string $name) {}
+  
     /**
      * Build the message.
      *

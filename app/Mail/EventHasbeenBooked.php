@@ -13,18 +13,13 @@ class EventHasbeenBooked extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $event;
-    public $order;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Event $event, Order $order)
-    {
-        $this->event = $event;
-        $this->order = $order;
-    }
+    public function __construct(public Event $event, public Order $order){}
+   
 
     /**
      * Build the message.

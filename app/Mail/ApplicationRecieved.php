@@ -13,21 +13,8 @@ class ApplicationRecieved extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $profile;
-    public $job;
-    public $user;
-
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
-    public function __construct(Profile $profile, JobListing $job)
-    {
-        $this->profile = $profile;
-        $this->job = $job;
-        $this->user = auth()->user();
-    }
+    public function __construct(public Profile $profile, public JobListing $job){}
+   
 
     /**
      * Build the message.
