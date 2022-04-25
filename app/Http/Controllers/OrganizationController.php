@@ -36,7 +36,7 @@ class OrganizationController extends Controller
 
         \Auth::login($user);
 
-        return redirect('/jobs');
+        return Inertia::location('/jobs');
 
     }
 }

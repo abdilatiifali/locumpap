@@ -90,5 +90,12 @@ const form = useForm({
     password: "",
 });
 
-const submit = () => form.post("/login");
+const submit = () => {
+    form.transform(data => ({
+        ...data,
+    })).post('/login', {
+        onFinish: () => form.reset('password'),
+    });
+};
+
 </script>

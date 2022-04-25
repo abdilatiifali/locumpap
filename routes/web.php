@@ -16,6 +16,7 @@ use App\Http\Controllers\SupportController;
 
 Route::controller(AuthController::class)->group(function () {
     Route::get("/login", 'create')->name('login')->middleware('guest');
+    Route::post("/login", 'login')->middleware('guest');
     Route::delete('/logout', 'destory')->name('logout')->middleware('auth');
 
     Route::post('/forgot-password', 'reset')->name('password.email')->middleware('guest');

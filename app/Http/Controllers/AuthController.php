@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
+use App\Http\Requests\LoginRequest;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Password;
 
 class AuthController extends Controller
@@ -20,6 +22,15 @@ class AuthController extends Controller
         return Inertia::render('Auth/Register');
     }
 
+    public function login(LoginRequest $request)
+    {
+        $request->authenticate();
+
+        $request->session()->regenerate();
+
+        return Inertia::location(redirect()->intended(RouteServiceProvider::HOME));
+    }
+
     public function destory()
     {
         \Auth::guard('web')->logout();
@@ -28,7 +39,7 @@ class AuthController extends Controller
 
         request()->session()->regenerateToken();
 
-        return redirect('/');
+        return Inertia::location('/');
     }
 
     public function forgot()
