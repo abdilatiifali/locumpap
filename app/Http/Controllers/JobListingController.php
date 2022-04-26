@@ -14,6 +14,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Arr;
 use App\Models\Locum;
 use App\Models\Permanent;
+use App\Http\Resources\JobListingResource;
 
 class JobListingController extends Controller
 {
@@ -28,11 +29,14 @@ class JobListingController extends Controller
             'city'          => request('city'),
             'department'    => request('department'),
             'profession'    => request('profession'),
+            'type'          => Str::lower(request('type')),
         ])->get();
 
+        $jobs = JobListingResource::collection($jobs->load('county', 'profession', 'department'));
+
         return Inertia::render('Jobs/Index', [
-            'filters'           => Request::only('city', 'department', 'profession'),
-            'jobs'              => $jobs->load('county', 'department', 'profession'),
+            'filters'           => Request::only('type', 'city', 'department', 'profession'),
+            'jobs'              => $jobs,
             'departments'       => Department::all(),
             'professions'       => Profession::all(),
         ]);
@@ -45,7 +49,7 @@ class JobListingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(JobListing $job)
-    {
+    {        
         return Inertia::render('Jobs/Show', [
             'job' => $job->load('organization'),
             'alreadyApplied' => auth()->user()?->alreadyApplied($job) ?? false,
@@ -63,12 +67,12 @@ class JobListingController extends Controller
     }
 
     public function store(StoreJobListingRequest $request)
-    { 
+    {         
         $data = $request->validated();
 
         $jobType = $this->getJobType($data);
 
-        $cleanData = Arr::except($data, ['start_at', 'end_at']);
+        $cleanData = Arr::except($data, ['start_at', 'end_at', 'job_type']);
 
         JobListing::create(
             array_merge($cleanData, [
@@ -84,12 +88,15 @@ class JobListingController extends Controller
 
     public function getJobType($data)
     {
-        return match ($data['job_type']) {
+        $type = Str::lower($data['job_type']);
+
+        return match ($type) {
             'locum' => Locum::create([
                 'start_at' => $data['start_at'],
                 'end_at' => $data['end_at'],
             ]),
             'permanent' => Permanent::create(),
+            default => throw new \Exception('Hello'),
         };
     }
 

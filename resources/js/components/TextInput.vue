@@ -13,7 +13,7 @@
             :placeholder="label"
             @input="$emit('update:modelValue', $event.target.value)"
             v-bind="{ ...attrs }"
-            class="mt-1 block w-full appearance-none rounded-md border border-gray-300 px-4 py-3 placeholder-gray-400 shadow-sm focus:border-cyan-500 focus:outline-none focus:ring-cyan-500 sm:text-sm"
+            class="mt-1 block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-cyan-500 focus:outline-none focus:ring-cyan-500 sm:text-sm"
         />
     </div>
     <p class="mt-1 italic text-red-500" v-if="errors">

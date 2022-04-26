@@ -54,6 +54,19 @@
 
                             <div class="col-span-6 sm:col-span-3">
                                 <select-input
+                                    :errors="form.errors.county"
+                                    v-model="form.county_id"
+                                    label="County"
+                                >
+                                    <option :value="county.id" v-for="county in counties">
+                                        {{ county.name }}
+                                    </option>
+                                </select-input>
+                            </div>
+
+
+                            <div class="col-span-6 sm:col-span-3">
+                                <select-input
                                     :errors="form.errors.job_type"
                                     v-model="form.job_type"
                                     label="Job Type"
@@ -64,16 +77,59 @@
                                 </select-input>
                             </div>
 
-                            <div class="col-span-6 sm:col-span-3">
-                                <select-input
-                                    :errors="form.errors.county"
-                                    v-model="form.county_id"
-                                    label="County"
-                                >
-                                    <option :value="county.id" v-for="county in counties">
-                                        {{ county.name }}
-                                    </option>
-                                </select-input>
+                            <div 
+                                v-if="form.job_type == 'Locum'" 
+                                class="col-span-6 sm:col-span-3"
+                            >
+                                <div>
+                                    <label
+                                        for="start_at"
+                                        class="block text-sm font-medium text-gray-700"
+                                    >
+                                        Start At
+                                    </label>
+                                    <input 
+                                        placeholder="Start At" 
+                                        ref="startAt"
+                                        v-model="form.start_at"
+                                        class="mt-1 block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-cyan-500 focus:outline-none focus:ring-cyan-500 sm:text-sm"
+                                    >
+                                     <p 
+                                        class="mt-1 italic text-red-500" 
+                                        v-if="form.errors.start_at"
+                                    >
+                                        {{ form.errors.start_at }}
+                                    </p>
+                                    
+                                </div>
+
+                            </div>
+
+                            <div 
+                                v-if="form.job_type == 'Locum'"
+                                class="col-span-6 sm:col-span-3"
+                            >
+                                <div>
+                                    <label
+                                        for="end_at"
+                                        class="block text-sm font-medium text-gray-700"
+                                    >
+                                        End At
+                                    </label>
+                                    <input 
+                                        placeholder="End At" 
+                                        ref="endAt"
+                                        v-model="form.end_at"
+                                        class="mt-1 block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-cyan-500 focus:outline-none focus:ring-cyan-500 sm:text-sm"
+                                    >
+                                    <p 
+                                        class="mt-1 italic text-red-500" 
+                                        v-if="form.errors.end_at"
+                                    >
+                                        {{ form.errors.end_at }}
+                                    </p>
+                                </div>
+                            
                             </div>
 
                             <div class="col-span-6 sm:col-span-3">
@@ -117,10 +173,11 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-
+import { ref, onMounted } from "vue";
+import flatpickr from "flatpickr"
 import Trix from "trix";
 import "trix/dist/trix.css";
+import "flatpickr/dist/themes/airbnb.css"
 
 import Header from "@/Shared/Header";
 import TextInput from "@/components/TextInput";
@@ -135,23 +192,41 @@ defineProps({
 });
 
 const theEditor = ref(null);
+const startAt = ref(null);
+const endAt = ref(null);
 
 const form = useForm({
     title: "",
     description: "",
     rate_per_hour: "",
-    job_type: "Full-time",
+    job_type: "Locum",
     county_id: "Nairobi",
     profession_id: "Doctor",
     department_id: "ICU",
     location: "",
+    start_at: '',
+    end_at: '',
 });
 
-const jobTypes = ["Full-time", "Part-time"];
+const jobTypes = ["Locum", "Permanent"];
+
+const endDatePicker = () => flatpickr(endAt.value)
+
+onMounted(() => {
+    flatpickr(startAt.value, {
+        minDate: 'today',
+    })
+
+    flatpickr(endAt.value, {
+        minDate: 'today',
+    })
+
+})
 
 const change = () => {
     form.description = theEditor.value.value;
 };
 
 const submit = () => form.post("/jobs");
+
 </script>

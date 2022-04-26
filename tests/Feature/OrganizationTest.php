@@ -63,12 +63,13 @@ class OrganizationTest extends TestCase
 
         $job = make(JobListing::class, [
             'title' => 'locum job title',
-            'job_type' => 'locum',
+            'job_type' => 'Locum',
             'start_at' => now()->addWeek(),
             'end_at' => now()->addMonth(),
         ]);
 
-        $this->post('/jobs', $job->toArray());
+        $this->withOutExceptionHandling()
+            ->post('/jobs', $job->toArray());
         
         $job = JobListing::first();
         $locum = Locum::first();

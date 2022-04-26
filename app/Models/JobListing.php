@@ -16,11 +16,21 @@ class JobListing extends Model
         'candidates' => 'array'
     ];
 
-    // protected $with = ['organization', 'users'];
+    public function typable()
+    {
+        return $this->morphTo();
+    }
 
     public function users()
     {
         return $this->belongsToMany(User::class, 'applicants');
+    }
+
+    public function type()
+    {
+        [, , $class] = explode('\\', $this->typable_type);
+
+        return $class;
     }
 
     public function totalApplicants(): Attribute
@@ -57,7 +67,10 @@ class JobListing extends Model
 
     public function scopeFilter($query, array $filters)
     {
-        $query->when($filters['city'] ?? 'all', function ($query, $city) {
+        $query->when($filters['type'] ?? 'all', function ($query, $type) {
+            $this->filterByTypes($query, $type);
+        })
+        ->when($filters['city'] ?? 'all', function ($query, $city) {
             if ($city == 'all') return;
             $query->whereHas('county', fn ($query) => $query->whereSlug($city));
         })
@@ -70,4 +83,14 @@ class JobListing extends Model
             $query->whereHas('profession', fn ($query) => $query->whereSlug($profession));
         });
     }
+
+    public function filterByTypes($query, $type)
+    {
+        return match($type) {
+            'locums' => $query->whereHasMorph('typable', Locum::class),
+            'permanent' => $query->whereHasMorph('typable', Permanent::class),
+            default => $query,
+        };
+    }
+
 }

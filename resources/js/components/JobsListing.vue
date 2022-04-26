@@ -22,8 +22,9 @@
                             ></p>
                             <div class="ml-2 flex flex-shrink-0">
                                 <p
-                                    class="inline-flex rounded-full bg-cyan-100 px-2 text-xs font-semibold leading-5 text-cyan-800"
-                                    v-text="job.job_type"
+                                    :class="{'bg-cyan-100 text-cyan-800': job.type == 'Locum'}"
+                                    class="inline-flex rounded-full px-2 bg-red-100 text-xs font-semibold leading-5 text-red-800"
+                                    v-text="job.type"
                                 ></p>
                             </div>
                         </div>
@@ -69,9 +70,9 @@
                                 <!-- Heroicon name: solid/calendar -->
                                 <ClockIcon class="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" />
                                 <p>
-                                    <time datetime="2020-01-07"
-                                        >10 seconds ago</time
-                                    >
+                                    <time datetime="2020-01-07" v-text="job.postedAt">
+
+                                    </time>
                                 </p>
                             </div>
                         </div>

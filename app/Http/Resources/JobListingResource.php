@@ -20,10 +20,16 @@ class JobListingResource extends JsonResource
             'title' => $this->title,
             'slug' => $this->slug,
             'postedAt' => $this->created_at->diffForHumans(),
-            'totalApplicants' => $this->totalApplicants,
-            'applicants' => UserResource::collection($this->users),
+            'description' => $this->description,
+            'rate_per_hour' => $this->rate_per_hour,
+            'profession' => $this->whenLoaded('profession'),
+            'type' => $this->type(),
+            'county' => $this->whenLoaded('county'),
+            'department' => $this->whenLoaded('department'),
             'bgColorClass' => 'bg-red-600',
-            'organization' => $this->organization->name,
+            'organization' => $this->whenLoaded('organization'),
+            'users' => UserResource::collection($this->whenLoaded('users')),
+            'totalApplicants' => 0,
         ];
     }
 }

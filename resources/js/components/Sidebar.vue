@@ -58,23 +58,24 @@
                     class="px-6 text-xs font-semibold uppercase tracking-wider text-cyan-200"
                     id="communities-headline"
                 >
-                    Counties
+                    Types
+
                 </p>
 
                 <div class="space-y-1 px-4 pt-2">
                     <Link
-                        href="?city=all"
+                        href="?type=all"
                         class="group flex items-center rounded-md px-2 py-2 text-sm font-medium leading-6 text-white hover:bg-cyan-600 hover:text-white"
                     >
                         All
                     </Link>
                     <Link
-                        :href="'?city=' + county.name"
-                        v-for="county in counties"
-                        :key="county.id"
+                        :href="'?type=' + type.name"
+                        v-for="type in jobTypes"
+                        :key="type.id"
                         class="group flex items-center rounded-md px-2 py-2 text-sm font-medium leading-6 text-white hover:bg-cyan-600 hover:text-white"
                     >
-                        {{ county.name }}
+                        {{ type.name }}
                     </Link>
                 </div>
             </div>
@@ -84,5 +85,14 @@
 
 <script setup>
 import { Link } from "@inertiajs/inertia-vue3";
-defineProps({ counties: Array });
+const jobTypes = [
+    {
+        id: 1,
+        name: 'Locums',
+    },
+    {
+        id: 2,
+        name: 'Permanent',
+    },
+];
 </script>

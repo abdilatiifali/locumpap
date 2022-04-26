@@ -35,7 +35,7 @@
           </div>
         </div>
 
-        <h2 v-if="jobs.length" class="max-w-6xl mx-auto mt-8 px-4 text-lg leading-6 font-medium text-gray-900 sm:px-6 lg:px-8">Recent Jobs You Posted</h2>
+        <h2 v-if="jobs.length"  class="max-w-6xl mx-auto mt-8 px-4 text-lg leading-6 font-medium text-gray-900 sm:px-6 lg:px-8">Recent Jobs You Posted</h2>
 
         <!-- Projects list (only on smallest breakpoint) -->
         <div class="mt-10 sm:hidden">
@@ -50,7 +50,7 @@
                   <span class="font-medium truncate text-sm leading-6">
                     {{ job.title }}
                     {{ ' ' }}
-                    <span class="truncate font-normal text-gray-500">in {{ job.organization }}</span>
+                    <span class="truncate font-normal text-gray-500">in {{ job.organization.name }}</span>
                   </span>
                 </span>
                 <ChevronRightIcon class="ml-4 h-5 w-5 text-gray-400 group-hover:text-gray-500" aria-hidden="true" />
@@ -62,7 +62,7 @@
       <!-- Projects table (small breakpoint and up) -->
         <div class="hidden max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 sm:block">
           <div class="align-middle inline-block min-w-full border-b border-gray-200">
-            <table v-if="jobs.length" class="min-w-full">
+            <table v-if="jobs.length"  class="min-w-full">
               <thead>
                 <tr class="border-t border-gray-200">
                   <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -85,7 +85,7 @@
                         <span>
                           {{ job.title }}
                           {{ ' ' }}
-                          <span class="text-gray-500 font-normal">in {{ job.organization }}</span>
+                          <span class="text-gray-500 font-normal">in {{ job.organization.name }}</span>
                         </span>
                       </Link>
                     </div>
@@ -93,9 +93,9 @@
                   <td class="px-6 py-3 text-sm text-gray-500 font-medium">
                     <div class="flex items-center space-x-2">
                       <div class="flex flex-shrink-0 -space-x-1">
-                        <img v-for="applicant in job.applicants" :key="applicant.id" class="max-w-none h-6 w-6 rounded-full ring-2 ring-white" :src="applicant.avatar" :alt="applicant.name" />
+                        <img v-for="applicant in job.users" :key="applicant.id" class="max-w-none h-6 w-6 rounded-full ring-2 ring-white" :src="applicant.avatar" :alt="applicant.name" />
                       </div>
-                      <span v-if="job.totalApplicants > job.applicants.length" class="flex-shrink-0 text-xs leading-5 font-medium">+{{ job.totalApplicants - job.applicants.length }}</span>
+                      <span v-if="job.totalApplicants > job.users.length" class="flex-shrink-0 text-xs leading-5 font-medium">+{{ job.totalApplicants - job.users.length }}</span>
                     </div>
                   </td>
                   <td class="hidden md:table-cell px-6 py-3 whitespace-nowrap text-sm text-gray-500 text-right">

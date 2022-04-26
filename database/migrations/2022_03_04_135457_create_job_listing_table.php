@@ -20,14 +20,13 @@ class CreateJobListingTable extends Migration
             $table->text('description')->nullable();
             $table->string('location');
             $table->integer('rate_per_hour');
-            $table->string('job_type');
             $table->text('candidates')->default('[]');
             $table->foreignId('department_id');
             $table->foreignId('profession_id');
             $table->foreignId('county_id');
             $table->foreignId('organization_id');
-            $table->unsignedInteger('typable_id')->nullable();
-            $table->string('typable_type')->nullable();
+            $table->unsignedInteger('typable_id');
+            $table->string('typable_type');
             $table->timestamps();
         });
     }

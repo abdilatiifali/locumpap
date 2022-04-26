@@ -24,9 +24,10 @@ class JobListingFactory extends Factory
             'department_id' => 1,
             'profession_id' => 1,
             'county_id' => 1,
-            'job_type' => 'full-time',
             'location' => 'nairobi',
             'organization_id' => 1,
+            'typable_id' => 1,
+            'typable_type' => 'App\Models\Locum',
         ];
     }
 }

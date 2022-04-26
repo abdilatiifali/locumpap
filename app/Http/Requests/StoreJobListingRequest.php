@@ -32,8 +32,8 @@ class StoreJobListingRequest extends FormRequest
             'profession_id' => 'required',
             'department_id' => 'required',
             'location' => 'required',
-            'start_at' => 'date|nullable',
-            'end_at' => 'date|nullable',
+            'start_at' => 'nullable|date',
+            'end_at' => 'nullable|date|after:start_at',
         ];
     }
 }
