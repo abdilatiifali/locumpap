@@ -6,6 +6,9 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Models\Organization;
+use App\Models\JobListing;
+use App\Models\Locum;
+use App\Models\Permanent;
 
 class OrganizationTest extends TestCase
 {
@@ -51,5 +54,51 @@ class OrganizationTest extends TestCase
             'city' => 'nairobi',
             'post_code' => '08182',
         ]);
+    }
+
+    /** @test */
+    public function an_organization_can_create_locum_jobs()
+    {
+        $this->loginAsOrganization();
+
+        $job = make(JobListing::class, [
+            'title' => 'locum job title',
+            'job_type' => 'locum',
+            'start_at' => now()->addWeek(),
+            'end_at' => now()->addMonth(),
+        ]);
+
+        $this->post('/jobs', $job->toArray());
+        
+        $job = JobListing::first();
+        $locum = Locum::first();
+
+        $this->assertDatabaseCount('job_listings', 1);
+        $this->assertDatabaseCount('locums', 1);
+        $this->assertEquals('locum job title', $job->title);
+        $this->assertEquals($locum->id, $job->typable_id);
+        $this->assertEquals(get_class($locum), $job->typable_type);
+    }
+
+    /** @test */
+    public function an_organization_can_create_permanent_jobs()
+    {
+        $this->loginAsOrganization();
+
+        $job = make(JobListing::class, [
+            'title' => 'permanent job title',
+            'job_type' => 'permanent',
+        ]);
+
+        $this->post('/jobs', $job->toArray());
+        
+        $job = JobListing::first();
+        $permanent = Permanent::first();
+
+        $this->assertDatabaseCount('job_listings', 1);
+        $this->assertDatabaseCount('permanents', 1);
+        $this->assertEquals('permanent job title', $job->title);
+        $this->assertEquals($permanent->id, $job->typable_id);
+        $this->assertEquals(get_class($permanent), $job->typable_type);
     }
 }

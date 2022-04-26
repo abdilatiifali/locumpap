@@ -38,29 +38,6 @@ class JobListingTest extends TestCase
     }
 
     /** @test */
-    public function an_organzation_can_create_jobs()
-    {
-        $organization = create(Organization::class);
-
-        $this->loginAsOrganization();
-
-        $job = make(JobListing::class, [
-            'organization_id' => $organization->id,
-            'title' => 'job title',
-        ]);
-
-        $this->assertDatabaseCount('job_listings', 0);
-
-        $this->post('/jobs', $job->toArray());
-        
-        $job = JobListing::first();
-
-        $this->assertDatabaseCount('job_listings', 1);
-        $this->assertEquals('job title', $job->title);
-
-    }
-
-    /** @test */
     public function a_doctor_can_not_create_jobs()
     {
         $this->loginAsDoctor();

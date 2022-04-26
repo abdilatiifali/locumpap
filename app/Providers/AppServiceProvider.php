@@ -28,6 +28,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Model::unguard();
+        
         Gate::define('post-jobs', function (User $user) {
             return $user->organization == true;
         });

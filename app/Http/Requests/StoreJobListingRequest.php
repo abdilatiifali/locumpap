@@ -24,7 +24,7 @@ class StoreJobListingRequest extends FormRequest
     public function rules()
     {
         return [
-             'title' => 'required',
+            'title' => 'required',
             'description' => 'required',
             'rate_per_hour' => 'required',
             'job_type' => 'required',
@@ -32,6 +32,8 @@ class StoreJobListingRequest extends FormRequest
             'profession_id' => 'required',
             'department_id' => 'required',
             'location' => 'required',
+            'start_at' => 'date|nullable',
+            'end_at' => 'date|nullable',
         ];
     }
 }
