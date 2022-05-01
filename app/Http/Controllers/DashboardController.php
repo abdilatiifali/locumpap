@@ -17,9 +17,9 @@ class DashboardController extends Controller
         $jobs = JobListing::with('organization', 'users')
             ->where('organization_id', auth()->user()->organization_id)->get();
 
-        $monthly = JobListing::monthly()->count();
-        $weekly = JobListing::weekly()->count();
-        $yearly = JobListing::yearly()->count();
+        $monthly = JobListing::where('organization_id', auth()->id())->monthly()->count();
+        $weekly = JobListing::where('organization_id', auth()->id())->weekly()->count();
+        $yearly = JobListing::where('organization_id', auth()->id())->yearly()->count();
 
         return Inertia::render('Dashboard/Index', [
             'jobs' => JobListingResource::collection($jobs),

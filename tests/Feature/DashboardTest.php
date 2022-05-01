@@ -131,7 +131,15 @@ class DashboardTest extends TestCase
             'created_at' => now()->addYear(3),
         ]);
 
-        $this->assertEquals(3, JobListing::Yearly()->count());
+        $job4 = create(JobListing::class, [
+            'organization_id' => 14,
+            'created_at' => now()->subDays(7),
+        ]);
+
+        $this->assertEquals(
+            3, 
+            JobListing::where('organization_id', auth()->id())->yearly()->count(),
+        );
     }
 
 
