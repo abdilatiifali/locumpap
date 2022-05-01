@@ -17,8 +17,15 @@ class DashboardController extends Controller
         $jobs = JobListing::with('organization', 'users')
             ->where('organization_id', auth()->user()->organization_id)->get();
 
+        $monthly = JobListing::monthly()->count();
+        $weekly = JobListing::weekly()->count();
+        $yearly = JobListing::yearly()->count();
+
         return Inertia::render('Dashboard/Index', [
-            'jobs' => JobListingResource::collection($jobs)
+            'jobs' => JobListingResource::collection($jobs),
+            'monthly' => $monthly,
+            'weekly' => $weekly,
+            'yearly' => $yearly,
         ]);
     }
 
@@ -37,5 +44,10 @@ class DashboardController extends Controller
             'specials' => Speciality::all(),
             'filters' => request()->only('city', 'specialist', 'availability'),
         ]);
+    }
+
+    public function payment()
+    {
+        return Inertia::render("Dashboard/Payment");
     }
 }

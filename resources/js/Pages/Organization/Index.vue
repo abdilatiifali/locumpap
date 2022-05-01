@@ -16,8 +16,7 @@
                     interactive calendar.
                 </p>
                 <p>
-                    <strong>Step 3 - </strong> Submit your request via SMS and
-                    Email and wait for a locum to contact you directly.
+                    <strong>Step 3 - </strong> Submit your request via email,sms or directly contact the locum through their mobile phone.
                 </p>
             </div>
 

@@ -69,7 +69,7 @@
                     <span class="lg:pl-2">Job</span>
                   </th>
                   <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Applicants</th>
-                  <th class="hidden md:table-cell px-6 py-3 border-b border-gray-200 bg-gray-50 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Posted At</th>
+                  <th class="hidden whitespace-nowrap md:table-cell px-6 py-3 border-b border-gray-200 bg-gray-50 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Posted At</th>
                 
                 </tr>
               </thead>
@@ -122,14 +122,17 @@ import { ref } from 'vue'
 import { ScaleIcon } from '@heroicons/vue/outline'
 import {  ChevronRightIcon } from '@heroicons/vue/solid'
 
-defineProps({
+let props = defineProps({
   jobs: Array,
+  monthly: Number,
+  weekly: Number,
+  yearly: Number,
 })
 
 const cards = [
-  { name: 'Job Posted This month', href: '#', icon: ScaleIcon, amount: '50' },
-  { name: 'Job Posted This Week', href: '#', icon: ScaleIcon, amount: '30' },
-  { name: 'Job Posted past year', href: '#', icon: ScaleIcon, amount: '100' },
+  { name: 'Job Posted This month', href: '#', icon: ScaleIcon, amount:  props.monthly},
+  { name: 'Job Posted This Week', href: '#', icon: ScaleIcon, amount: props.weekly },
+  { name: 'Job Posted past year', href: '#', icon: ScaleIcon, amount: props.yearly },
   // More items...
 ]
 

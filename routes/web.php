@@ -58,6 +58,9 @@ Route::group(['middleware' => 'auth'], function () {
     // applicants
     Route::get("/dashboard", [DashboardController::class, 'index'])->can('post-jobs');
     Route::get("/dashboard/healthcare-professionals", [DashboardController::class, 'professions'])->can('post-jobs');
+    
+    Route::get("/dashboard/payment", [DashboardController::class, 'payment'])->can('post-jobs');
+
 
     Route::get("/applicants", [ApplicantsController::class, 'index'])->can('post-jobs');
     Route::get("/applicants/{applicant}", [ApplicantsController::class, 'show'])->can('post-jobs');
@@ -106,6 +109,7 @@ Route::get("/privacy-policy", function () {
 Route::get("/success", function () {
     return Inertia::render('Success');
 })->middleware('auth');
+
 
 
 // contact support

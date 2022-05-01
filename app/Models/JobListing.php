@@ -26,6 +26,21 @@ class JobListing extends Model
         return $this->belongsToMany(User::class, 'applicants');
     }
 
+    public function scopeMonthly($query)
+    {
+        return $query->whereBetween('created_at', [now()->subDays(30), now()]);
+    }
+
+    public function scopeWeekly($query)
+    {
+        return $query->whereBetween('created_at', [now()->subDays(7), now()]);
+    }
+
+    public function scopeYearly($query)
+    {
+        return $query->whereBetween('created_at', [now()->subYear(), now()]);
+    }
+
     public function type()
     {
         [, , $class] = explode('\\', $this->typable_type);

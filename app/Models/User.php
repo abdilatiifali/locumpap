@@ -13,7 +13,7 @@ use Illuminate\Contracts\Auth\CanResetPassword;
 
 class User extends Authenticatable implements CanResetPassword
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable;     
 
     // protected $with = ['profile'];
     /**
@@ -75,20 +75,10 @@ class User extends Authenticatable implements CanResetPassword
     public function alreadyApplied(JobListing $job): bool
     {
         $users = User::findMany($job->candidates);
-
+        
         return $users->contains(function ($user, $key) {
             return $user->id == $this->id;
         });
-    }
-
-    public function organize()
-    {
-        return $this->belongsTo(Organization::class);
-    }
-
-    public function organizations()
-    {
-        return $this->hasMany(Organization::class);
     }
 
     public static function createNewUser($attributes)
