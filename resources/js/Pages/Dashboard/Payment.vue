@@ -1,8 +1,8 @@
 <template>
     <main class="flex-1 pb-8">    
       <div class="mt-8">
-        <div class="max-w-5xl mx-auto">
-          <h2 class="text-2xl ml-1 leading-6 font-semibold text-gray-900">Payment Details</h2>
+        <div class="max-w-5xl px-8 sm:px-2 mx-auto">
+          <h2 class="text-2xl leading-6 font-semibold text-gray-900">Payment Details</h2>
         </div>
 
         <div>
