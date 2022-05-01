@@ -110,10 +110,10 @@
                                             <span
                                                 class="mt-2 mr-2 text-2xl font-medium"
                                             >
-                                                $
+                                                KES 
                                             </span>
                                             <span class="font-bold">
-                                                {{ formatedPrice(3000) }} KES
+                                                {{ formatedPrice(3000) }}
                                             </span>
                                         </span>
                                     </div>
