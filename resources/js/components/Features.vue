@@ -16,14 +16,14 @@
                         {{ tier.name }}
                     </h3>
                 </div>
-                <div
+                <!-- <div
                     class="mt-4 flex items-baseline text-3xl font-extrabold"
                 >
                     {{ tier.priceMonthly }}
                     <span
                         class="ml-1 text-sm font-medium text-gray-500"
                     ></span>
-                </div>
+                </div> -->
                 <p class="mt-5 text-lg text-gray-500">
                     {{ tier.description }}
                 </p>
@@ -69,7 +69,6 @@ const tiers = [
     {
         name: "LocumPap for HCOs",
         href: "/looking-for-a-locum",
-        priceMonthly: "free to sign up",
         description: "Contact locums with ease.",
         linkText: "I am looking for a locum",
         features: [
@@ -83,7 +82,6 @@ const tiers = [
     {
         name: "LocumPap For Locums",
         href: "/im-a-locum",
-        priceMonthly: "free",
         description: "Allow practices to find you.",
         linkText: "I'm a locum",
         features: [

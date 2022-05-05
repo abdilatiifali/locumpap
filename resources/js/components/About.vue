@@ -108,7 +108,7 @@
                     <h2
                         class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl"
                     >
-                        On a mission to empower Healthy Workers
+                        About Us
                     </h2>
                     <div class="mt-6 space-y-6 text-gray-500">
                         <p class="text-lg">
@@ -118,7 +118,7 @@
                             Our platform’s core mission is connecting healthcare workers to medical facilities countrywide.
                         </p>
                         <p class="text-base leading-7">
-                            Our mission is to bridge the existing gap in the medical sector through offering real time human resource assistance where needed.
+                            Our vision is to bridge the existing gap in the medical sector through offering real time human resource assistance where needed.
                         </p>
                     </div>
                 </div>

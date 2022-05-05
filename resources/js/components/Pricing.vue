@@ -32,7 +32,7 @@
                                                 >
                                                     KES
                                                 </span>
-                                                <span class="font-bold">{{ formatedPrice(3000) }}</span>
+                                                <span class="font-bold">{{ formatedPrice(price) }}</span>
                                             </span>
                                         </div>
                                     </div>
@@ -56,17 +56,7 @@
                                             </p>
                                         </li>
                                     </ul>
-                                    <div class="mt-8">
-                                        <div class="rounded-lg shadow-md">
-                                            <a
-                                                href="#"
-                                                class="block w-full rounded-lg border border-transparent bg-white px-6 py-3 text-center text-base font-medium text-cyan-600 hover:bg-gray-50"
-                                                aria-describedby="tier-hobby"
-                                            >
-                                                Pay Now
-                                            </a>
-                                        </div>
-                                    </div>
+                                    <div class="mt-8"></div>
                                 </div>
                             </div>
                         </div>
@@ -113,7 +103,7 @@
                                                 KES 
                                             </span>
                                             <span class="font-bold">
-                                                {{ formatedPrice(3000) }}
+                                                {{ formatedPrice(price) }}
                                             </span>
                                         </span>
                                     </div>
@@ -138,17 +128,7 @@
                                         </p>
                                     </li>
                                 </ul>
-                                <div class="mt-10">
-                                    <div class="rounded-lg shadow-md">
-                                        <a
-                                            href="#"
-                                            class="block w-full rounded-lg border border-transparent bg-cyan-600 px-6 py-4 text-center text-xl font-medium leading-6 text-white hover:bg-indigo-700"
-                                            aria-describedby="tier-growth"
-                                        >
-                                            Pay
-                                        </a>
-                                    </div>
-                                </div>
+                                <div class="mt-10"></div>
                             </div>
                         </div>
                     </div>
@@ -163,6 +143,9 @@ import { CheckIcon } from "@heroicons/vue/outline";
 import { computed } from "vue";
 import { format } from "@/Services/FormattedPrice";
 
+defineProps({
+    price: Number,
+})
 
 const formatedPrice = (price) => format(price);
 

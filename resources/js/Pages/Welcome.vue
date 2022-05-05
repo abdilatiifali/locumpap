@@ -4,7 +4,7 @@
         <Hero />
     </div>
 
-     <div v-if="! $page.props.user.name" class="relative pt-4 pb-32">
+     <div v-if="! $page.props.user.name" class="relative pt-8 pb-32">
         <div class="px-4 sm:px-0 relative z-10 mx-auto max-w-7xl">
             <Features />
         </div>
@@ -13,10 +13,6 @@
     <About />
 
     <Contact />
-
-    
-
-
 
     <NewsLetter />
 
