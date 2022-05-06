@@ -63,19 +63,19 @@
                     <dd class="mt-1 text-sm text-gray-900" v-text="applicant.profile.registrationNumber"></dd>
                   </div>
 
-                  <div class="sm:col-span-1">
+                  <div class="sm:col-span-1" v-if="applicant.profile.about">
                     <dt class="text-sm font-medium text-gray-500">About</dt>
                     <dd class="mt-1 text-sm text-gray-900" v-text="applicant.profile.about"></dd>
                   </div>
 
-                  <div class="sm:col-span-1">
+                  <div class="sm:col-span-1" v-if="applicant.profile.about">
                     <dt class="text-sm font-medium text-gray-500">Available</dt>
                     <dd class="mt-1 text-sm text-gray-900">
                       {{ applicant.profile.availability }}
                     </dd>
                   </div>
 
-                  <div class="sm:col-span-2">
+                  <div class="sm:col-span-2" v-if="applicant.profile.attachments">
                     <dt class="text-sm font-medium text-gray-500">Attachments</dt>
                     <dd class="mt-1 text-sm text-gray-900">
                       <ul role="list" class="border border-gray-200 rounded-md divide-y divide-gray-200">
@@ -93,105 +93,29 @@
                       </ul>
                     </dd>
                   </div>
+
                 </dl>
               </div>
-              <!-- <div>
-                <a href="#" class="block bg-gray-50 text-sm font-medium text-gray-500 text-center px-4 py-4 hover:text-gray-700 sm:rounded-b-lg">Read full application</a>
-              </div> -->
+             
             </div>
           </section>
 
-          <!-- Comments-->
-          <!-- <section aria-labelledby="notes-title">
-            <div class="bg-white shadow sm:rounded-lg sm:overflow-hidden">
-              <div class="divide-y divide-gray-200">
-                <div class="px-4 py-5 sm:px-6">
-                  <h2 id="notes-title" class="text-lg font-medium text-gray-900">Notes</h2>
-                </div>
-                <div class="px-4 py-6 sm:px-6">
-                  <ul role="list" class="space-y-8">
-                    <li v-for="comment in comments" :key="comment.id">
-                      <div class="flex space-x-3">
-                        <div class="flex-shrink-0">
-                          <img class="h-10 w-10 rounded-full" :src="`https://images.unsplash.com/photo-${comment.imageId}?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80`" alt="" />
-                        </div>
-                        <div>
-                          <div class="text-sm">
-                            <a href="#" class="font-medium text-gray-900">{{ comment.name }}</a>
-                          </div>
-                          <div class="mt-1 text-sm text-gray-700">
-                            <p>{{ comment.body }}</p>
-                          </div>
-                          <div class="mt-2 text-sm space-x-2">
-                            <span class="text-gray-500 font-medium">{{ comment.date }}</span>
-                            {{ ' ' }}
-                            <span class="text-gray-500 font-medium">&middot;</span>
-                            {{ ' ' }}
-                            <button type="button" class="text-gray-900 font-medium">Reply</button>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="bg-gray-50 px-4 py-6 sm:px-6">
-                <div class="flex space-x-3">
-                  <div class="flex-shrink-0">
-                    <img class="h-10 w-10 rounded-full" :src="user.imageUrl" alt="" />
-                  </div>
-                  <div class="min-w-0 flex-1">
-                    <form action="#">
-                      <div>
-                        <label for="comment" class="sr-only">About</label>
-                        <textarea id="comment" name="comment" rows="3" class="shadow-sm block w-full focus:ring-blue-500 focus:border-blue-500 sm:text-sm border border-gray-300 rounded-md" placeholder="Add a note" />
-                      </div>
-                      <div class="mt-3 flex items-center justify-between">
-                        <a href="#" class="group inline-flex items-start text-sm space-x-2 text-gray-500 hover:text-gray-900">
-                          <QuestionMarkCircleIcon class="flex-shrink-0 h-5 w-5 text-gray-400 group-hover:text-gray-500" aria-hidden="true" />
-                          <span> Some HTML is okay. </span>
-                        </a>
-                        <button type="submit" class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Comment</button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section> -->
         </div>
-
-        
       </div>
     </main>
   </div>
 </template>
 
 <script setup>
+import { onMounted } from 'vue'
 
-defineProps({
+let props = defineProps({
   applicant: Object
 })
 
-import {
-  CheckIcon,
-  PaperClipIcon,
-  QuestionMarkCircleIcon,
-  ThumbUpIcon,
-  UserIcon,
-} from '@heroicons/vue/solid'
+onMounted(() => console.log(props.applicant.profile.attachments))
 
-const user = {
-  name: 'Whitney Francis',
-  email: 'whitney@example.com',
-  imageUrl:
-    'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
-}
-
-const attachments = [
-  { name: 'resume_front_end_developer.pdf', href: '#' },
-  { name: 'coverletter_front_end_developer.pdf', href: '#' },
-]
+import { PaperClipIcon } from '@heroicons/vue/solid'
 
 
 </script>

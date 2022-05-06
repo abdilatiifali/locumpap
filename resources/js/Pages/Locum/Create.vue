@@ -81,7 +81,6 @@
                                 <text-input
                                     :errors="form.errors.registration_number"
                                     label="Professional Registration Number"
-                                    type="number"
                                     v-model="form.registration_number"
                                 />
                             </div>

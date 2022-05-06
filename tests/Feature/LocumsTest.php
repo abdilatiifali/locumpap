@@ -32,7 +32,7 @@ class LocumsTest extends TestCase
             'specialityId' => $speciality->id,
             'mobile_number' => '0123456',
             'professionId' => $profession->id,
-            'registration_number' => '012345678',
+            'registration_number' => 'a12345678',
             'organization' => false,
         ]);
 
@@ -44,7 +44,7 @@ class LocumsTest extends TestCase
         $this->assertEquals($profession->id, $profile->profession_id);
         $this->assertEquals($county->id, $profile->county_id);
         $this->assertEquals($speciality->id, $profile->speciality_id);
-        $this->assertEquals('012345678', $profile->professional_registration_number);
+        $this->assertEquals('a12345678', $profile->professional_registration_number);
     }
 
     /** @test */

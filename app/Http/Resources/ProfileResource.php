@@ -27,30 +27,25 @@ class ProfileResource extends JsonResource
             'availability' => $this->from . ' to ' . $this->to,
             'phoneNumber' => $this->mobile_number,
             'registrationNumber' => $this->professional_registration_number,
-            'attachments' => [
-                [
-                    'name' => $this->getName('cv'), 
+            'attachments' => $this->cv ? [
+                [ 
+                    'name' => 'cv', 
                     'href' => '/download/' . basename($this->cv),
                 ],
                 [
-                    'name' => $this->getName('recommendation_letter'), 
+                    'name' => 'recommendation_letter', 
                     'href' => '/download/' . basename($this->recommendation_letter)
                 ],
                 [
-                    'name' => $this->getName('national Id'), 
+                    'name' => 'national Id', 
                     'href' => '/download/' . basename($this->nationalId)
                 ],
                 [
-                    'name' => $this->getName('indemnity_cover'), 
+                    'name' => 'indemnity_cover', 
                     'href' => '/download/' . basename($this->indemnity_cover)
                 ]
-            ]
+            ] : null
         ];
-    }
-
-    public function getName($file)
-    {
-        return $file;
     }
 
     public function assetUrl($path)
