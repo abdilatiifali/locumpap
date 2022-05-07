@@ -67,7 +67,7 @@ class JobListingController extends Controller
     }
 
     public function store(StoreJobListingRequest $request)
-    {         
+    {                 
         $data = $request->validated();
 
         $jobType = $this->getJobType($data);

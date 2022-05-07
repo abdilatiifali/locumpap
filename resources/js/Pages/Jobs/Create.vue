@@ -35,11 +35,9 @@
                             </div>
 
                             <div class="col-span-6 sm:col-span-3">
-                                <text-input
+                               <autocomplate-place  
+                                    @place-changed="placeChanged" 
                                     :errors="form.errors.location"
-                                    label="Location"
-                                    type="text"
-                                    v-model="form.location"
                                 />
                             </div>
 
@@ -172,6 +170,7 @@
     </div>
 </template>
 
+
 <script setup>
 import { ref, onMounted } from "vue";
 import flatpickr from "flatpickr"
@@ -183,6 +182,7 @@ import Header from "@/Shared/Header";
 import TextInput from "@/components/TextInput";
 import SelectInput from "@/components/SelectInput";
 import LoadingButton from "@/components/LoadingButton";
+import AutocomplatePlace from "@/components/AutocomplatePlace";
 import { useForm } from "@inertiajs/inertia-vue3";
 
 defineProps({
@@ -226,6 +226,8 @@ onMounted(() => {
 const change = () => {
     form.description = theEditor.value.value;
 };
+
+const placeChanged = place => form.location = place
 
 const submit = () => form.post("/jobs");
 

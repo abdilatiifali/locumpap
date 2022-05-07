@@ -29,6 +29,8 @@
     <link rel="preload" href="/heroimage.jpeg" as="image">
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet" />
     <script src="{{ mix('/js/app.js') }}" defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATi7yIOsZkV99_n657NOoUBK9lNfw4dZM&libraries=places"></script>
+
     @inertiaHead
   </head>
   <body class="h-full bg-gray-100 font-sans">
