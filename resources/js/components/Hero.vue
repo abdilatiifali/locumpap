@@ -73,7 +73,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Logo cloud -->
             <logo-cloud />
         </div>

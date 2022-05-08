@@ -29,7 +29,7 @@ onMounted(() => {
         country: ['ke'],
     })
     autocomplete.setFields([ "name"]);
-    autocomplete.setTypes(['hospital', 'pharmacy']);
+    // autocomplete.setTypes(['hospital', 'pharmacy', 'dentist', 'doctor', 'physiotherapist']);
 
     autocomplete.addListener('place_changed', function () {
         emit('place-changed', autocomplete.getPlace().name)

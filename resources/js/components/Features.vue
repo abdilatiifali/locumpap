@@ -67,7 +67,7 @@ import { CheckIcon } from "@heroicons/vue/outline";
 
 const tiers = [
     {
-        name: "LocumPap for HCOs",
+        name: "LocumPap for healthcare institutions",
         href: "/looking-for-a-locum",
         description: "Contact locums with ease.",
         linkText: "I am looking for a locum",

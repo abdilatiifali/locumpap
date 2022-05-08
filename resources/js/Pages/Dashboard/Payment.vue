@@ -10,7 +10,7 @@
               </Switch>
               <SwitchLabel as="span" class="ml-3">
                 <span class="text-sm font-medium text-gray-900">Annual billing </span>
-                <span class="text-sm text-gray-500">(Save 10%)</span>
+                <span class="text-sm text-gray-500">(Save 20%)</span>
               </SwitchLabel>
             </SwitchGroup>
           </div>
