@@ -50,6 +50,8 @@ class User extends Authenticatable implements CanResetPassword
         'organization' => 'boolean',
     ];
 
+    protected $appends = ['profilePhotoUrl'];
+
     public function jobListings()
     {
         return $this->belongsToMany(JobListing::class)
@@ -91,15 +93,13 @@ class User extends Authenticatable implements CanResetPassword
         ]);
     }
 
-    public function profilePhotoUrl(): Attribute
+    public function getProfilePhotoUrlAttribute()
     {
         $photoUrl = $this->profile_photo_path
                 ? \Storage::url($this->profile_photo_path)
                 : $this->defaultProfilePhotoUrl();
 
-        return new Attribute(
-            get: fn () => $photoUrl
-        );
+        return $photoUrl;
     }
 
     protected function defaultProfilePhotoUrl()

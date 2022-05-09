@@ -5,7 +5,7 @@
         @input="$emit('update:modelValue', $event.target.value)"
     >
         <option value="all">
-            <span class="hidden lg:block">All</span> {{ modelName }}
+            <span class="hidden lg:block">{{ modelName }}</span> 
         </option>
         <option :value="option.slug" v-for="option in options" :key="option.id">
             {{ option.name }}

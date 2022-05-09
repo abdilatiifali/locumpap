@@ -25,14 +25,17 @@ class JobListingController extends Controller
      */
     public function index()
     {
-        $jobs = JobListing::withOut('organization', 'users')->latest()->filter([
+        $jobs = JobListing::withOut('organization')->latest()->filter([
             'city'          => request('city'),
             'department'    => request('department'),
             'profession'    => request('profession'),
             'type'          => Str::lower(request('type')),
-        ])->get();
+        ])
+        ->with('users', 'county', 'profession', 'department')
+        ->paginate()
+        ->withQueryString();
 
-        $jobs = JobListingResource::collection($jobs->load('county', 'profession', 'department'));
+        $jobs = JobListingResource::collection($jobs);
 
         return Inertia::render('Jobs/Index', [
             'filters'           => Request::only('type', 'city', 'department', 'profession'),

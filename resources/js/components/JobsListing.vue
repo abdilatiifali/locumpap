@@ -6,7 +6,7 @@
             class="space-y-4 md:space-y-0 md:divide-y md:divide-gray-200"
         >
             <li
-                v-for="job in jobs"
+                v-for="job in jobs.data"
                 :key="job.id"
                 class="rounded-md bg-white md:rounded-none md:bg-transparent md:hover:rounded-md"
             >
@@ -80,6 +80,13 @@
                 </Link>
             </li>
         </ul>
+
+        <!-- Pagination -->
+        <Pagination 
+            v-if="jobs.meta.per_page < jobs.meta.total" 
+            :links="jobs.links" 
+            :meta="jobs.meta" 
+        />
     </div>
 </template>
 
@@ -87,6 +94,7 @@
 import { Link } from "@inertiajs/inertia-vue3";
 import { format } from "@/Services/FormattedPrice";
 import { ClockIcon, LocationMarkerIcon, CashIcon, UserIcon } from "@heroicons/vue/solid"
+import Pagination from "@/components/Pagination"
 
 defineProps({
     jobs: Array,

@@ -14,8 +14,10 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $jobs = JobListing::with('organization', 'users')
-            ->where('organization_id', auth()->user()->organization_id)->get();
+        $jobs = JobListing::latest()
+            ->with('organization', 'users')
+            ->where('organization_id', auth()->user()->organization_id)
+            ->paginate(10); 
 
         $monthly = JobListing::where('organization_id', auth()->id())->monthly()->count();
         $weekly = JobListing::where('organization_id', auth()->id())->weekly()->count();
@@ -35,8 +37,10 @@ class DashboardController extends Controller
             'city' => request('city'),
             'specialist' => request('specialist'),
             'availability' => request('availability'),
-        ])->get();
-        
+        ])
+        ->paginate(10)
+        ->withQueryString();
+
         $doctors = UserResource::collection($users);
 
         return Inertia::render("Dashboard/Doctors", [

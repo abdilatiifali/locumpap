@@ -4,16 +4,19 @@
             <select-filter
                 :options="$page.props.counties"
                 v-model="form.city"
+                modelName="Counites"
             />
 
             <select-filter
                 :options="departments"
                 v-model="form.department"
+                modelName="Departments"
             />
 
             <select-filter
                 :options="professions"
                 v-model="form.profession"
+                modelName="Professions"
             />
         </div>
 
@@ -38,7 +41,7 @@ import { debounce } from "lodash";
 import { reactive, watch } from "vue";
 
 const props = defineProps({
-    jobs: Array,
+    jobs: Object,
     departments: Array,
     professions: Array,
     filters: Object,

@@ -35,15 +35,15 @@
           </div>
         </div>
 
-        <h2 v-if="jobs.length"  class="max-w-6xl mx-auto mt-8 px-4 text-lg leading-6 font-medium text-gray-900 sm:px-6 lg:px-8">Recent Jobs You Posted</h2>
+        <h2 v-if="jobs.data.length"  class="max-w-6xl mx-auto mt-8 px-4 text-lg leading-6 font-medium text-gray-900 sm:px-6 lg:px-8">Recent Jobs You Posted</h2>
 
-        <!-- Projects list (only on smallest breakpoint) -->
+        <!-- jobs list (only on smallest breakpoint) -->
         <div class="mt-10 sm:hidden">
           <div class="px-4 sm:px-6">
             <h2 class="text-gray-500 text-xs font-medium uppercase tracking-wide">Jobs</h2>
           </div>
           <ul role="list" class="mt-3 border-t border-gray-200 divide-y divide-gray-100">
-            <li v-for="job in jobs" :key="job.id">
+            <li v-for="job in jobs.data" :key="job.id">
               <Link :href="'/jobs/' + job.slug" class="group flex items-center justify-between px-4 py-4 hover:bg-gray-50 sm:px-6">
                 <span class="flex items-center truncate space-x-3">
                   <span :class="[job.bgColorClass, 'w-2.5 h-2.5 flex-shrink-0 rounded-full']" aria-hidden="true" />
@@ -57,12 +57,18 @@
               </Link>
             </li>
           </ul>
+          <Pagination 
+            v-if="jobs.meta.per_page < jobs.meta.total" 
+            :links="jobs.links"
+            :meta="jobs.meta"
+          />
+
         </div>
 
-      <!-- Projects table (small breakpoint and up) -->
+      <!-- jobs table (small breakpoint and up) -->
         <div class="hidden max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 sm:block">
           <div class="align-middle inline-block min-w-full border-b border-gray-200">
-            <table v-if="jobs.length"  class="min-w-full">
+            <table v-if="jobs.data.length"  class="min-w-full">
               <thead>
                 <tr class="border-t border-gray-200">
                   <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -74,7 +80,7 @@
                 </tr>
               </thead>
               <tbody class="bg-white divide-y divide-gray-100">
-                <tr  v-for="job in jobs" :key="job.id">
+                <tr  v-for="job in jobs.data" :key="job.id">
                   <td class="px-6 py-3 max-w-0 w-full whitespace-nowrap text-sm font-medium text-gray-900">
                     <div class="flex items-center space-x-3 lg:pl-2">
                       <div 
@@ -105,9 +111,11 @@
               </tbody>
             </table>
 
-            <p v-else class="italic font-medium">
-              You didn't post any jobs yet
-            </p>
+            <Pagination 
+              v-if="jobs.meta.per_page < jobs.meta.total" 
+              :links="jobs.links"
+              :meta="jobs.meta"
+            />
           </div>
         </div>
 
@@ -121,9 +129,10 @@ import { ref } from 'vue'
 
 import { ScaleIcon } from '@heroicons/vue/outline'
 import {  ChevronRightIcon } from '@heroicons/vue/solid'
+import Pagination from "@/components/Pagination"
 
 let props = defineProps({
-  jobs: Array,
+  jobs: Object,
   monthly: Number,
   weekly: Number,
   yearly: Number,

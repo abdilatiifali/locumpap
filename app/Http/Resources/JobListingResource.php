@@ -28,7 +28,13 @@ class JobListingResource extends JsonResource
             'department' => $this->whenLoaded('department'),
             'bgColorClass' => 'bg-red-600',
             'organization' => $this->whenLoaded('organization'),
-            'users' => UserResource::collection($this->whenLoaded('users')),
+            'users' => $this->whenLoaded('users')->map(function ($user) {
+                return [
+                    'id' => $user->id,
+                    'name' => $user->name,
+                    'avatar' => $user->profilePhotoUrl
+                ];
+            }),
             'totalApplicants' => 0,
         ];
     }
