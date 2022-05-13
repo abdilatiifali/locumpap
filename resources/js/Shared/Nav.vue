@@ -9,9 +9,9 @@
                         <span class="sr-only">Locum Pap</span>
                         <img
                             loading="eager"
-                            class="h-8 w-auto sm:h-10"
-                            src="/logo.png"
-                            alt="Locum Pap Logo"
+                            class="h-6 w-auto"
+                            src="/images/logo.svg"
+                            alt="Locum Pap"
                         />
                     </Link>
                 </div>
@@ -143,8 +143,8 @@
                             <div class="flex items-center justify-between">
                                 <div>
                                     <img
-                                        class="h-8 w-auto"
-                                        src="/logo.png"
+                                        class="h-6 w-auto"
+                                        src="/images/logo.svg"
                                         alt="Locum Pap"
                                     />
                                 </div>
