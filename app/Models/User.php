@@ -2,18 +2,19 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Events\Registered;
+use App\Traits\MustVerifyUser;
+use Illuminate\Contracts\Auth\CanResetPassword;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Database\Eloquent\Casts\Attribute;
-use Illuminate\Contracts\Auth\CanResetPassword;
+use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements CanResetPassword
 {
-    use HasApiTokens, HasFactory, Notifiable;     
+    use HasApiTokens, HasFactory, Notifiable, MustVerifyUser;   
 
     // protected $with = ['profile'];
     /**
@@ -85,12 +86,16 @@ class User extends Authenticatable implements CanResetPassword
 
     public static function createNewUser($attributes)
     {
-        return static::create([
+        $user = static::create([
             'name' => $attributes['first_name'] . ' ' . $attributes['last_name'],
             'email' => $attributes['email'],
             'password' => Hash::make($attributes['password']),
             'organization' => $attributes['organization'],
         ]);
+
+        event(new Registered($user));
+
+        return $user;
     }
 
     public function getProfilePhotoUrlAttribute()

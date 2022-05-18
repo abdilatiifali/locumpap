@@ -6,6 +6,7 @@ use App\Http\Requests\StoreOrganizationRequest;
 use Inertia\Inertia;
 use App\Models\Organization;
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 
 class OrganizationController extends Controller
 {
@@ -33,6 +34,8 @@ class OrganizationController extends Controller
 
         // associate this user with an organization
         $user->update(['organization_id' => $organization->id]);
+
+        event(new Registered(auth()->user()));
 
         \Auth::login($user);
 

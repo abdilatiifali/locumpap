@@ -14,6 +14,7 @@ use App\Http\Controllers\ApplicantsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SupportController;
 
+
 Route::controller(AuthController::class)->group(function () {
     Route::get("/login", 'create')->name('login')->middleware('guest');
     Route::post("/login", 'login')->middleware('guest');
@@ -23,6 +24,9 @@ Route::controller(AuthController::class)->group(function () {
     Route::get("/forgot-password", 'forgot')->name('password.request')->middleware('guest');
 });
 
+Route::get("/verification/notice", function () {
+    return Inertia::render("Verification/Notice");
+})->name('verification.notice');
 
 Route::get('/reset-password/{token}', function ($token) {
     return Inertia::render('Auth/ResetPassword', compact('token'));
@@ -39,7 +43,7 @@ Route::get("/download/{path}", function ($path) {
 });
 
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => ['auth', 'verified']], function () {
     // locums jobs
     Route::controller(JobListingController::class)->group(function () {
         Route::get('/jobs', 'index');

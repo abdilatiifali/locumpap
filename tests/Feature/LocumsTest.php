@@ -2,13 +2,15 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Tests\TestCase;
+use App\Models\County;
 use App\Models\Profession;
 use App\Models\Profile;
-use App\Models\County;
 use App\Models\speciality;
+use App\Notifications\VerifyUser;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Facades\Notification;
+use Tests\TestCase;
 
 class LocumsTest extends TestCase
 {
@@ -17,9 +19,13 @@ class LocumsTest extends TestCase
     /** @test */
     public function it_can_register_a_new_doctor()
     {
+        Notification::fake();
+
         $profession = create(Profession::class);
         $county = create(County::class);
         $speciality = create(Speciality::class);
+
+        Notification::assertNothingSent();
 
         $response = $this->withOutExceptionHandling()->post('/locum', [
             'first_name' => 'abdi',
@@ -35,6 +41,10 @@ class LocumsTest extends TestCase
             'registration_number' => 'a12345678',
             'organization' => false,
         ]);
+
+        Notification::assertSentTo(
+            [auth()->user()], VerifyUser::class
+        );
 
         $profile = Profile::first();
 

@@ -13,6 +13,15 @@ class DashboardTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
+    public function unverified_organization_can_not_access_dashboard()
+    {
+        $this->loginAsOrganization(['verified_at' => null]);
+
+        $this->get("/dashboard")
+            ->assertRedirect('/verification/notice');
+    }
+
+    /** @test */
     public function guest_can_not_view_dashboard()
     {
         $this->get("/dashboard")

@@ -31,8 +31,7 @@ class LocumController extends Controller
     }
 
     public function store(StoreLocumRequest $request)
-    {    
-
+    {            
         $user = User::createNewUser(
             $request->only('first_name', 'last_name', 'email', 'password', 'organization')
         );

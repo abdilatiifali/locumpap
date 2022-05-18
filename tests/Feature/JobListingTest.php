@@ -21,6 +21,15 @@ class JobListingTest extends TestCase
     }
 
     /** @test */
+    public function unverified_locums_can_not_access_jobs()
+    {
+        $this->loginAsDoctor(['verified_at' => null]);
+
+        $this->get("/jobs")
+            ->assertRedirect('/verification/notice');
+    }
+
+    /** @test */
     public function an_authenticated_user_can_view_jobs()
     {
         $this->signedIn();
