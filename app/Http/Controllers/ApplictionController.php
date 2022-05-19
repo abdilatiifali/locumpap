@@ -6,6 +6,7 @@ use App\Services\JobApplication;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Models\JobListing;
+use Illuminate\Support\Arr;
 
 class ApplictionController extends Controller
 {
@@ -13,8 +14,11 @@ class ApplictionController extends Controller
     {
         $user = auth()->user();
 
+
         if ($user->profile) {
-            $fieldIsMissing = collect($user->profile->getAttributes())->contains(null);
+            $fieldIsMissing = collect(
+                Arr::except($user->profile->getAttributes(), 'recommendation_letter')
+            )->contains(null);
         }
 
         return match(true) {

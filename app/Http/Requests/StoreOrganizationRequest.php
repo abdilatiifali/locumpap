@@ -45,6 +45,7 @@ class StoreOrganizationRequest extends FormRequest
             'address' => 'required',
             'city' => 'required',
             'post_code' => 'required',
+            'registration_number' => 'required|alpha_num_|regex:/^[a-zA-Z]{1}[0-9]+/',
         ];
     }
 }

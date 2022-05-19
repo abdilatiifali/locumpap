@@ -8,7 +8,7 @@ If you are shortlisted, you’ll be contacted for an interview. If after 3 weeks
 
 Your Career Profile is sent to employers along with your CV when applying for a job. You are 50% more likely to be shortlisted if your profile is complete.
 
-@component('mail::button', ['url' => 'http://inertiajobs.test/'])
+@component('mail::button', ['url' => config('app.url') . '/jobs'])
 Checkout Our Latest Jobs
 @endcomponent
 

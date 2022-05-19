@@ -28,7 +28,6 @@ class ProfileFactory extends Factory
             'cv' => 'application/abdi.pdf',
             'nationalId' => '203020',
             'recommendation_letter' => 'application/testing.pdf',
-            'indemnity_cover' => 'application/testing.pdf',
             'user_id' => 1,
             'about' => 'hello world',
         ];

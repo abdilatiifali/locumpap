@@ -22,6 +22,7 @@ class Organization extends Model
             'address' => $attributes['address'],
             'city' => $attributes['city'],
             'post_code' => $attributes['post_code'],
+            'registration_number' => $attributes['registration_number'],
         ]);
     }
 }

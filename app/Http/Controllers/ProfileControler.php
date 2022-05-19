@@ -18,9 +18,9 @@ class ProfileControler extends Controller
 {
     public function index()
     {
-        $profile = ProfileResource::make(auth()->user()->profile);
-
-        return Inertia::render('Settings/Index', compact('profile'));
+        return Inertia::render('Settings/Index', [
+            'profile' => ProfileResource::make(auth()->user()->profile)
+        ]);
     }
 
     // todo Refactor later
@@ -34,55 +34,37 @@ class ProfileControler extends Controller
             abort(403);
         }
 
-        if (request()->file('avatar')) {
-            // update the profile photo
-            auth()->user()->update([
-                'profile_photo_path' => request()->file('avatar')->storePublicly('avatars', ['disk' => 'public'])
-            ]);
-        }
+        // update profile photo
+        request()->file('avatar') 
+            ? auth()->user()->update(['profile_photo_path' => $this->store('avatar', 'avatars')])
+            : null;
 
-        if (request()->file('cv')) {
-            $profile->update([
-                'cv' => request()->file('cv')->storePublicly('application', ['disk' => 'public'])
-            ]);
-        }
+        // update cv
+        request()->file('cv') 
+            ? $profile->update(['cv' => $this->store('cv')])
+            : null;
 
-        if (request()->file('recommendation_letter')) {
-            $profile->update([
-                'recommendation_letter' => request()->file('recommendation_letter')->storePublicly(
-                    'application', 
-                    ['disk' => 'public']
-                )
-            ]);
-        }
-
-        if (request()->file('nationalId')) {
-            $profile->update([
-                'nationalId' => request()->file('nationalId')->storePublicly(
-                    'application', 
-                    ['disk' => 'public']
-                )
-            ]);
-        }
-
-        if (request()->file('indemnity_cover')) {
-            $profile->update([
-                'indemnity_cover' => request()->file('indemnity_cover')->storePublicly(
-                    'application', 
-                    ['disk' => 'public']
-                )
-            ]);
-        }
-
+        // update recommendation letter
+        request()->file('recommendation_letter') 
+            ? $profile->update(['recommendation_letter' => $this->store('recommendation_letter')])
+            : null;
+       
         $profile->update([
             'gender' =>   request('gender'),
             'about' => request('about'),
             'qualification' => request('qualification'),
+            'nationalId' => request('nationalId'),
             'experience' => request('level'),
             'from' => $from,
             'to' => $to,
         ]);
 
         return redirect('/jobs');
+    }
+
+    public function store($name, $folder = 'application')
+    {
+        return request()->file($name)
+                ->storePublicly($folder, ['disk' => 'public']);
     }
 }

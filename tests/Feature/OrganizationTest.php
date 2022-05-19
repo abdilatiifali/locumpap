@@ -30,6 +30,7 @@ class OrganizationTest extends TestCase
             'organization_type' => 'Hospital',
             'address' => 'jam',
             'city' => 'nairobi',
+            'registration_number' => 'a09100',
             'post_code' => '08182',
             'organization' => true,
         ]);
@@ -52,6 +53,7 @@ class OrganizationTest extends TestCase
             'organization_type' => 'Hospital',
             'address' => 'jam',
             'city' => 'nairobi',
+            'registration_number' => 'a09100',
             'post_code' => '08182',
         ]);
     }

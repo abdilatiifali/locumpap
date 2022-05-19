@@ -24,7 +24,8 @@ class OrganizationTest extends TestCase
             'organization_type' => 'hospital',
             'address' => 'jam street',
             'city' => 'nairobi',
-            'post_code' => '019191'
+            'post_code' => '019191',
+            'registration_number' => 'a1010101',
         ];
 
         $organization = Organization::createNewOrganization($attributes, $user);

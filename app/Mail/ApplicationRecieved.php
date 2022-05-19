@@ -27,15 +27,6 @@ class ApplicationRecieved extends Mailable
             ->markdown('mail.hospital')
             ->attach(storage_path("app/public/{$this->profile->cv}"), [
                 'as' => "{$this->name()}.cv.pdf"
-            ])
-            ->attach(storage_path("app/public/{$this->profile->nationalId}"), [
-                'as' => "{$this->name()}.nationalId.pdf"
-            ])
-            ->attach(storage_path("app/public/{$this->profile->indemnity_cover}"), [
-                'as' => "{$this->name()}.indemnity_cover.pdf"
-            ])
-            ->attach(storage_path("app/public/{$this->profile->recommendation_letter}"), [
-                'as' => "{$this->name()}.recommendation_letter.pdf"
             ]);
     }
 

@@ -14,7 +14,6 @@ class ProfileResource extends JsonResource
      */
     public function toArray($request)
     {   
-        $name = auth()->user()->name;
         return [
             'gender' =>   $this->gender,
             'about' =>    $this->about,
@@ -22,7 +21,6 @@ class ProfileResource extends JsonResource
             'level' => $this->experience,
             'nationalId' =>   $this->nationalId,
             'cv' => $this->cv,
-            'indemnity_cover' => $this->indemnity_cover,
             'recommendation_letter' => $this->recommendation_letter,
             'availability' => $this->from . ' to ' . $this->to,
             'phoneNumber' => $this->mobile_number,
@@ -36,14 +34,6 @@ class ProfileResource extends JsonResource
                     'name' => 'recommendation_letter', 
                     'href' => '/download/' . basename($this->recommendation_letter)
                 ],
-                [
-                    'name' => 'national Id', 
-                    'href' => '/download/' . basename($this->nationalId)
-                ],
-                [
-                    'name' => 'indemnity_cover', 
-                    'href' => '/download/' . basename($this->indemnity_cover)
-                ]
             ] : null
         ];
     }

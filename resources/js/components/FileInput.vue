@@ -1,6 +1,12 @@
 <template>
     <div>
-        <label v-if="label" class="form-label">{{ label }}:</label>
+        <div>
+            <label v-if="label" class="form-label">
+                {{ label }}:
+                <span class="text-red-500" v-if="model == '*'">*</span>
+                <span v-if="model == 'optional'">(optional)</span>
+            </label>
+        </div>
         <div class="form-input p-0">
             <input
                 ref="file"
@@ -12,7 +18,7 @@
             <div v-if="!modelValue" class="py-2">
                 <button
                     type="button"
-                    class="w-full rounded-lg bg-cyan-500 px-4 py-2 text-xs font-medium text-white hover:bg-cyan-700 md:w-1/2"
+                    class="w-full rounded-lg bg-cyan-500 uppercase tracking-wide px-4 py-3 text-xs font-medium text-white hover:bg-cyan-700"
                     @click="browse"
                 >
                     Browse
@@ -45,6 +51,10 @@ export default {
         label: String,
         accept: String,
         errors: String,
+        model: {
+            type: String,
+            default: "*",
+        },
     },
     emits: ["update:modelValue"],
     watch: {

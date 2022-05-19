@@ -103,7 +103,7 @@
                     </select-input>
                   </div>
 
-                  <div class="col-span-12">
+                  <div class="col-span-12 sm:col-span-6">
                     <select-input v-model="form.qualification" class="uppercase" label="Qualification">
                       <option v-for="qualification in qualifications" :key="qualification">
                         {{ qualification }}
@@ -111,26 +111,42 @@
                     </select-input>
                   </div>
 
+                  <div class="col-span-12 sm:col-span-6">
+                    <text-input 
+                      v-model="form.nationalId"
+                      type="number"
+                      label="Your national Id"
+                      :errors="form.errors.nationalId"
+                    />
+                  </div>
+
                   <div class="col-span-12">
                     <label class="text-gray-900">Availablity</label>
                      <input v-model="form.available" class="w-full mt-1" ref="availability" />
                   </div>
 
-                  <div class="col-span-6">
-                    <file-input class="w-full" v-model="form.nationalId" type="file" accept="file/*" label="NationalId"/>
+                  <div class="relative col-span-6 mt-2">
+                      <file-input 
+                        class="w-full" 
+                        v-model="form.cv"
+                        type="file" 
+                        accept="file/*" 
+                        label="CV"
+                      />
                   </div>
 
-                  <div class="col-span-6">
-                    <file-input class="w-full" type="file" v-model="form.recommendation_letter" accept="file/*" label="Recommendation Letter"/>
+                  <div class="col-span-6 mt-2">
+                    <file-input 
+                      class="w-full" 
+                      type="file"
+                      model="optional" 
+                      v-model="form.recommendation_letter" 
+                      accept="file/*" 
+                      label="Recommendation Letter"
+                    />
                   </div>
 
-                  <div class="col-span-6">
-                    <file-input class="w-full" v-model="form.indemnity_cover" type="file" accept="file/*" label="Indemnity Cover"/>
-                  </div>
-
-                   <div class="col-span-6">
-                    <file-input class="w-full" v-model="form.cv" type="file" accept="file/*" label="CV"/>
-                  </div>
+              
                 </div>
               </div>
 
@@ -190,11 +206,10 @@ const form = useForm({
     avatar: null,
     qualification: props.profile.qualification,
     level: props.profile.level,
-    nationalId: null,
+    nationalId: props.profile.nationalId,
     cv: null,
     recommendation_letter: null,
     available: props.profile.availability,
-    indemnity_cover: null,
     job: localStorage.getItem("job"),
 });
 

@@ -26,9 +26,8 @@ class CreateProfilesTable extends Migration
             $table->date('from')->nullable();
             $table->date('to')->nullable();
             $table->string('cv')->nullable();
-            $table->string('nationalId')->nullable();
+            $table->unsignedInteger('nationalId')->nullable();
             $table->string('recommendation_letter')->nullable();
-            $table->string('indemnity_cover')->nullable();
             $table->text('about')->nullable();
             $table->foreignId('user_id')->constrained();
             $table->timestamps();

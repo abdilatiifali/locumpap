@@ -23,6 +23,7 @@ class OrganizationFactory extends Factory
             'phone_number' => $this->faker->phoneNumber(),
             'organization_type' => 'Hospital',
             'address' => $this->faker->streetAddress(),
+            'registration_number' => 'a109191',
             'city' => $this->faker->city(),
             'post_code' => $this->faker->postcode(),
         ];

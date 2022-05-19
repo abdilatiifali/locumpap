@@ -20,6 +20,7 @@ class CreateOrganizationsTable extends Migration
             $table->string('county');
             $table->string('phone_number');
             $table->string('organization_type');
+            $table->string('registration_number');
             $table->string('address');
             $table->string('city');
             $table->string('post_code');

@@ -151,19 +151,4 @@ class JobApplicationTest extends TestCase
         $this->post('/apply', ['job' => $job])
             ->assertRedirect('/profile');
     }
-
-    /** @test */
-    public function to_apply_job_u_need_to_upload_indemnity_cover()
-    {
-        $this->loginAsDoctor();
-
-        $job = create(JobListing::class);
-
-        $profile = create(Profile::class, [
-            'indemnity_cover' => null,
-        ]);
-
-        $this->post('/apply', ['job' => $job])
-            ->assertRedirect('/profile');
-    }
 }

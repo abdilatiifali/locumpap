@@ -28,7 +28,7 @@ class OrganizationController extends Controller
 
         $organization = Organization::createNewOrganization($request->only(
                 'organization_name', 'email', 'county', 'phone_number',
-                'organization_type', 'address', 'city', 'post_code',
+                'organization_type', 'address', 'city', 'post_code', 'registration_number',
             ),
         );
 

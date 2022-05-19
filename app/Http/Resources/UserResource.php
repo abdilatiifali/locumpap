@@ -26,11 +26,4 @@ class UserResource extends JsonResource
             'profile' => ProfileResource::make($this->whenLoaded('profile')),
         ];
     }
-
-    // public function cv()
-    // {
-    //     [$folder, $file] = explode('/', auth()->user()->profile->cv);
-
-    //     return asset(\Storage::url($file));
-    // }
 }

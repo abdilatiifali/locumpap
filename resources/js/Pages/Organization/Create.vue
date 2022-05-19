@@ -96,10 +96,9 @@
                                     </select-input>
                                 </div>
                                 <div class="col-span-6 sm:col-span-3">
-                                    <text-input
+                                    <autocomplate-place  
+                                        @place-changed="placeChanged" 
                                         :errors="form.errors.address"
-                                        label="Address"
-                                        v-model="form.address"
                                     />
                                 </div>
                                 <div class="col-span-6 sm:col-span-3">
@@ -123,6 +122,14 @@
                                         v-model="form.post_code"
                                     />
                                 </div>
+                                <div class="col-span-6 sm:col-span-3">
+                                    <text-input
+                                        :errors="form.errors.registration_number"
+                                        label="Professional Registration Number"
+                                        v-model="form.registration_number"
+                                    />
+                                </div>
+
                             </div>
                             <div class="mt-12">
                                 <loading-button
@@ -144,7 +151,9 @@ import Header from "@/Shared/Header";
 import TextInput from "@/components/TextInput";
 import SelectInput from "@/components/SelectInput";
 import LoadingButton from "@/components/LoadingButton";
+import AutocomplatePlace from "@/components/AutocomplatePlace"
 import { useForm } from "@inertiajs/inertia-vue3";
+
 
 const organizationTypes = [
     "Dental Practice",
@@ -169,7 +178,10 @@ const form = useForm({
     county: "",
     city: "",
     post_code: "",
+    registration_number: "",
 });
 
+const placeChanged = place => form.address = place
 const submit = () => form.post("/practices");
+
 </script>

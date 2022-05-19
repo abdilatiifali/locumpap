@@ -31,17 +31,14 @@ class ProfileTest extends TestCase
             'nationalId' => null,
             'cv' => null,
             'recommendation_letter' => null,
-            'indemnity_cover' => null,
         ]);
 
         Storage::fake('application');
 
         $avatar = UploadedFile::fake()->image('avatar.jpg');
 
-        $nationalId = UploadedFile::fake()->create('nationalId.pdf');
         $cv = UploadedFile::fake()->create('cv.pdf');
         $recommendation_letter = UploadedFile::fake()->create('recommendation_letter.pdf');
-        $indemnity_cover = UploadedFile::fake()->create('indemnity_cover.pdf');
 
         $this->put('/profile', [
             'about' => 'my name is abdi',
@@ -49,10 +46,9 @@ class ProfileTest extends TestCase
             'gender' => 'male',
             'level' => '1 year',
             'qualification' => 'phd',
-            'nationalId' => $nationalId,
+            'nationalId' => 32306245,
             'cv' => $cv,
             'recommendation_letter' => $recommendation_letter,
-            'indemnity_cover' => $indemnity_cover,
             'available' => '2022-04-20 to 2022-04-29',
         ]);
 
@@ -63,12 +59,17 @@ class ProfileTest extends TestCase
         $this->assertEquals('phd', $profile->qualification);
         $this->assertEquals('2022-04-20', $profile->from);
         $this->assertEquals('2022-04-29', $profile->to);
-        $this->assertEquals("avatars/{$avatar->hashName()}", auth()->user()->fresh()->profile_photo_path);
-        $this->assertEquals("application/{$nationalId->hashName()}", $profile->nationalId);
+        $this->assertEquals(
+            "avatars/{$avatar->hashName()}", 
+            auth()->user()->fresh()->profile_photo_path
+        );
+
+        $this->assertEquals(32306245, $profile->nationalId);
         $this->assertEquals("application/{$cv->hashName()}", $profile->cv);
-        $this->assertEquals("application/{$recommendation_letter->hashName()}", $profile->recommendation_letter);
-        $this->assertEquals("application/{$cv->hashName()}", $profile->cv);
-        $this->assertEquals("application/{$indemnity_cover->hashName()}", $profile->indemnity_cover);
+        $this->assertEquals(
+            "application/{$recommendation_letter->hashName()}", 
+            $profile->recommendation_letter
+        );
 
     }
 
