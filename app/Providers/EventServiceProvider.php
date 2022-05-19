@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Events\OrganizationRegisterd;
 use App\Events\Registered;
 use App\Listeners\SendVerificationNotification;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -17,9 +18,9 @@ class EventServiceProvider extends ServiceProvider
      */
     protected $listen = [
         Registered::class => [
-            // SendEmailVerificationNotification::class,
             SendVerificationNotification::class,
         ],
+
     ];
 
     /**

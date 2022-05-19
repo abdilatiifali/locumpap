@@ -24,6 +24,9 @@ class CreateOrganizationsTable extends Migration
             $table->string('address');
             $table->string('city');
             $table->string('post_code');
+            $table->timestamp('trial_ends_at')->nullable();
+            $table->timestamp('subscribed_at')->nullable();
+            $table->timestamp('subscription_ends_at')->nullable();
             $table->timestamps();
         });
     }

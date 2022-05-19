@@ -51,7 +51,20 @@ class JobListingTest extends TestCase
     {
         $this->loginAsDoctor();
         
-        $this->post('/jobs')->assertForbidden();
+        $this->post('/jobs')
+            ->assertForbidden();
+    }
+
+    /** @test */
+    public function unsubscribed_organization_can_not_visit_create_jobs_page()
+    {
+        $this->loginAsOrganization();
+
+        $organization = Organization::first();
+        $organization->endTrial();
+
+        $this->get("/jobs/create")
+            ->assertForbidden();
     }
 
     /** @test */

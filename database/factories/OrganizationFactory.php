@@ -25,6 +25,7 @@ class OrganizationFactory extends Factory
             'address' => $this->faker->streetAddress(),
             'registration_number' => 'a109191',
             'city' => $this->faker->city(),
+            'trial_ends_at' => now()->addMonths(3),
             'post_code' => $this->faker->postcode(),
         ];
     }

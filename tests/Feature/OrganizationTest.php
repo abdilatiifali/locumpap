@@ -59,9 +59,37 @@ class OrganizationTest extends TestCase
     }
 
     /** @test */
-    public function an_organization_can_create_locum_jobs()
+    public function an_organization_can_not_create_jobs_if_thier_trial_is_ended()
+    {
+        $this->loginAsOrganization([
+            'created_at' => now()->subMonths(4),
+        ]);
+
+        $organization = Organization::first();
+
+        $organization->endTrial();
+
+        $job = make(JobListing::class, [
+            'job_type' => 'permanent',
+        ]);
+
+        $this->post('/jobs', $job->toArray())
+            ->assertForbidden();
+    }
+
+    /** @test */
+    public function subscribed_organization_can_create_locum_jobs()
     {
         $this->loginAsOrganization();
+
+        $organization = Organization::first();
+
+        $organization->endTrial();
+
+        $organization->update([
+            'subscribed_at' => now(),
+            'subscription_ends_at' => now()->addMonths(12)
+        ]);
 
         $job = make(JobListing::class, [
             'title' => 'locum job title',
@@ -81,6 +109,14 @@ class OrganizationTest extends TestCase
         $this->assertEquals('locum job title', $job->title);
         $this->assertEquals($locum->id, $job->typable_id);
         $this->assertEquals(get_class($locum), $job->typable_type);
+        $this->assertEquals(
+            $organization->subscribed_at->format('d-m-Y'),
+            now()->format('d-m-Y')
+        );
+        $this->assertEquals(
+            $organization->subscription_ends_at->format('d-m-Y'), 
+            now()->addMonths(12)->format('d-m-Y')
+        );
     }
 
     /** @test */

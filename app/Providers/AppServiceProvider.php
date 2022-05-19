@@ -3,11 +3,12 @@
 namespace App\Providers;
 
 use App\Http\Resources\ProductResource;
-use Illuminate\Support\ServiceProvider;
+use App\Models\JobListing;
+use App\Models\Organization;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Gate;
-use App\Models\JobListing;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {

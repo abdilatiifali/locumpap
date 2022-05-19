@@ -42,11 +42,11 @@ class VerifyUser extends Notification implements ShouldQueue
         $name = 'abdi ali';
 
         return (new MailMessage)
-                    ->subject(Lang::get('Your Locum Pap Account has been registered.'))
-                    ->line(Lang::get('Hi Abdi'), $name)
-                    ->line('Thank you for registering with Locum Pap. We will review your details and approve your account within 24 hours.')
-                    ->line(Lang::get('If you did not create an account, no further action is required.'))
-                    ->line('Thank you for using our application!');
+                ->subject(Lang::get('Your Locum Pap Account has been registered.'))
+                ->line(Lang::get('Hi'), $name)
+                ->line('Thank you for registering with Locum Pap. We will review your details and approve your account within 24 hours.')
+                ->line(Lang::get('If you did not create an account, no further action is required.'))
+                ->line('Thank you for using our application!');
     }
 
    
