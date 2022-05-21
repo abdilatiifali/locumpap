@@ -26,6 +26,11 @@ class JobListing extends Model
         return $this->belongsToMany(User::class, 'applicants');
     }
 
+    public function scopeCreator($query)
+    {
+        return $query->where('organization_id', auth()->id());
+    }
+
     public function scopeMonthly($query)
     {
         return $query->whereBetween('created_at', [now()->subDays(30), now()]);

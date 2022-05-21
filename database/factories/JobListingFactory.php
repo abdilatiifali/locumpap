@@ -28,6 +28,7 @@ class JobListingFactory extends Factory
             'organization_id' => 1,
             'typable_id' => 1,
             'typable_type' => 'App\Models\Locum',
+            'candidates' => [],
         ];
     }
 }

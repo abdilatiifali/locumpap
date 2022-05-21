@@ -29,7 +29,7 @@ class JobApplicationTest extends TestCase
 
         $profile = create(Profile::class, ['user_id' => auth()->id()]);
 
-        $this->assertNull($job->candidates);
+        $this->assertEmpty($job->candidates);
 
         $this->withOutExceptionHandling()
             ->post('/apply', ['job' => $job->slug])
