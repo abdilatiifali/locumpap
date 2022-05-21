@@ -45,7 +45,7 @@ class DashboardController extends Controller
 
         return Inertia::render("Dashboard/Doctors", [
             'doctors' => $doctors,
-            'specials' => Speciality::all(),
+            'specials' => Speciality::getAll(),
             'filters' => request()->only('city', 'specialist', 'availability'),
         ]);
     }

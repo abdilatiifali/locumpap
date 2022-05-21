@@ -11,10 +11,12 @@ environments:
             - 'npm install && npm run prod && rm -rf node_modules'
     staging:
         memory: 1024
-        database: 'locumpap'
         cli-memory: 512
         runtime: 'php-8.1:al2'
+        database: locumpap
         build:
             - 'COMPOSER_MIRROR_PATH_REPOS=1 composer install --no-dev'
             - 'php artisan event:cache'
             - 'npm install && npm run prod && rm -rf node_modules'
+        deploy:
+            - 'php artisan migrate'

@@ -20,7 +20,7 @@ class CreateJobListingTable extends Migration
             $table->text('description')->nullable();
             $table->string('location');
             $table->integer('rate_per_hour');
-            $table->text('candidates')->default('[]');
+            $table->text('candidates');
             $table->foreignId('department_id');
             $table->foreignId('profession_id');
             $table->foreignId('county_id');

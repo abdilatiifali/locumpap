@@ -40,8 +40,8 @@ class JobListingController extends Controller
         return Inertia::render('Jobs/Index', [
             'filters'           => Request::only('type', 'city', 'department', 'profession'),
             'jobs'              => $jobs,
-            'departments'       => Department::all(),
-            'professions'       => Profession::all(),
+            'departments'       => Department::getAll(),
+            'professions'       => Profession::getAll(),
         ]);
     }
 
@@ -52,7 +52,7 @@ class JobListingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(JobListing $job)
-    {        
+    {         
         return Inertia::render('Jobs/Show', [
             'job' => $job->load('organization'),
             'alreadyApplied' => auth()->user()?->alreadyApplied($job) ?? false,
@@ -63,9 +63,8 @@ class JobListingController extends Controller
     public function create()
     {        
         return Inertia::render('Jobs/Create', [
-            'departments' => Department::all(),
-            'professions' => Profession::all(),
-            'counties' => County::all(),
+            'departments' => Department::getAll(),
+            'professions' => Profession::getAll(),
         ]);
     }
 
@@ -81,6 +80,7 @@ class JobListingController extends Controller
             array_merge($cleanData, [
                 'organization_id' => auth()->user()->organization_id,
                 'slug' => Str::slug(request('title')),
+                'candidates' => [],
                 'typable_id' => $jobType->id,
                 'typable_type' => get_class($jobType),
             ])

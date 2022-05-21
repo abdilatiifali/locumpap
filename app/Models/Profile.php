@@ -12,7 +12,7 @@ class Profile extends Model
     protected $guarded = [];
 
     protected $with = ['speciality', 'profession'];
-
+    
     public function user()
     {
         return $this->belongsTo(User::class);

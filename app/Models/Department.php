@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Department extends Model
 {
     use HasFactory;
+
+    public static function getAll()
+    {
+        return \Cache::rememberForever('departments', function () {
+            return static::all();
+        });
+    }
 }
