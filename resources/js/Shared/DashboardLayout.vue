@@ -20,7 +20,7 @@
 		              </div>
 		            </TransitionChild>
 		            <div class="flex-shrink-0 flex items-center px-4">
-		              <img class="h-8 w-auto" src="/images/logo.svg" alt="Locum Pap logo" />
+		              <img class="h-8 w-auto" :src="$page.props.logoUrl" alt="Locum Pap logo" />
 		            </div>
 		            <nav class="mt-5 flex-shrink-0 h-full divide-y divide-cyan-800 overflow-y-auto" aria-label="Sidebar">
 		              <div class="px-2 space-y-1">

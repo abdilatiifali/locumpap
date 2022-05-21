@@ -38,6 +38,7 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request): array
     {
         return array_merge(parent::share($request), [
+            'logoUrl' => asset('/images/logo.svg'),
             'user' => auth()->user() ? [
                 'name' => auth()->user()->name,
                 'email' => auth()->user()->email,

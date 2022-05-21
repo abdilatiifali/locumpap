@@ -10,7 +10,7 @@
                             <img
                                 loading="eager"
                                 class="h-full w-full object-cover"
-                                src="/heroimage.jpeg"
+                                :src="image"
                                 alt="People working on laptops"
                             />
                             <div
@@ -81,4 +81,8 @@
 
 <script setup>
 import LogoCloud from "@/components/LogoCloud"
+
+defineProps({
+    image: String
+})
 </script>

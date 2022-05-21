@@ -54,7 +54,7 @@
                     >
                         <img
                             class="absolute inset-0 h-full w-full object-cover"
-                            src="/women.jpeg"
+                            :src="image"
                             alt=""
                         />
                         <div
@@ -126,5 +126,9 @@
         </div>
     </div>
 </template>
-
+<script setup>
+defineProps({
+    image: String
+}) 
+</script>
 

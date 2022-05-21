@@ -10,7 +10,7 @@
                         <img
                             loading="eager"
                             class="h-6 w-auto"
-                            src="/images/logo.svg"
+                            :src="$page.props.logoUrl"
                             alt="Locum Pap"
                         />
                     </Link>
@@ -144,7 +144,7 @@
                                 <div>
                                     <img
                                         class="h-6 w-auto"
-                                        src="/images/logo.svg"
+                                        :src="$page.props.logoUrl"
                                         alt="Locum Pap"
                                     />
                                 </div>

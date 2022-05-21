@@ -9,6 +9,9 @@ class WelcomeController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Welcome');
+        return Inertia::render('Welcome', [
+            'heroImageUrl' => asset('/heroimage.jpeg'),
+            'testimonialImageUrl' => asset('/women.jpeg'),
+        ]);
     }
 }
