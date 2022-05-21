@@ -1,8 +1,8 @@
 <template>
     <Header title="I'm a Locum" description="Locum pap makes it easy for you" />
 
-    <div class="bg-white pb-12">
-        <div class="mx-auto max-w-7xl px-4 py-6 pt-16 sm:px-6 lg:px-8">
+    <div class="bg-white pb-24">
+        <div class="mx-auto max-w-7xl py-6 pt-16 px-6 lg:px-8">
             <div class="prose">
                 <p>
                    Finding locums can be challenging but Locum Pap is here to help solve that for you. All you need to do is complete our simple registration steps. Locum Pap will match your profile with healthcare institutions relevant to your profession and counties. You will receive an SMS, Email or phone call from an interested institution, comply and you’re good to go.&nbsp; Register by following these 2 simple steps.
@@ -17,7 +17,7 @@
                 </p>
                
             </div>
-            <div class="mt-8">
+            <div class="mt-12">
                 <Link
                     href="/locum/register"
                     class="py-3 hover:bg-cyan-700 px-6 bg-cyan-500 text-white rounded-md shadow-lg"

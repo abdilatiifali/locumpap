@@ -20,7 +20,7 @@
                                         >
                                             Mpesa Payment
                                         </h3>
-                                        <img src="/images/mpesa-logo.png">
+                                        <img :src="mpesaLogo" alt="Mpesa logo">
                                         <div
                                             class="mt-4 flex items-center justify-center"
                                         >
@@ -90,7 +90,7 @@
                                     >
                                         Pay through Bank
                                     </h3>
-                                    <img src="/images/first-community-bank-logo.jpeg">
+                                    <img :src="bankLogo" alt="Bank Logo">
                                     <div
                                         class="mt-4 flex items-center justify-center"
                                     >
@@ -145,6 +145,8 @@ import { format } from "@/Services/FormattedPrice";
 
 defineProps({
     price: Number,
+    mpesaLogo: String,
+    bankLogo: String
 })
 
 const formatedPrice = (price) => format(price);

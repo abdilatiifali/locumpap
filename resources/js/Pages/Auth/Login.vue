@@ -73,7 +73,7 @@
         <div class="relative hidden w-0 flex-1 lg:block">
             <img
                 class="absolute inset-0 h-full w-full object-cover"
-                src="/man-applying-job.jpeg"
+                :src="loginImage"
                 alt="Man applying job"
             />
         </div>
@@ -84,6 +84,10 @@
 import TextInput from "@/components/TextInput.vue";
 import Button from "@/components/Button";
 import { useForm } from "@inertiajs/inertia-vue3";
+
+defineProps({
+    loginImage: String
+})
 
 const form = useForm({
     email: "",

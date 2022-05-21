@@ -52,6 +52,9 @@ class DashboardController extends Controller
 
     public function payment()
     {
-        return Inertia::render("Dashboard/Payment");
+        return Inertia::render("Dashboard/Payment", [
+            'mpesaLogo' => asset('/images/mpesa-logo.png'),
+            'bankLogo' => asset('/images/first-community-bank-logo.jpeg'),
+        ]);
     }
 }

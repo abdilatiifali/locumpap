@@ -15,11 +15,9 @@ class LocumController extends Controller
 {
     public function index()
     {
-        if (auth()->user()) {
-            return redirect('/jobs');
-        }
-
-        return Inertia::render('Locum/Index');
+        return auth()->user() 
+            ? redirect('/jobs')
+            : Inertia::render('Locum/Index');
     }
 
     public function create()

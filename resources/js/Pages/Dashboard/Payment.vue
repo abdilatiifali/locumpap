@@ -18,7 +18,11 @@
 
         <div>
           <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Pricing :price="price" />
+            <Pricing 
+              :mpesaLogo="mpesaLogo" 
+              :bankLogo="bankLogo" 
+              :price="price" 
+            />
           </div>
         </div>
       </div>
@@ -29,6 +33,11 @@
 import Pricing from "@/components/Pricing"
 import { Switch, SwitchGroup, SwitchLabel } from '@headlessui/vue'
 import { ref, computed } from 'vue'
+
+defineProps({
+  mpesaLogo: String,
+  bankLogo: String,
+})
 
 const enabled = ref(false)
 

@@ -1,7 +1,7 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
     <main
-        class="min-h-screen bg-white px-4 pt-16 pb-24 sm:px-6 sm:pt-24 lg:px-8 lg:py-32"
+        class="min-h-screen bg-gray-100 px-4 pt-16 pb-24 sm:px-6 sm:pt-24 lg:px-8 lg:py-32"
     >
         <div class="mx-auto max-w-3xl">
             <div class="max-w-xl">
