@@ -127,8 +127,8 @@
 
                   <div class="relative col-span-6 mt-2">
                       <file-input 
-                        class="w-full" 
-                        v-model="form.cv"
+                        class="w-full"
+                        @change="updateCv"
                         type="file" 
                         accept="file/*" 
                         label="CV"
@@ -139,8 +139,8 @@
                     <file-input 
                       class="w-full" 
                       type="file"
+                      @change="updateRecommendation"
                       model="optional" 
-                      v-model="form.recommendation_letter" 
                       accept="file/*" 
                       label="Recommendation Letter"
                     />
@@ -193,6 +193,7 @@ const qualifications = ['Phd', 'Masters', 'Bachelor']
 const experiences = ['1 year', '2 years', '3 years', '4 years', '10 years']
 const availability = ref(null)
 
+
 let props = defineProps({
   profile: Object,
 })
@@ -207,8 +208,8 @@ const form = useForm({
     qualification: props.profile.qualification,
     level: props.profile.level,
     nationalId: props.profile.nationalId,
-    cv: null,
     recommendation_letter: null,
+    cv: null,
     available: props.profile.availability,
     job: localStorage.getItem("job"),
 });
@@ -226,8 +227,20 @@ onMounted(() => {
 const updateAvatar = (e) => {
   let image = document.getElementById('avatar')
   image.onLoad = () => URL.revokeObject(image.src)
-  form.avatar = e.target.files[0]
   image.src = URL.createObjectURL(e.target.files[0])
+
+  Vapor.store(e.target.files[0], { visibility: 'public-read' })
+    .then(response => form.avatar = response.key)
+}
+
+const updateCv = e => {
+  Vapor.store(e.target.files[0], {visibility: 'public-read'})
+    .then(response => form.cv = response.key)
+}
+
+const updateRecommendation = e => {
+  Vapor.store(e.target.files[0], {visibility: 'public-read'})
+    .then(response => form.recommendation_letter = response.key)
 }
 
 const subNavigation = [

@@ -100,11 +100,9 @@ class User extends Authenticatable implements CanResetPassword
 
     public function getProfilePhotoUrlAttribute()
     {
-        $photoUrl = $this->profile_photo_path
-                ? \Storage::url($this->profile_photo_path)
+        return $this->profile_photo_path
+                ? \Storage::disk('s3')->url($this->profile_photo_path)
                 : $this->defaultProfilePhotoUrl();
-
-        return $photoUrl;
     }
 
     protected function defaultProfilePhotoUrl()

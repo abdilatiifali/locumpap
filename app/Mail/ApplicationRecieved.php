@@ -24,10 +24,7 @@ class ApplicationRecieved extends Mailable
     public function build()
     {
         return $this->subject('User has applied The job')
-            ->markdown('mail.hospital')
-            ->attach(storage_path("app/public/{$this->profile->cv}"), [
-                'as' => "{$this->name()}.cv.pdf"
-            ]);
+            ->markdown('mail.hospital');
     }
 
     public function name()

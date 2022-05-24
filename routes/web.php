@@ -38,8 +38,8 @@ Route::post('/reset-password', [AuthController::class, 'update'])->name('passwor
 Route::get("/", [WelcomeController::class, 'index']);
 
 // organizationd downloading applicant attachments
-Route::get("/download/{path}", function ($path) {    
-    return \Storage::download("public/application/{$path}");
+Route::get("/download/{path}", function ($path) {
+    return redirect(\Storage::disk('s3')->url('tmp/' . $path));
 });
 
 

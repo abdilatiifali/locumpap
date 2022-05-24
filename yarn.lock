@@ -3589,6 +3589,13 @@ laravel-mix@^6.0.6:
     webpackbar "^5.0.0-3"
     yargs "^17.2.1"
 
+laravel-vapor@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/laravel-vapor/-/laravel-vapor-0.5.1.tgz#38958583859a5d037b3d5a28edec2d6336c053c5"
+  integrity sha512-sS3tkwSk6nUA6srDmQqlGeu9S6piGW5ybieHEHHxbt6YgvqVPF2XQO6ZTiME4h4fdXPMTG6++v9Z3k4PFEJm0g==
+  dependencies:
+    axios "^0.21.1"
+
 lilconfig@^2.0.3, lilconfig@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/lilconfig/-/lilconfig-2.0.4.tgz#f4507d043d7058b380b6a8f5cb7bcd4b34cee082"

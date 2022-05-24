@@ -56,7 +56,6 @@
     <link rel="apple-touch-startup-image" href="{{asset('/favicons/apple-splash-1136-640.jpg')}}" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
     
     <link rel="preload" href="{{ asset('/images/logo.svg') }}" as="image">
-    <link rel="preload" href="{{ asset('/heroimage.jpeg') }}" as="image">
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet" />
     <script src="{{ mix('/js/app.js') }}" defer></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATi7yIOsZkV99_n657NOoUBK9lNfw4dZM&libraries=places"></script>

@@ -53,23 +53,13 @@ class ProfileTest extends TestCase
         ]);
 
         $profile = Profile::first();
-
+        
         $this->assertEquals('my name is abdi', $profile->about);
         $this->assertEquals('male', $profile->gender);
         $this->assertEquals('phd', $profile->qualification);
         $this->assertEquals('2022-04-20', $profile->from);
         $this->assertEquals('2022-04-29', $profile->to);
-        $this->assertEquals(
-            "avatars/{$avatar->hashName()}", 
-            auth()->user()->fresh()->profile_photo_path
-        );
-
         $this->assertEquals(32306245, $profile->nationalId);
-        $this->assertEquals("application/{$cv->hashName()}", $profile->cv);
-        $this->assertEquals(
-            "application/{$recommendation_letter->hashName()}", 
-            $profile->recommendation_letter
-        );
 
     }
 

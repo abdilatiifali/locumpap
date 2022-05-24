@@ -31,7 +31,7 @@ class ApplicantsController extends Controller
     }
 
     public function show(User $applicant)
-    {
+    {        
         return Inertia::render('Applicants/Show', [
             'applicant' => UserResource::make($applicant)
         ]);

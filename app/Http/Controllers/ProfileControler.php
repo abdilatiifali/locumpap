@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Resources\ProfileResource;
 use App\Http\Resources\UserResource;
 
+
 class ProfileControler extends Controller
 {
     public function index()
@@ -34,19 +35,16 @@ class ProfileControler extends Controller
             abort(403);
         }
 
-        // update profile photo
-        request()->file('avatar') 
-            ? auth()->user()->update(['profile_photo_path' => $this->store('avatar', 'avatars')])
+        request('avatar') 
+            ? auth()->user()->update(['profile_photo_path' => request('avatar')]) 
             : null;
 
-        // update cv
-        request()->file('cv') 
-            ? $profile->update(['cv' => $this->store('cv')])
+        request('cv') 
+            ? $profile->update(['cv' => request('cv')]) 
             : null;
 
-        // update recommendation letter
-        request()->file('recommendation_letter') 
-            ? $profile->update(['recommendation_letter' => $this->store('recommendation_letter')])
+        request('recommendation_letter')
+            ? $profile->update(['recommendation_letter' => request('recommendation_letter')])
             : null;
        
         $profile->update([
@@ -60,11 +58,5 @@ class ProfileControler extends Controller
         ]);
 
         return redirect('/jobs');
-    }
-
-    public function store($name, $folder = 'application')
-    {
-        return request()->file($name)
-                ->storePublicly($folder, ['disk' => 'public']);
     }
 }

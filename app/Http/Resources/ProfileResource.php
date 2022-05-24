@@ -25,26 +25,22 @@ class ProfileResource extends JsonResource
             'availability' => $this->from . ' to ' . $this->to,
             'phoneNumber' => $this->mobile_number,
             'registrationNumber' => $this->professional_registration_number,
-            'attachments' => $this->cv ? [
-                [ 
-                    'name' => 'cv', 
-                    'href' => '/download/' . basename($this->cv),
-                ],
-                [
-                    'name' => 'recommendation_letter', 
-                    'href' => '/download/' . basename($this->recommendation_letter)
-                ],
-            ] : null
+            'attachments' => $this->attachments($this->cv, $this->recommendation_letter),
         ];
     }
 
-    public function assetUrl($path)
+    public function attachments($cv, $recommendation_letter)
     {
-        if (is_null($path)) return null;
+        $attachments = collect([]);
 
-        [$folder, $file] = explode('/', $path);
+        is_null($cv) ? null : $attachments->push(['name' => 'cv', 'href' => '/download/' . basename($cv)]);
 
-        return asset(\Storage::url($file));
+        is_null($recommendation_letter) 
+            ? null 
+            : $attachments->push(['name' => 'recommendation letter', 'href' => '/download/' . basename($recommendation_letter)]);
+
+
+        return $attachments;
     }
 
 }
