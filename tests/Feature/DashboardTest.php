@@ -79,9 +79,9 @@ class DashboardTest extends TestCase
             'created_at' => now()->subWeek(2),
         ]);
 
-         $job3 = create(JobListing::class, [
+        $job3 = create(JobListing::class, [
             'organization_id' => auth()->id(),
-            'created_at' => now()->addMonths(2),
+            'created_at' => now()->subWeek(3),
         ]);
 
         $this->assertEquals(2, JobListing::monthly()->count());
@@ -145,10 +145,7 @@ class DashboardTest extends TestCase
             'created_at' => now()->subDays(7),
         ]);
 
-        $this->assertEquals(
-            3, 
-            JobListing::where('organization_id', auth()->id())->yearly()->count(),
-        );
+        $this->assertEquals(3, JobListing::where('organization_id', auth()->id())->yearly()->count());
     }
 
 
