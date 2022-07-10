@@ -16,19 +16,38 @@
                 >
                     <div class="px-4 py-4 sm:px-6">
                         <div class="flex items-center justify-between">
-                            <p
-                                class="truncate text-sm font-medium text-cyan-600"
-                                v-text="job.title"
-                            ></p>
-                            <div class="ml-2 flex flex-shrink-0">
+                            <div>
                                 <p
-                                    :class="{'bg-cyan-100 text-cyan-800': job.type == 'Locum'}"
-                                    class="inline-flex rounded-full px-2 bg-red-100 text-xs font-semibold leading-5 text-red-800"
-                                    v-text="job.type"
-                                ></p>
+                                    class="truncate text-sm font-medium text-cyan-600"
+                                    v-text="job.title"
+                                >
+                                    
+                                </p>
+                            </div>
+
+                            <div class="ml-auto">
+
+                                <div class="flex">
+                                    <div class="inline-flex items-center rounded-full px-2 bg-yellow-100 text-xs font-semibold leading-5 text-yellow-800">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="flex h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                        </svg>
+                                        <p class="inline-flex rounded-full px-2 bg-yellow-100 text-xs font-semibold leading-5 text-yellow-800">
+                                            {{ job.deadline  }}
+                                        </p>
+                                    </div>
+
+                                    <div class="ml-2 flex flex-shrink-0">
+                                        <p
+                                            :class="{'bg-cyan-100 text-cyan-800': job.type == 'Locum'}"
+                                            class="inline-flex rounded-full px-2 bg-red-100 text-xs font-semibold leading-5 text-red-800"
+                                            v-text="job.type"
+                                        ></p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="mt-2 sm:flex sm:justify-between">
+                        <div class="mt-3 sm:flex sm:justify-between">
                             <div class="sm:flex">
                                 <p
                                     class="flex items-center text-sm text-gray-500"

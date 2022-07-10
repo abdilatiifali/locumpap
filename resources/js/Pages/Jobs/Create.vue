@@ -155,6 +155,27 @@
                             </div>
                         </div>
 
+                        <div class="mt-4">
+                            <label
+                                for="deadline"
+                                class="block text-sm font-medium text-gray-700"
+                            >
+                                Deadine At
+                            </label>
+                            <input 
+                                placeholder="Deadline At" 
+                                ref="deadline"
+                                v-model="form.deadline_at"
+                                class="mt-1 block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-cyan-500 focus:outline-none focus:ring-cyan-500 sm:text-sm"
+                            >
+                            <p 
+                                class="mt-1 italic text-red-500" 
+                                v-if="form.errors.deadline_at"
+                            >
+                                {{ form.errors.deadline_at }}
+                            </p>
+                        </div>
+
                         <div class="mt-12">
                             <loading-button
                                 :loading="form.processing"
@@ -194,6 +215,7 @@ defineProps({
 const theEditor = ref(null);
 const startAt = ref(null);
 const endAt = ref(null);
+const deadline = ref(null);
 
 const form = useForm({
     title: "",
@@ -206,6 +228,7 @@ const form = useForm({
     location: "",
     start_at: '',
     end_at: '',
+    deadline_at: '',
 });
 
 const jobTypes = ["Locum", "Permanent"];
@@ -218,6 +241,10 @@ onMounted(() => {
     })
 
     flatpickr(endAt.value, {
+        minDate: 'today',
+    })
+
+    flatpickr(deadline.value, {
         minDate: 'today',
     })
 

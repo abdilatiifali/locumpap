@@ -13,7 +13,8 @@ class JobListing extends Model
     protected $guarded = [];
 
     protected $casts = [
-        'candidates' => 'array'
+        'candidates' => 'array',
+        'deadline_at' => 'date',
     ];
 
     public function typable()

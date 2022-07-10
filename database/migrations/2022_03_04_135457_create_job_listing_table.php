@@ -24,6 +24,7 @@ class CreateJobListingTable extends Migration
             $table->foreignId('department_id');
             $table->foreignId('profession_id');
             $table->foreignId('county_id');
+            $table->timestamp('deadline_at')->nullable();
             $table->foreignId('organization_id');
             $table->unsignedInteger('typable_id');
             $table->string('typable_type');

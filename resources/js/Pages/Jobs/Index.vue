@@ -1,5 +1,5 @@
 <template>
-    <div class="overflow-hidden mx-auto max-w-3xl px-4 pt-10 pb-16 sm:px-6 lg:max-w-7xl">
+    <div class="min-h-screen overflow-hidden mx-auto max-w-3xl px-4 pt-10 pb-16 sm:px-6 lg:max-w-7xl">
         <div class="flex w-full justify-between space-x-4  md:px-0">
             <select-filter
                 :options="$page.props.counties"

@@ -71,7 +71,7 @@ class DashboardTest extends TestCase
 
         $job = create(JobListing::class, [
             'organization_id' => auth()->id(),
-            'created_at' => now()->subMonth(),
+            'created_at' => now()->subMonths(2),
         ]);
 
         $job2 = create(JobListing::class, [

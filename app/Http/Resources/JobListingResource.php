@@ -23,6 +23,7 @@ class JobListingResource extends JsonResource
             'description' => $this->description,
             'rate_per_hour' => $this->rate_per_hour,
             'profession' => $this->whenLoaded('profession'),
+            'deadline' => $this->deadline_at->diffForHumans(),
             'type' => $this->type(),
             'county' => $this->whenLoaded('county'),
             'department' => $this->whenLoaded('department'),

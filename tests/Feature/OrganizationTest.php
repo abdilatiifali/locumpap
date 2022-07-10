@@ -91,9 +91,12 @@ class OrganizationTest extends TestCase
             'subscription_ends_at' => now()->addMonths(12)
         ]);
 
+        $deadline = now()->addMonth();
+
         $job = make(JobListing::class, [
             'title' => 'locum job title',
             'job_type' => 'Locum',
+            'deadline_at' => $deadline,
             'start_at' => now()->addWeek(),
             'end_at' => now()->addMonth(),
         ]);
@@ -106,6 +109,7 @@ class OrganizationTest extends TestCase
 
         $this->assertDatabaseCount('job_listings', 1);
         $this->assertDatabaseCount('locums', 1);
+        $this->assertEquals($deadline->diffForHumans(), $job->deadline_at->diffForHumans());
         $this->assertEquals('locum job title', $job->title);
         $this->assertEquals($locum->id, $job->typable_id);
         $this->assertEquals(get_class($locum), $job->typable_type);
@@ -126,6 +130,7 @@ class OrganizationTest extends TestCase
 
         $job = make(JobListing::class, [
             'title' => 'permanent job title',
+            'deadline_at' => now()->addMonths(2),
             'job_type' => 'permanent',
         ]);
 

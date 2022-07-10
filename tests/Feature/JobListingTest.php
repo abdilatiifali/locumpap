@@ -113,4 +113,21 @@ class JobListingTest extends TestCase
             ->assertSessionHasErrors('county_id');
 
     }
+
+    /** @test */
+    public function a_deadline_is_required_to_post_a_job()
+    {
+        $this->loginAsOrganization();
+
+        $job = make(JobListing::class, [
+            'title' => 'abdi',
+            'deadline_at' => null,
+        ])->toArray();
+
+        $response = $this->post('/jobs')
+            ->assertStatus(302)
+            ->assertSessionHasErrors('deadline_at');
+
+    }
+
 }
