@@ -133,6 +133,12 @@ return [
         'resource' => ActionResource::class,
     ],
 
+    'brand' => [
+    'logo' => public_path('/images/logo.svg'),
+        // ...
+    ],
+
+
     /*
     |--------------------------------------------------------------------------
     | Nova Currency

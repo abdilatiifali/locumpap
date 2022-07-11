@@ -1,5 +1,5 @@
 <template>
-    <div class="overflow-hidden bg-gray-100">
+    <div class="min-h-screen overflow-hidden bg-gray-100">
         <div class="relative mx-auto max-w-7xl px-4 pb-16 pt-8 sm:px-6 lg:px-8">
             <div
                 class="absolute top-0 bottom-0 left-3/4 hidden w-screen bg-gray-50 lg:block"
@@ -69,7 +69,7 @@
                                 />
 
                                 <figcaption
-                                    class="mt-3 flex items-center text-sm text-gray-500"
+                                    class="mt-3 mb-12 flex items-center text-sm text-gray-500"
                                 >
                                     <LocationMarkerIcon
                                         class="h-5 w-5 flex-none text-gray-400"
@@ -87,7 +87,7 @@
                                     :href="
                                         '/events/' + event.slug + '/register'
                                     "
-                                    class="mt-4 rounded-full py-3 text-center"
+                                    class="mt-12 px-4 py-3 bg-cyan-500 text-white rounded-full py-3 text-center"
                                 >
                                     Enroll Now
                                 </Link>

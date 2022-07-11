@@ -36,7 +36,7 @@ class EventsController extends Controller
     }
 
     public function store()
-    {        
+    { 
         request()->validate([
             'name' => 'required',
             'email' => 'required|email',
@@ -50,6 +50,7 @@ class EventsController extends Controller
             'name' => request('name'),
             'email' => request('email'),
             'number' => request('number'),
+            'price' => $event->price,
             'event_id' => $event->id,
         ]);
 
@@ -61,5 +62,7 @@ class EventsController extends Controller
         Mail::to($event->email)
             ->queue(new UserHasBookedEvent($event, $order));
         // confirmation page
+
+        return Inertia::render('Events/Success');
     }
 }
