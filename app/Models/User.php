@@ -72,7 +72,8 @@ class User extends Authenticatable implements CanResetPassword
 
     public function isAdmin()
     {
-        return $this->email === 'abdilatiifali@gmail.com';
+        return  $this->email === 'abdilatiifali@gmail.com' 
+                || $this->email === 'locumpap@gmail.com';
     }
 
     public function alreadyApplied(JobListing $job): bool
