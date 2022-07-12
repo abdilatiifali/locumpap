@@ -90,8 +90,7 @@
                                     <p
                                         class="text-base font-semibold text-cyan-200"
                                     >
-                                        Sarah Williams, Doctor at nairobi
-                                        hospital
+                                        Sarah Williams.
                                     </p>
                                 </footer>
                             </blockquote>
