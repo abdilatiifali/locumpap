@@ -23,20 +23,6 @@
                                         v-model="form.organization_name"
                                     />
                                 </div>
-                                <div class="col-span-6 sm:col-span-3">
-                                    <text-input
-                                        :errors="form.errors.first_name"
-                                        label="First Name"
-                                        v-model="form.first_name"
-                                    />
-                                </div>
-                                <div class="col-span-6 sm:col-span-3">
-                                    <text-input
-                                        :errors="form.errors.last_name"
-                                        label="Last Name"
-                                        v-model="form.last_name"
-                                    />
-                                </div>
 
                                 <div class="col-span-6 sm:col-span-3">
                                     <text-input
@@ -115,22 +101,15 @@
                                         v-model="form.city"
                                     />
                                 </div>
-                                <div class="col-span-6 sm:col-span-3">
+                                <div class="col-span-6 sm:col-span-6">
                                     <text-input
                                         :errors="form.errors.post_code"
                                         label="Post Code"
                                         v-model="form.post_code"
                                     />
                                 </div>
-                                <div class="col-span-6 sm:col-span-3">
-                                    <text-input
-                                        :errors="form.errors.registration_number"
-                                        label="Professional Registration Number"
-                                        v-model="form.registration_number"
-                                    />
-                                </div>
-
                             </div>
+
                             <div class="mt-12">
                                 <loading-button
                                     :loading="form.processing"
@@ -138,6 +117,7 @@
                                     >Register</loading-button
                                 >
                             </div>
+
                         </form>
                     </div>
                 </div>
@@ -156,17 +136,18 @@ import { useForm } from "@inertiajs/inertia-vue3";
 
 
 const organizationTypes = [
-    "Dental Practice",
-    "General Practice",
+    "Dental clinic",
+    "Pharmacy",
+    "Radiology Centre",
+    "Nursing Home",
+    "Physio Centre",
     "Hospital",
-    "Locum agency",
+    "NGO",
     "Opticians",
 ];
 
 const form = useForm({
     organization_name: "",
-    first_name: "",
-    last_name: "",
     email: "",
     email_confirmation: "",
     password: "",
@@ -178,7 +159,6 @@ const form = useForm({
     county: "",
     city: "",
     post_code: "",
-    registration_number: "",
 });
 
 const placeChanged = place => form.address = place

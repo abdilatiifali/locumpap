@@ -19,8 +19,6 @@ class OrganizationTest extends TestCase
     {
         $response = $this->withOutExceptionHandling()->post('/practices', [
             'organization_name' => 'Nairobi Hospital',
-            'first_name' => 'abdi',
-            'last_name' => 'ali',
             'email' => 'latiifabdi@gmail.com',
             'email_confirmation' => 'latiifabdi@gmail.com',
             'password' => 'testing123',
@@ -30,7 +28,6 @@ class OrganizationTest extends TestCase
             'organization_type' => 'Hospital',
             'address' => 'jam',
             'city' => 'nairobi',
-            'registration_number' => 'a09100',
             'post_code' => '08182',
             'organization' => true,
         ]);
@@ -40,7 +37,7 @@ class OrganizationTest extends TestCase
         $organization = Organization::first();
 
         $this->assertDatabaseHas('users', [
-            'name' => 'abdi ali',
+            'name' => 'Nairobi Hospital',
             'email' => 'latiifabdi@gmail.com',
             'organization_id' => $organization->id
         ]);
@@ -53,7 +50,6 @@ class OrganizationTest extends TestCase
             'organization_type' => 'Hospital',
             'address' => 'jam',
             'city' => 'nairobi',
-            'registration_number' => 'a09100',
             'post_code' => '08182',
         ]);
     }

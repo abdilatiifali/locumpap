@@ -25711,11 +25711,9 @@ __webpack_require__.r(__webpack_exports__);
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
     expose();
-    var organizationTypes = ["Dental Practice", "General Practice", "Hospital", "Locum agency", "Opticians"];
+    var organizationTypes = ["Dental clinic", "Pharmacy", "Radiology Centre", "Nursing Home", "Physio Centre", "Hospital", "NGO", "Opticians"];
     var form = (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_5__.useForm)({
       organization_name: "",
-      first_name: "",
-      last_name: "",
       email: "",
       email_confirmation: "",
       password: "",
@@ -25726,8 +25724,7 @@ __webpack_require__.r(__webpack_exports__);
       address: "",
       county: "",
       city: "",
-      post_code: "",
-      registration_number: ""
+      post_code: ""
     });
 
     var placeChanged = function placeChanged(place) {
@@ -26117,7 +26114,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     heroImageUrl: String,
-    testimonialImageUrl: String
+    testimonialImageUrl: String,
+    partners: Array
   },
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
@@ -26603,7 +26601,8 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
-    image: String
+    image: String,
+    partners: Array
   },
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
@@ -26687,6 +26686,35 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     loading: Boolean,
     disable: Boolean
+  },
+  setup: function setup(__props, _ref) {
+    var expose = _ref.expose;
+    expose();
+    var __returned__ = {};
+    Object.defineProperty(__returned__, '__isScriptSetup', {
+      enumerable: false,
+      value: true
+    });
+    return __returned__;
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/LogoCloud.vue?vue&type=script&setup=true&lang=js":
+/*!**************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/LogoCloud.vue?vue&type=script&setup=true&lang=js ***!
+  \**************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: {
+    partners: Array
   },
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
@@ -29340,7 +29368,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return $setup.form.city = $event;
     }),
-    modelName: "Counites"
+    modelName: "Counties"
   }, null, 8
   /* PROPS */
   , ["options", "modelValue"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["SelectFilter"], {
@@ -29863,22 +29891,13 @@ var _hoisted_18 = {
   "class": "col-span-6 sm:col-span-3"
 };
 var _hoisted_19 = {
-  "class": "col-span-6 sm:col-span-3"
+  "class": "col-span-6 sm:col-span-6"
 };
 var _hoisted_20 = {
-  "class": "col-span-6 sm:col-span-3"
-};
-var _hoisted_21 = {
-  "class": "col-span-6 sm:col-span-3"
-};
-var _hoisted_22 = {
-  "class": "col-span-6 sm:col-span-3"
-};
-var _hoisted_23 = {
   "class": "mt-12"
 };
 
-var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Register");
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Register");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Header"], {
@@ -29895,77 +29914,59 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8
   /* PROPS */
   , ["errors", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
-    errors: $setup.form.errors.first_name,
-    label: "First Name",
-    modelValue: $setup.form.first_name,
-    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
-      return $setup.form.first_name = $event;
-    })
-  }, null, 8
-  /* PROPS */
-  , ["errors", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
-    errors: $setup.form.errors.last_name,
-    label: "Last Name",
-    modelValue: $setup.form.last_name,
-    "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
-      return $setup.form.last_name = $event;
-    })
-  }, null, 8
-  /* PROPS */
-  , ["errors", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
     errors: $setup.form.errors.email,
     label: "Email Address",
     type: "email",
     modelValue: $setup.form.email,
-    "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
+    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return $setup.form.email = $event;
     })
   }, null, 8
   /* PROPS */
-  , ["errors", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
+  , ["errors", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
     errors: $setup.form.errors.email_confirmation,
     label: "Re enter Email",
     type: "email",
     modelValue: $setup.form.email_confirmation,
-    "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
+    "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
       return $setup.form.email_confirmation = $event;
     })
   }, null, 8
   /* PROPS */
-  , ["errors", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
+  , ["errors", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
     errors: $setup.form.errors.password,
     label: "Password",
     type: "password",
     modelValue: $setup.form.password,
-    "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
+    "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
       return $setup.form.password = $event;
     })
   }, null, 8
   /* PROPS */
-  , ["errors", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
+  , ["errors", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
     errors: $setup.form.errors.password_confirmation,
     label: "Confirm Password",
     type: "password",
     modelValue: $setup.form.password_confirmation,
-    "onUpdate:modelValue": _cache[6] || (_cache[6] = function ($event) {
+    "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
       return $setup.form.password_confirmation = $event;
     })
   }, null, 8
   /* PROPS */
-  , ["errors", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
+  , ["errors", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
     errors: $setup.form.errors.phone_number,
     label: "Phone Number",
     type: "number",
     modelValue: $setup.form.phone_number,
-    "onUpdate:modelValue": _cache[7] || (_cache[7] = function ($event) {
+    "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
       return $setup.form.phone_number = $event;
     })
   }, null, 8
   /* PROPS */
-  , ["errors", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["SelectInput"], {
+  , ["errors", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["SelectInput"], {
     errors: $setup.form.errors.organization_type,
     modelValue: $setup.form.organization_type,
-    "onUpdate:modelValue": _cache[8] || (_cache[8] = function ($event) {
+    "onUpdate:modelValue": _cache[6] || (_cache[6] = function ($event) {
       return $setup.form.organization_type = $event;
     }),
     "class": "uppercase",
@@ -29985,53 +29986,44 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
-  , ["errors", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["AutocomplatePlace"], {
+  , ["errors", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["AutocomplatePlace"], {
     onPlaceChanged: $setup.placeChanged,
     errors: $setup.form.errors.address
   }, null, 8
   /* PROPS */
-  , ["errors"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
+  , ["errors"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
     errors: $setup.form.errors.county,
     label: "County",
     modelValue: $setup.form.county,
-    "onUpdate:modelValue": _cache[9] || (_cache[9] = function ($event) {
+    "onUpdate:modelValue": _cache[7] || (_cache[7] = function ($event) {
       return $setup.form.county = $event;
     })
   }, null, 8
   /* PROPS */
-  , ["errors", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
+  , ["errors", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
     errors: $setup.form.errors.city,
     label: "City",
     modelValue: $setup.form.city,
-    "onUpdate:modelValue": _cache[10] || (_cache[10] = function ($event) {
+    "onUpdate:modelValue": _cache[8] || (_cache[8] = function ($event) {
       return $setup.form.city = $event;
     })
   }, null, 8
   /* PROPS */
-  , ["errors", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
+  , ["errors", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
     errors: $setup.form.errors.post_code,
     label: "Post Code",
     modelValue: $setup.form.post_code,
-    "onUpdate:modelValue": _cache[11] || (_cache[11] = function ($event) {
+    "onUpdate:modelValue": _cache[9] || (_cache[9] = function ($event) {
       return $setup.form.post_code = $event;
     })
   }, null, 8
   /* PROPS */
-  , ["errors", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
-    errors: $setup.form.errors.registration_number,
-    label: "Professional Registration Number",
-    modelValue: $setup.form.registration_number,
-    "onUpdate:modelValue": _cache[12] || (_cache[12] = function ($event) {
-      return $setup.form.registration_number = $event;
-    })
-  }, null, 8
-  /* PROPS */
-  , ["errors", "modelValue"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["LoadingButton"], {
+  , ["errors", "modelValue"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["LoadingButton"], {
     loading: $setup.form.processing,
     disable: $setup.form.processing
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_24];
+      return [_hoisted_21];
     }),
     _: 1
     /* STABLE */
@@ -30834,10 +30826,11 @@ var _hoisted_3 = {
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Hero"], {
+    partners: $props.partners,
     image: $props.heroImageUrl
   }, null, 8
   /* PROPS */
-  , ["image"])]), !_ctx.$page.props.user.name ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Features"])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["About"], {
+  , ["partners", "image"])]), !_ctx.$page.props.user.name ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Features"])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["About"], {
     image: $props.testimonialImageUrl
   }, null, 8
   /* PROPS */
@@ -31214,9 +31207,9 @@ var _hoisted_6 = {
 };
 var _hoisted_7 = ["src"];
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"absolute inset-0 bg-cyan-500 mix-blend-multiply\"></div><div class=\"absolute inset-0 bg-gradient-to-t from-cyan-600 via-cyan-600 opacity-90\"></div><div class=\"relative px-8\"><!-- &lt;div&gt;\n                                &lt;img\n                                    class=&quot;h-12&quot;\n                                    src=&quot;https://tailwindui.com/img/logos/workcation.svg?color=white&quot;\n                                    alt=&quot;Workcation&quot;\n                                /&gt;\n                            &lt;/div&gt; --><blockquote class=\"mt-8\"><div class=\"relative text-lg font-medium text-white md:flex-grow\"><p class=\"relative\"> I used locum pap to apply new job at nairobi while i was in kisumu. The platform was simple to use. once i filled in my profiles and attached my necessary documents with a click of a button i applied 20 jobs and finally landed my dream job. </p></div><footer class=\"mt-4\"><p class=\"text-base font-semibold text-cyan-200\"> Sarah Williams. </p></footer></blockquote></div>", 3);
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"absolute inset-0 bg-cyan-500 mix-blend-multiply\"></div><div class=\"absolute inset-0 bg-gradient-to-t from-cyan-600 via-cyan-600 opacity-90\"></div><div class=\"relative px-8\"><!-- &lt;div&gt;\n                                &lt;img\n                                    class=&quot;h-12&quot;\n                                    src=&quot;https://tailwindui.com/img/logos/workcation.svg?color=white&quot;\n                                    alt=&quot;Workcation&quot;\n                                /&gt;\n                            &lt;/div&gt; --><blockquote class=\"mt-8\"><div class=\"relative text-lg font-medium text-white md:flex-grow\"><p class=\"relative\"> Over the years i have struggled getting available locums in and out of the city. That is until i came accross Locum Pap which allowed me to access a wide range of short term employment opportunities throughout the country. All i had to do was key in my details amd wait to be notified. I can now say that with Locum Pap, you are guaranteed access to locums at the click of a button. </p></div><footer class=\"mt-4\"><p class=\"text-base font-semibold text-cyan-200\"> Hellen Smith </p></footer></blockquote></div>", 3);
 
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0\"><!-- Content area --><div class=\"pt-12 sm:pt-16 lg:pt-20\"><h2 class=\"text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl\"> About Us </h2><div class=\"mt-6 space-y-6 text-gray-500\"><p class=\"text-lg\"> Locum pap is a resource platform built for health institutions and medical practitioners countrywide </p><p class=\"text-base leading-7\"> Our platform’s core mission is connecting healthcare workers to medical facilities countrywide. </p><p class=\"text-base leading-7\"> Our vision is to bridge the existing gap in the medical sector through offering real time human resource assistance where needed. </p></div></div></div>", 1);
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0\"><!-- Content area --><div class=\"pt-12 sm:pt-16 lg:pt-20\"><h2 class=\"text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl\"> About Us </h2><div class=\"mt-6 space-y-6 text-gray-500\"><p class=\"text-lg\"> Locum pap is a resource platform built for health institutions and medical practitioners countrywide. </p><p class=\"text-lg leading-7\"> Our platform’s core mission is connecting healthcare workers to medical facilities countrywide. </p><p class=\"text-lg leading-7\"> Our vision is to bridge the existing gap in the medical sector through offering real time human resource assistance where needed. </p></div></div></div>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Testimonial card"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
@@ -31949,7 +31942,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Logo cloud "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["LogoCloud"])])]);
+  })) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Logo cloud "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["LogoCloud"], {
+    partners: $props.partners
+  }, null, 8
+  /* PROPS */
+  , ["partners"])])]);
 }
 
 /***/ }),
@@ -32161,12 +32158,35 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "bg-gray-100"
 };
+var _hoisted_2 = {
+  "class": "mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8"
+};
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8\"><p class=\"text-center text-sm font-semibold uppercase tracking-wide text-gray-500\"> Trusted by over 5 very average small businesses </p><div class=\"mt-6 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5\"><div class=\"col-span-1 flex justify-center md:col-span-2 lg:col-span-1\"><img class=\"h-12\" src=\"https://tailwindui.com/img/logos/tuple-logo-gray-400.svg\" alt=\"Tuple\"></div><div class=\"col-span-1 flex justify-center md:col-span-2 lg:col-span-1\"><img class=\"h-12\" src=\"https://tailwindui.com/img/logos/mirage-logo-gray-400.svg\" alt=\"Mirage\"></div><div class=\"col-span-1 flex justify-center md:col-span-2 lg:col-span-1\"><img class=\"h-12\" src=\"https://tailwindui.com/img/logos/statickit-logo-gray-400.svg\" alt=\"StaticKit\"></div><div class=\"col-span-1 flex justify-center md:col-span-2 md:col-start-2 lg:col-span-1\"><img class=\"h-12\" src=\"https://tailwindui.com/img/logos/transistor-logo-gray-400.svg\" alt=\"Transistor\"></div><div class=\"col-span-2 flex justify-center md:col-span-2 md:col-start-4 lg:col-span-1\"><img class=\"h-12\" src=\"https://tailwindui.com/img/logos/workcation-logo-gray-400.svg\" alt=\"Workcation\"></div></div></div>", 1);
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  "class": "text-center text-sm font-semibold uppercase tracking-wide text-gray-500"
+}, " Trusted by over all the best hospitals in kenya. ", -1
+/* HOISTED */
+);
 
-var _hoisted_3 = [_hoisted_2];
-function render(_ctx, _cache) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_3);
+var _hoisted_4 = {
+  "class": "mt-6 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5"
+};
+var _hoisted_5 = ["src"];
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.partners, function (partner) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+      key: partner,
+      "class": "col-span-1 flex justify-center md:col-span-2 lg:col-span-1"
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+      "class": "h-12",
+      src: partner,
+      alt: "Tuple"
+    }, null, 8
+    /* PROPS */
+    , _hoisted_5)]);
+  }), 128
+  /* KEYED_FRAGMENT */
+  ))])])]);
 }
 
 /***/ }),
@@ -73994,12 +74014,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _LogoCloud_vue_vue_type_template_id_54eff06f__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LogoCloud.vue?vue&type=template&id=54eff06f */ "./resources/js/components/LogoCloud.vue?vue&type=template&id=54eff06f");
-/* harmony import */ var _Users_abdiali_Sites_locumpap_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _LogoCloud_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./LogoCloud.vue?vue&type=script&setup=true&lang=js */ "./resources/js/components/LogoCloud.vue?vue&type=script&setup=true&lang=js");
+/* harmony import */ var _Users_abdiali_Sites_locumpap_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
-const script = {}
+
+
 
 ;
-const __exports__ = /*#__PURE__*/(0,_Users_abdiali_Sites_locumpap_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_LogoCloud_vue_vue_type_template_id_54eff06f__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/LogoCloud.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_abdiali_Sites_locumpap_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_LogoCloud_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_LogoCloud_vue_vue_type_template_id_54eff06f__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/LogoCloud.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -74918,6 +74940,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_LoadingButton_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_LoadingButton_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./LoadingButton.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/LoadingButton.vue?vue&type=script&setup=true&lang=js");
+ 
+
+/***/ }),
+
+/***/ "./resources/js/components/LogoCloud.vue?vue&type=script&setup=true&lang=js":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/LogoCloud.vue?vue&type=script&setup=true&lang=js ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_LogoCloud_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_LogoCloud_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./LogoCloud.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/LogoCloud.vue?vue&type=script&setup=true&lang=js");
  
 
 /***/ }),

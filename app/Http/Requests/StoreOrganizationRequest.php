@@ -28,8 +28,6 @@ class StoreOrganizationRequest extends FormRequest
     {
         return [
             'organization_name' => 'required|string|max:25',
-            'first_name' => 'required|string|max:25',
-            'last_name' => 'required|string|max:25',
             'email' => [
                 'required',
                 'string',
@@ -45,7 +43,6 @@ class StoreOrganizationRequest extends FormRequest
             'address' => 'required',
             'city' => 'required',
             'post_code' => 'required',
-            'registration_number' => 'required|alpha_num_|regex:/^[a-zA-Z]{1}[0-9]+/',
         ];
     }
 }

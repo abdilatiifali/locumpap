@@ -99,6 +99,20 @@ class User extends Authenticatable implements CanResetPassword
         return $user;
     }
 
+    public static function createNewUserOrganization($attributes)
+    {
+        $user = static::create([
+            'name' => $attributes['organization_name'],
+            'email' => $attributes['email'],
+            'password' => Hash::make($attributes['password']),
+            'organization' => $attributes['organization'],
+        ]);
+
+        event(new Registered($user));
+
+        return $user;
+    }
+
     public function getProfilePhotoUrlAttribute()
     {
         return $this->profile_photo_path

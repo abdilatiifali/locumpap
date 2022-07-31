@@ -74,7 +74,7 @@
                 </div>
             </div>
             <!-- Logo cloud -->
-            <logo-cloud />
+            <logo-cloud :partners="partners" />
         </div>
     </main>
 </template>
@@ -83,6 +83,7 @@
 import LogoCloud from "@/components/LogoCloud"
 
 defineProps({
-    image: String
+    image: String,
+    partners: Array,
 })
 </script>

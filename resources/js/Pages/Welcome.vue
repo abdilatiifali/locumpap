@@ -1,7 +1,7 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
     <div class="bg-white">
-        <Hero :image="heroImageUrl" />
+        <Hero :partners="partners" :image="heroImageUrl" />
     </div>
 
      <div v-if="! $page.props.user.name" class="relative pt-8 pb-32">
@@ -28,5 +28,6 @@ import NewsLetter from "@/components/NewsLetter";
 defineProps({
     heroImageUrl: String,
     testimonialImageUrl: String,
+    partners: Array,
 })
 </script>

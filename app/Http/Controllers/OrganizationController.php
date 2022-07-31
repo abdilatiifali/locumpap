@@ -22,13 +22,13 @@ class OrganizationController extends Controller
 
     public function store(StoreOrganizationRequest $request)
     {        
-        $user = User::createNewUser(
-            $request->only('first_name', 'last_name', 'email', 'password', 'organization')
+        $user = User::createNewUserOrganization(
+            $request->only('organization_name', 'email', 'password', 'organization')
         );
 
         $organization = Organization::createNewOrganization($request->only(
                 'organization_name', 'email', 'county', 'phone_number',
-                'organization_type', 'address', 'city', 'post_code', 'registration_number',
+                'organization_type', 'address', 'city', 'post_code',
             ),
         );
 

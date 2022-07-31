@@ -76,13 +76,7 @@
                                     class="relative text-lg font-medium text-white md:flex-grow"
                                 >
                                     <p class="relative">
-                                        I used locum pap to apply new job at
-                                        nairobi while i was in kisumu. The
-                                        platform was simple to use. once i
-                                        filled in my profiles and attached my
-                                        necessary documents with a click of a
-                                        button i applied 20 jobs and finally
-                                        landed my dream job.
+                                       Over the years i have struggled getting available locums in and out of the city. That is until i came accross Locum Pap which allowed me to access a wide range of short term employment opportunities throughout the country. All i had to do was key in my details amd wait to be notified. I can now say that with Locum Pap, you are guaranteed access to locums at the click of a button.
                                     </p>
                                 </div>
 
@@ -90,7 +84,7 @@
                                     <p
                                         class="text-base font-semibold text-cyan-200"
                                     >
-                                        Sarah Williams.
+                                        Hellen Smith
                                     </p>
                                 </footer>
                             </blockquote>
@@ -111,12 +105,12 @@
                     </h2>
                     <div class="mt-6 space-y-6 text-gray-500">
                         <p class="text-lg">
-                            Locum pap is a resource platform built for health institutions and medical practitioners countrywide
+                            Locum pap is a resource platform built for health institutions and medical practitioners countrywide.
                         </p>
-                        <p class="text-base leading-7">
+                        <p class="text-lg leading-7">
                             Our platform’s core mission is connecting healthcare workers to medical facilities countrywide.
                         </p>
-                        <p class="text-base leading-7">
+                        <p class="text-lg leading-7">
                             Our vision is to bridge the existing gap in the medical sector through offering real time human resource assistance where needed.
                         </p>
                     </div>
@@ -125,6 +119,7 @@
         </div>
     </div>
 </template>
+
 <script setup>
 defineProps({
     image: String

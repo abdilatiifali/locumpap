@@ -4,7 +4,7 @@
             <select-filter
                 :options="$page.props.counties"
                 v-model="form.city"
-                modelName="Counites"
+                modelName="Counties"
             />
 
             <select-filter
