@@ -143,6 +143,7 @@ const organizationTypes = [
     "Physio Centre",
     "Hospital",
     "NGO",
+    "Rehabilitation centre",
     "Opticians",
 ];
 

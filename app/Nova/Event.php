@@ -11,6 +11,7 @@ use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Place;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Trix;
+use Laravel\Nova\Fields\VaporImage;
 
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -59,7 +60,7 @@ class Event extends Resource
             DateTime::make('Published At'),
             Text::make('phoneNumber'),
             Text::make('Email'),
-            Image::make('Image'),
+            VaporImage::make('Image'),
         ];
     }
 

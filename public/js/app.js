@@ -25711,7 +25711,7 @@ __webpack_require__.r(__webpack_exports__);
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
     expose();
-    var organizationTypes = ["Dental clinic", "Pharmacy", "Radiology Centre", "Nursing Home", "Physio Centre", "Hospital", "NGO", "Opticians"];
+    var organizationTypes = ["Dental clinic", "Pharmacy", "Radiology Centre", "Nursing Home", "Physio Centre", "Hospital", "NGO", "Rehabilitation centre", "Opticians"];
     var form = (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_5__.useForm)({
       organization_name: "",
       email: "",

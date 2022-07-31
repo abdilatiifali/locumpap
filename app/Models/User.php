@@ -48,6 +48,7 @@ class User extends Authenticatable implements CanResetPassword
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'verified_at' => 'datetime',
         'organization' => 'boolean',
     ];
 

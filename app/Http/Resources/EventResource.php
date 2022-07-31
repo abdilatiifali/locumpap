@@ -16,7 +16,7 @@ class EventResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'image' => asset($this->image),
+            'image' => $this->s3Url($this->image),
             'description' => $this->description,
             'title' => $this->title,
             'host' => $this->author,
@@ -26,5 +26,13 @@ class EventResource extends JsonResource
             'month' => $this->published_at->format('M, d'),
             'time' => $this->published_at->format('g:ia'),
         ];
+    }
+
+    private function s3Url($file): string
+    {
+        $disk = \Storage::disk('s3');
+        $disk->setVisibility($file, 'public');
+        
+        return $disk->url($file);
     }
 }

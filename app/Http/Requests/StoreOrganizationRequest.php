@@ -27,12 +27,12 @@ class StoreOrganizationRequest extends FormRequest
     public function rules()
     {
         return [
-            'organization_name' => 'required|string|max:25',
+            'organization_name' => 'required|string|max:40',
             'email' => [
                 'required',
                 'string',
                 'email',
-                'max:25',
+                'max:40',
                 Rule::unique(User::class),
             ],
             'email_confirmation' => 'required|string|same:email',
