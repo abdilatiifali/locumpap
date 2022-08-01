@@ -88,11 +88,20 @@
                                     />
                                 </div>
                                 <div class="col-span-6 sm:col-span-3">
-                                    <text-input
+                                    <select-input
                                         :errors="form.errors.county"
-                                        label="County"
                                         v-model="form.county"
-                                    />
+                                        class="uppercase"
+                                        label="County"
+                                    >
+                                        <option 
+                                            :value="county.name" 
+                                            v-for="county in $page.props.counties" 
+                                            :key="county.id"
+                                        >
+                                            {{ county.name }}
+                                        </option>
+                                    </select-input>
                                 </div>
                                 <div class="col-span-6 sm:col-span-3">
                                     <text-input

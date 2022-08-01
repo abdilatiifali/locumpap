@@ -4,7 +4,7 @@
             <p
                 class="text-center text-sm font-semibold uppercase tracking-wide text-gray-500"
             >
-                Trusted by over all the best hospitals in kenya.
+                Trusted by hospitals all over kenya.
             </p>
             <div
                 class="mt-6 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5"
