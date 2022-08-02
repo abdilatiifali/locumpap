@@ -26,7 +26,7 @@ class StoreJobListingRequest extends FormRequest
         return [
             'title' => 'required',
             'description' => 'required',
-            'rate_per_hour' => 'required',
+            'rate' => 'required',
             'job_type' => 'required',
             'county_id' => 'required',
             'deadline_at' => 'required|date',

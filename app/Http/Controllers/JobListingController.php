@@ -37,6 +37,8 @@ class JobListingController extends Controller
 
         $jobs = JobListingResource::collection($jobs);
 
+        // return $jobs;
+
         return Inertia::render('Jobs/Index', [
             'filters'           => Request::only('type', 'city', 'department', 'profession'),
             'jobs'              => $jobs,

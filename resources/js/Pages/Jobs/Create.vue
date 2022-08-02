@@ -43,10 +43,10 @@
 
                             <div class="col-span-6 sm:col-span-3">
                                 <text-input
-                                    :errors="form.errors.rate_per_hour"
-                                    label="Rate Per Hour"
+                                    :errors="form.errors.rate"
+                                    label="Rate"
                                     type="text"
-                                    v-model="form.rate_per_hour"
+                                    v-model="form.rate"
                                 />
                             </div>
 
@@ -220,7 +220,7 @@ const deadline = ref(null);
 const form = useForm({
     title: "",
     description: "",
-    rate_per_hour: "",
+    rate: "",
     job_type: "Locum",
     county_id: "Nairobi",
     profession_id: "Doctor",

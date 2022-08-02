@@ -21,7 +21,7 @@ class JobListingResource extends JsonResource
             'slug' => $this->slug,
             'postedAt' => $this->created_at->diffForHumans(),
             'description' => $this->description,
-            'rate_per_hour' => $this->rate_per_hour,
+            'rate' => $this->rate,
             'profession' => $this->whenLoaded('profession'),
             'deadline' => $this->deadline_at->diffForHumans(),
             'type' => $this->type(),

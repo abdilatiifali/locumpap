@@ -25379,7 +25379,7 @@ __webpack_require__.r(__webpack_exports__);
     var form = (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_10__.useForm)({
       title: "",
       description: "",
-      rate_per_hour: "",
+      rate: "",
       job_type: "Locum",
       county_id: "Nairobi",
       profession_id: "Doctor",
@@ -29176,12 +29176,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8
   /* PROPS */
   , ["errors"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
-    errors: $setup.form.errors.rate_per_hour,
-    label: "Rate Per Hour",
+    errors: $setup.form.errors.rate,
+    label: "Rate",
     type: "text",
-    modelValue: $setup.form.rate_per_hour,
+    modelValue: $setup.form.rate,
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
-      return $setup.form.rate_per_hour = $event;
+      return $setup.form.rate = $event;
     })
   }, null, 8
   /* PROPS */
@@ -32044,21 +32044,18 @@ var _hoisted_17 = {
   "class": "mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6"
 };
 
-var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Rate per hour:  ");
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Rate:  ");
 
 var _hoisted_19 = {
   "class": "font-medium text-gray-900"
 };
-
-var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" KES ");
-
-var _hoisted_21 = {
+var _hoisted_20 = {
   "class": "mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6"
 };
-var _hoisted_22 = {
+var _hoisted_21 = {
   "class": "mt-2 flex items-center text-sm text-gray-500 sm:mt-0"
 };
-var _hoisted_23 = ["textContent"];
+var _hoisted_22 = ["textContent"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" This example requires Tailwind CSS v2.0+ "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_2, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.jobs.data, function (job) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
@@ -32093,20 +32090,20 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         /* TEXT */
         )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["CashIcon"], {
           "class": "mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
-        }), _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.formatPrice(job.rate_per_hour)) + "  ", 1
+        }), _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(job.rate) + "   ", 1
         /* TEXT */
-        ), _hoisted_20]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Heroicon name: solid/location-marker "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["UserIcon"], {
+        )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Heroicon name: solid/location-marker "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["UserIcon"], {
           "class": "mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
         }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(job.department.name), 1
         /* TEXT */
-        )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Heroicon name: solid/calendar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ClockIcon"], {
+        )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Heroicon name: solid/calendar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ClockIcon"], {
           "class": "mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
         }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("time", {
           datetime: "2020-01-07",
           textContent: (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(job.postedAt)
         }, null, 8
         /* PROPS */
-        , _hoisted_23)])])])])];
+        , _hoisted_22)])])])])];
       }),
       _: 2
       /* DYNAMIC */

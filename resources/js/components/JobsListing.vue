@@ -67,13 +67,10 @@
                                     class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6"
                                 >
                                     <CashIcon class="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" />
-                                    Rate per hour:&nbsp;
+                                    Rate:&nbsp;
                                     <span class="font-medium text-gray-900">
-                                        {{
-                                            formatPrice(job.rate_per_hour)
-                                        }}&nbsp;
+                                        {{ job.rate }} &nbsp;
                                     </span>
-                                    KES
                                 </p>
                                 <p
                                     class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6"
