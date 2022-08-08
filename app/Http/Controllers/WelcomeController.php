@@ -12,8 +12,8 @@ class WelcomeController extends Controller
         $partners = [
             'dental' => asset('/images/partners/dental.jpeg'),
             'pearl' => asset('/images/partners/pearl.jpeg'),
-            'static' => 'https://tailwindui.com/img/logos/statickit-logo-gray-400.svg',
-            'transistor' => 'https://tailwindui.com/img/logos/transistor-logo-gray-400.svg',
+            'albania' => asset('/images/partners/albani-hospita.jpeg'),
+            'transistor' => asset('/images/partners/ottoman-hospital.jpeg'),
             'workcation' => 'https://tailwindui.com/img/logos/workcation-logo-gray-400.svg',
         ];
 
