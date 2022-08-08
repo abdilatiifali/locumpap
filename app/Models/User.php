@@ -61,6 +61,11 @@ class User extends Authenticatable implements CanResetPassword
                 ->using(Applicant::class);
     }
 
+    public function organization()
+    {
+        return $this->belongsTo(Organization::class, 'organization_id');
+    }
+
     public function orders()
     {
         return $this->hasMany(Order::class);
