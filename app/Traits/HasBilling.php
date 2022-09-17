@@ -15,7 +15,7 @@ trait HasBilling
 	public function offerTrial()
 	{
 		$this->update([
-			'trial_ends_at' => now()->addMonths(3),
+			'trial_ends_at' => now()->addMonths(6),
 		]);
 	}
 

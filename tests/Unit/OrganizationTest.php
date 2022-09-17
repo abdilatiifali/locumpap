@@ -34,7 +34,7 @@ class OrganizationTest extends TestCase
     }
 
     /** @test */
-    public function three_months_trial_has_been_offered_for_new_organization()
+    public function six_months_trial_has_been_offered_for_new_organization()
     {        
         $user = create(User::class);
 
@@ -54,7 +54,7 @@ class OrganizationTest extends TestCase
         
         $this->assertEquals(
             $organization->trial_ends_at->format('d-m-Y'), 
-            now()->addMonths(3)->format('d-m-Y')
+            now()->addMonths(6)->format('d-m-Y')
         );
     }
 }

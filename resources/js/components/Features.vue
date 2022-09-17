@@ -16,14 +16,7 @@
                         {{ tier.name }}
                     </h3>
                 </div>
-                <!-- <div
-                    class="mt-4 flex items-baseline text-3xl font-extrabold"
-                >
-                    {{ tier.priceMonthly }}
-                    <span
-                        class="ml-1 text-sm font-medium text-gray-500"
-                    ></span>
-                </div> -->
+                
                 <p class="mt-5 text-lg text-gray-500">
                     {{ tier.description }}
                 </p>
@@ -73,7 +66,7 @@ const tiers = [
         linkText: "I am looking for a locum",
         features: [
             "Free to sign up",
-            "3 months free trial version",
+            "6 months free trial version",
             "Access to highly skilled medical professionals",
             "Eliminate expensive recruitment agency fees",
             "Discounted rates for staff trainings",

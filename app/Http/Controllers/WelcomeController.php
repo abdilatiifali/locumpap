@@ -14,7 +14,7 @@ class WelcomeController extends Controller
             'pearl' => asset('/images/partners/pearl.jpeg'),
             'albania' => asset('/images/partners/albani-hospita.jpeg'),
             'transistor' => asset('/images/partners/ottoman-hospital.jpeg'),
-            'workcation' => 'https://tailwindui.com/img/logos/workcation-logo-gray-400.svg',
+            'royal' => asset('/images/partners/royal.jpeg'),
         ];
 
         return Inertia::render('Welcome', [
