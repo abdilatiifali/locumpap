@@ -8,7 +8,7 @@ use App\Traits\HasBilling;
 
 class Organization extends Model
 {    
-    use HasFactory, HasBilling;
+    use HasFactory;
     
     protected $casts = [
         'trial_ends_at' => 'datetime',
@@ -28,8 +28,6 @@ class Organization extends Model
             'city' => $attributes['city'],
             'post_code' => $attributes['post_code'],
         ]);
-
-       $organization->charge();
 
         return $organization;
     }

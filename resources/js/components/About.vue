@@ -76,7 +76,7 @@
                                     class="relative text-lg font-medium text-white md:flex-grow"
                                 >
                                     <p class="relative">
-                                       Over the years i have struggled getting available locums in and out of the city. That is until i came accross Locum Pap which allowed me to access a wide range of short term employment opportunities throughout the country. All i had to do was key in my details amd wait to be notified. I can now say that with Locum Pap, you are guaranteed access to locums at the click of a button.
+                                       Over the years i have struggled getting available locums in and out of the city. That is until i came accross Locum Pap which allowed me to access a wide range of locum employment opportunities throughout the country. All i had to do was key in my details and wait to be notified. I can now say that with Locum Pap, you are guaranteed access to locums at the click of a button.
                                     </p>
                                 </div>
 

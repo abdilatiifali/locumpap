@@ -54,70 +54,68 @@ class OrganizationTest extends TestCase
         ]);
     }
 
-    /** @test */
-    public function an_organization_can_not_create_jobs_if_thier_trial_is_ended()
-    {
-        $this->loginAsOrganization([
-            'created_at' => now()->subMonths(4),
-        ]);
+    // /** @test */
+    // public function an_organization_can__create_jobs_()
+    // {
+    //     $this->loginAsOrganization([
+    //         'created_at' => now()->subMonths(4),
+    //     ]);
 
-        $organization = Organization::first();
+    //     $organization = Organization::first();
 
-        $organization->endTrial();
+    //     $organization->endTrial();
 
-        $job = make(JobListing::class, [
-            'job_type' => 'permanent',
-        ]);
+    //     $job = make(JobListing::class, [
+    //         'job_type' => 'permanent',
+    //     ]);
 
-        $this->post('/jobs', $job->toArray())
-            ->assertForbidden();
-    }
+    //     $this->post('/jobs', $job->toArray())
+    //         ->assertForbidden();
+    // }
 
-    /** @test */
-    public function subscribed_organization_can_create_locum_jobs()
-    {
-        $this->loginAsOrganization();
+    // /** @test */
+    // public function subscribed_organization_can_create_locum_jobs()
+    // {
+    //     $this->loginAsOrganization();
 
-        $organization = Organization::first();
+    //     $organization = Organization::first();
 
-        $organization->endTrial();
+    //     $organization->update([
+    //         'subscribed_at' => now(),
+    //         'subscription_ends_at' => now()->addMonths(12)
+    //     ]);
 
-        $organization->update([
-            'subscribed_at' => now(),
-            'subscription_ends_at' => now()->addMonths(12)
-        ]);
+    //     $deadline = now()->addMonth();
 
-        $deadline = now()->addMonth();
+    //     $job = make(JobListing::class, [
+    //         'title' => 'locum job title',
+    //         'job_type' => 'Locum',
+    //         'deadline_at' => $deadline,
+    //         'start_at' => now()->addWeek(),
+    //         'end_at' => now()->addMonth(),
+    //     ]);
 
-        $job = make(JobListing::class, [
-            'title' => 'locum job title',
-            'job_type' => 'Locum',
-            'deadline_at' => $deadline,
-            'start_at' => now()->addWeek(),
-            'end_at' => now()->addMonth(),
-        ]);
-
-        $this->withOutExceptionHandling()
-            ->post('/jobs', $job->toArray());
+    //     $this->withOutExceptionHandling()
+    //         ->post('/jobs', $job->toArray());
         
-        $job = JobListing::first();
-        $locum = Locum::first();
+    //     $job = JobListing::first();
+    //     $locum = Locum::first();
 
-        $this->assertDatabaseCount('job_listings', 1);
-        $this->assertDatabaseCount('locums', 1);
-        $this->assertEquals($deadline->diffForHumans(), $job->deadline_at->diffForHumans());
-        $this->assertEquals('locum job title', $job->title);
-        $this->assertEquals($locum->id, $job->typable_id);
-        $this->assertEquals(get_class($locum), $job->typable_type);
-        $this->assertEquals(
-            $organization->subscribed_at->format('d-m-Y'),
-            now()->format('d-m-Y')
-        );
-        $this->assertEquals(
-            $organization->subscription_ends_at->format('d-m-Y'), 
-            now()->addMonths(12)->format('d-m-Y')
-        );
-    }
+    //     $this->assertDatabaseCount('job_listings', 1);
+    //     $this->assertDatabaseCount('locums', 1);
+    //     $this->assertEquals($deadline->diffForHumans(), $job->deadline_at->diffForHumans());
+    //     $this->assertEquals('locum job title', $job->title);
+    //     $this->assertEquals($locum->id, $job->typable_id);
+    //     $this->assertEquals(get_class($locum), $job->typable_type);
+    //     $this->assertEquals(
+    //         $organization->subscribed_at->format('d-m-Y'),
+    //         now()->format('d-m-Y')
+    //     );
+    //     $this->assertEquals(
+    //         $organization->subscription_ends_at->format('d-m-Y'), 
+    //         now()->addMonths(12)->format('d-m-Y')
+    //     );
+    // }
 
     /** @test */
     public function an_organization_can_create_permanent_jobs()

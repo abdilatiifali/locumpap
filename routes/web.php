@@ -47,8 +47,8 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     // locums jobs
     Route::controller(JobListingController::class)->group(function () {
         Route::get('/jobs', 'index');
-        Route::post('/jobs', 'store')->middleware('subscribed');
-        Route::get("/jobs/create", 'create')->middleware('subscribed');
+        Route::post('/jobs', 'store');
+        Route::get("/jobs/create", 'create');
         Route::get("/jobs/{job}", 'show');
     });
 
@@ -61,7 +61,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
     // applicants
     Route::get("/dashboard", [DashboardController::class, 'index'])->can('post-jobs');
-    Route::get("/dashboard/healthcare-professionals", [DashboardController::class, 'professions'])->middleware('subscribed')->can('post-jobs');
+    Route::get("/dashboard/healthcare-professionals", [DashboardController::class, 'professions'])->can('post-jobs');
     
     Route::get("/dashboard/payment", [DashboardController::class, 'payment'])->can('post-jobs');
 

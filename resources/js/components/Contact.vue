@@ -30,16 +30,6 @@
                             </dd>
                         </div>
 
-                        <div class="mt-6">
-                            <dt class="sr-only">Phone number</dt>
-                            <dd class="flex">
-                                <PhoneIcon
-                                    class="h-6 w-6 flex-shrink-0 text-gray-400"
-                                    aria-hidden="true"
-                                />
-                                <a href="tel:+254 (778 214 656)" class="ml-3">+254 (778214656)</a>
-                            </dd>
-                        </div>
                         <div class="mt-3">
                             <dt class="sr-only">Email</dt>
                             <dd class="flex">

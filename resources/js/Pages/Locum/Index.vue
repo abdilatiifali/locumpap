@@ -12,7 +12,7 @@
                     <strong>Step 1 - </strong> Register your FREE locum pap account and modify your profile as you go.
                 </p>
                 <p>
-                    <strong>Step 2 - </strong> Wait to receive an SMS and Email
+                    <strong>Step 2 - </strong> Wait to receive or SMS and Email
                     from healthcare institutions looking for a locum.
                 </p>
                

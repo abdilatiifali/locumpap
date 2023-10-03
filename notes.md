@@ -1,6 +1,7 @@
 # Todo
--  add national id and practing licene attachments
-- add degree attachment
-
-
-Professions need to have different color codes
+- change short term opportunity to locum  (done)
+- change 'amd' to and (done) 
+- change 6.2 completly (done)
+- change 'and' to 'or' (DONE)
+- change 'setting' to 'drop cv'  
+- remove number from the contact details (DONE)
