@@ -2624,10 +2624,6 @@ select {
     margin-left: 0.75rem;
   }
 
-  .sm\:ml-auto {
-    margin-left: auto;
-  }
-
   .sm\:block {
     display: block;
   }
@@ -2648,10 +2644,6 @@ select {
     height: 66.666667%;
   }
 
-  .sm\:h-4 {
-    height: 1rem;
-  }
-
   .sm\:w-full {
     width: 100%;
   }
@@ -2662,10 +2654,6 @@ select {
 
   .sm\:w-2\/3 {
     width: 66.666667%;
-  }
-
-  .sm\:w-4 {
-    width: 1rem;
   }
 
   .sm\:max-w-3xl {

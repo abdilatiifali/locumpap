@@ -25951,8 +25951,8 @@ __webpack_require__.r(__webpack_exports__);
     var expose = _ref.expose;
     expose();
     var props = __props;
-    var qualifications = ['Phd', 'Masters', 'Bachelor'];
-    var experiences = ['1 year', '2 years', '3 years', '4 years', '10 years'];
+    var qualifications = ['Phd', 'Masters', 'Bachelor', 'Diploma']; // const experiences = ['1 year', '2 years', '3 years', '4 years', '10 years']
+
     var availability = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(null);
     var user = (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_5__.usePage)().props.value.user;
     var form = (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_5__.useForm)({
@@ -26020,7 +26020,6 @@ __webpack_require__.r(__webpack_exports__);
     }];
     var __returned__ = {
       qualifications: qualifications,
-      experiences: experiences,
       availability: availability,
       props: props,
       user: user,
@@ -30545,28 +30544,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
-  , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_37, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["SelectInput"], {
+  , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_37, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TextInput"], {
     modelValue: $setup.form.level,
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
       return $setup.form.level = $event;
     }),
-    label: "Experience"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.experiences, function (experience) {
-        return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-          key: _ctx.exprience
-        }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(experience), 1
-        /* TEXT */
-        );
-      }), 64
-      /* STABLE_FRAGMENT */
-      ))];
-    }),
-    _: 1
-    /* STABLE */
-
-  }, 8
+    label: "Experience",
+    type: "text"
+  }, null, 8
   /* PROPS */
   , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_38, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["SelectInput"], {
     modelValue: $setup.form.qualification,

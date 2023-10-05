@@ -96,11 +96,8 @@
                   </div>
 
                   <div class="col-span-12 sm:col-span-6">
-                    <select-input v-model="form.level" label="Experience">
-                      <option v-for="experience in experiences" :key="exprience">
-                        {{ experience }}
-                      </option>
-                    </select-input>
+                    <text-input v-model="form.level" label="Experience" type="text"/>
+                      
                   </div>
 
                   <div class="col-span-12 sm:col-span-6">
@@ -189,8 +186,8 @@ import {
 } from '@heroicons/vue/outline'
 import { usePage } from "@inertiajs/inertia-vue3";
 
-const qualifications = ['Phd', 'Masters', 'Bachelor']
-const experiences = ['1 year', '2 years', '3 years', '4 years', '10 years']
+const qualifications = ['Phd', 'Masters', 'Bachelor', 'Diploma']
+// const experiences = ['1 year', '2 years', '3 years', '4 years', '10 years']
 const availability = ref(null)
 
 
