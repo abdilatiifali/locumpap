@@ -4,7 +4,7 @@ environments:
     production:
         memory: 1024
         cli-memory: 512
-        runtime: 'php-8.1:al2-arm'
+        runtime: 'php-8.2:al2-arm'
         storage: locumpap-production
         domain: locumpap.com
         database: locumproduction
