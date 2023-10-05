@@ -166,7 +166,7 @@
                 </ol>
                 <br />
 
-                <h3>5.FEES</h3>
+                <h3>6.FEES</h3>
                 <p>There is no fee to register with us.</p>
                 <h3>7. INTELLECTUAL PROPERTY RIGHTS</h3>
                 <p>

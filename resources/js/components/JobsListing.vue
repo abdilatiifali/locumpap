@@ -15,17 +15,18 @@
                     class="block hover:bg-gray-50"
                 >
                     <div class="px-4 py-4 sm:px-6">
-                        <div class="flex items-center justify-between">
+                        <div class="md:flex items-center justify-between">
                             <div>
                                 <p
-                                    class="truncate text-sm font-medium text-cyan-600"
+                                    style="text-wrap: wrap;"
+                                    class="text-sm font-medium text-cyan-600"
                                     v-text="job.title"
                                 >
                                     
                                 </p>
                             </div>
 
-                            <div class="ml-auto">
+                            <div class="mt-2 md:mt-0 md:ml-auto">
 
                                 <div class="flex">
                                     <div class="inline-flex items-center rounded-full px-2 bg-yellow-100 text-xs font-semibold leading-5 text-yellow-800">

@@ -41,9 +41,6 @@
 				<p>5.6 We are under no obligation to supply locums to you and in the event that a locum is sick or otherwise fails to attend work then you shall be responsible for finding a replacement locum (if necessary).</p>
 				<h3>6. FEES</h3>
 				<p>6.1 There is no fee to register with us.</p>
-				<p>6.2 The fee shall be payable by you prior to any SMS and/or email being sent to the locums.</p>
-				<p>6.3 All fees shall be inclusive of VAT.</p>
-				<p>6.4 All amounts due under these Terms shall be paid in full without any set-off, counterclaim, deduction or withholding (other than as required by law).</p>
 				<h3>7. INTELLECTUAL PROPERTY RIGHTS</h3>
 				<p>We are the owner or the licensee of all intellectual property rights in our Site, and in the material published on it.</p>
 				<h3>8. OUR SITE CHANGES REGULARLY</h3>
