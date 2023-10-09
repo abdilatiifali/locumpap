@@ -47,15 +47,28 @@
                     <div class="py-6 px-12">
                         <div class="prose mb-12" v-html="job.description"></div>
 
-                        <Link
-                            v-if="!alreadyApplied && $page.props.user.is.doctor"
-                            @click="go"
-                            class="block w-full rounded-lg bg-cyan-500 py-4 px-8 text-center text-sm font-semibold uppercase text-white shadow-lg hover:bg-cyan-600 hover:text-white"
-                        >
-                            Apply Now
-                        </Link>
+                        <div v-if="!alreadyApplied">
+                            <div v-if="$page.props.user && $page.props.user.is.doctor">
+                                <Link
+                                    @click="go"
+                                    class="block w-full rounded-lg bg-cyan-500 py-4 px-8 text-center text-sm font-semibold uppercase text-white shadow-lg hover:bg-cyan-600 hover:text-white"
+                                >
+                                  Apply Job
+                                </Link>
+                            </div>
 
-                        <p v-if="alreadyApplied">
+                            <div v-else>
+                                <Link
+                                    @click="go"
+                                    class="block w-full rounded-lg bg-cyan-500 py-4 px-8 text-center text-sm font-semibold uppercase text-white shadow-lg hover:bg-cyan-600 hover:text-white"
+                                >
+                                  Apply Job
+                                </Link>
+                            </div>
+
+                        </div>
+
+                        <p v-else="alreadyApplied">
                             You have Already applied this job
                         </p>
                     </div>
@@ -91,7 +104,7 @@ const go = () => {
     })
 }
 
-onMounted(() => console.log(usePage().props.value.user.is.doctor))
+onMounted(() => console.log(usePage().props.value.user))
 
 const creator = computed(() => {
  return usePage().props.value.user.organizationId === props.job.organization_id

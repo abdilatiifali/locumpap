@@ -25,13 +25,6 @@
                 </div>
                 <PopoverGroup as="nav" class="hidden space-x-10 md:flex">
                     <Link
-                        href="/im-a-locum"
-                        class="text-base font-medium text-gray-500 hover:text-gray-900"
-                    >
-                        Locums
-                    </Link>
-
-                    <Link
                         v-if="!user.name"
                         href="looking-for-a-locum"
                         class="text-base font-medium text-gray-500 hover:text-gray-900"
@@ -219,6 +212,7 @@ import { onMounted, computed } from "vue";
 import { usePage } from "@inertiajs/inertia-vue3";
 
 const navigation = [
+    {name: "Locums", href: "/jobs"},
     { name: "Training & Events", href: "/events" },
     { name: "About Locum Pap", href: "/#about" },
     { name: "Contact Us", href: "/#contact" },

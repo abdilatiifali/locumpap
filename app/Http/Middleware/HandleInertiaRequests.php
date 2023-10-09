@@ -51,7 +51,7 @@ class HandleInertiaRequests extends Middleware
                 'is' => [
                     'doctor' => auth()->user()?->isDoctor(),
                 ],
-            ] : 'null',
+            ] : false,
 
             'flash' => [
                 'status' => fn () => $request->session()->get('status')

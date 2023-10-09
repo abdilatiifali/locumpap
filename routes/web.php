@@ -43,14 +43,13 @@ Route::get("/download/{path}", function ($path) {
 });
 
 
+Route::get('/jobs', [JobListingController::class, 'index']);
+Route::get("/jobs/{job}", [JobListingController::class, 'show']);
+
 Route::group(['middleware' => ['auth', 'verified']], function () {
     // locums jobs
-    Route::controller(JobListingController::class)->group(function () {
-        Route::get('/jobs', 'index');
-        Route::post('/jobs', 'store');
-        Route::get("/jobs/create", 'create');
-        Route::get("/jobs/{job}", 'show');
-    });
+    Route::get("/jobs/create", [JobListingController::class, 'create']);
+    Route::post('/jobs', [JobListingController::class, 'store']);
 
     // applying a job
     Route::post("/apply", [ApplictionController::class, 'store']);

@@ -54,7 +54,7 @@ class JobListingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(JobListing $job)
-    {         
+    {  
         return Inertia::render('Jobs/Show', [
             'job' => $job->load('organization'),
             'alreadyApplied' => auth()->user()?->alreadyApplied($job) ?? false,
