@@ -42,10 +42,6 @@ Route::get("/download/{path}", function ($path) {
     return redirect(\Storage::disk('s3')->url('tmp/' . $path));
 });
 
-
-Route::get('/jobs', [JobListingController::class, 'index']);
-Route::get("/jobs/{job}", [JobListingController::class, 'show']);
-
 Route::group(['middleware' => ['auth', 'verified']], function () {
     // locums jobs
     Route::get("/jobs/create", [JobListingController::class, 'create']);
@@ -69,6 +65,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get("/applicants/{applicant}", [ApplicantsController::class, 'show'])->can('post-jobs');
   
 }); 
+
+Route::get('/jobs', [JobListingController::class, 'index']);
+Route::get("/jobs/{job}", [JobListingController::class, 'show']);
 
 Route::get('/im-a-locum', [LocumController::class, 'index']);
 
