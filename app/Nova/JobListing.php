@@ -5,25 +5,27 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Place;
-use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Organization extends Resource
+class JobListing extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Organization::class;
+    public static $model = \App\Models\JobListing::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -44,14 +46,14 @@ class Organization extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            Text::make('Name'),
-            Text::make('County'),
-            Text::make('Phone Number', 'phone_number'),
-            Place::make('Address'),
-            Text::make('Email'),
-            Text::make('Organization Type', 'organization_type'),
+            Text::make('Title'),
+            Trix::make('Description')->nullable(),
+            Text::make('location'),
+            Number::make('Rate Per House', 'rate_per_hour')->nullable(),
+            DateTime::make('Deadline')->nullable(),
 
-            HasMany::make('joblistings'),
+            BelongsTo::make('organization'),
+
         ];
     }
 

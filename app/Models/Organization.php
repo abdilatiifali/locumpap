@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
+use App\Models\JobListing;
+use App\Traits\HasBilling;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Traits\HasBilling;
 
 class Organization extends Model
 {    
@@ -30,5 +31,10 @@ class Organization extends Model
         ]);
 
         return $organization;
+    }
+
+    public function joblistings()
+    {
+        return $this->hasMany(JobListing::class, 'organization_id');
     }
 }
