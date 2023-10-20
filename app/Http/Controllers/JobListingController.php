@@ -37,8 +37,6 @@ class JobListingController extends Controller
 
         $jobs = JobListingResource::collection($jobs);
 
-        // return $jobs;
-
         return Inertia::render('Jobs/Index', [
             'filters'           => Request::only('type', 'city', 'department', 'profession'),
             'jobs'              => $jobs,
@@ -71,17 +69,19 @@ class JobListingController extends Controller
     }
 
     public function store(StoreJobListingRequest $request)
-    {                 
+    {      
         $data = $request->validated();
 
         $jobType = $this->getJobType($data);
 
         $cleanData = Arr::except($data, ['start_at', 'end_at', 'job_type']);
 
+        $location = strtolower(preg_replace("/[^\w]+/", "-", $cleanData['location']));
+
         JobListing::create(
             array_merge($cleanData, [
                 'organization_id' => auth()->user()->organization_id,
-                'slug' => Str::slug(request('title')),
+                'slug' => Str::slug(request('title')) . '-from-' . $location,
                 'candidates' => [],
                 'typable_id' => $jobType->id,
                 'typable_type' => get_class($jobType),
