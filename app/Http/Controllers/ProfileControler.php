@@ -27,14 +27,12 @@ class ProfileControler extends Controller
     // todo Refactor later
     public function update()
     {   
-        [$from, $to] = explode(' to ', request('available'));
-
         $profile = auth()->user()->profile;
 
         if (auth()->user()->cannot('update', $profile)) {
             abort(403);
         }
-
+        
         request('avatar') 
             ? auth()->user()->update(['profile_photo_path' => request('avatar')]) 
             : null;
@@ -53,8 +51,6 @@ class ProfileControler extends Controller
             'qualification' => request('qualification'),
             'nationalId' => request('nationalId'),
             'experience' => request('level'),
-            'from' => $from,
-            'to' => $to,
         ]);
 
         return redirect('/jobs');

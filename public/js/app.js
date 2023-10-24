@@ -25951,9 +25951,7 @@ __webpack_require__.r(__webpack_exports__);
     var expose = _ref.expose;
     expose();
     var props = __props;
-    var qualifications = ['Phd', 'Masters', 'Bachelor', 'Diploma']; // const experiences = ['1 year', '2 years', '3 years', '4 years', '10 years']
-
-    var availability = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(null);
+    var qualifications = ['Phd', 'Masters', 'Bachelor', 'Diploma'];
     var user = (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_5__.usePage)().props.value.user;
     var form = (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_5__.useForm)({
       _method: 'PUT',
@@ -25965,7 +25963,6 @@ __webpack_require__.r(__webpack_exports__);
       nationalId: props.profile.nationalId,
       recommendation_letter: null,
       cv: null,
-      available: props.profile.availability,
       job: localStorage.getItem("job")
     });
 
@@ -25974,11 +25971,7 @@ __webpack_require__.r(__webpack_exports__);
     };
 
     (0,vue__WEBPACK_IMPORTED_MODULE_0__.onMounted)(function () {
-      (0,flatpickr__WEBPACK_IMPORTED_MODULE_6__["default"])(availability.value, {
-        mode: 'range',
-        minDate: 'today',
-        dateFormat: "Y-m-d"
-      });
+      console.log(props.profile);
     });
 
     var updateAvatar = function updateAvatar(e) {
@@ -26020,7 +26013,6 @@ __webpack_require__.r(__webpack_exports__);
     }];
     var __returned__ = {
       qualifications: qualifications,
-      availability: availability,
       props: props,
       user: user,
       form: form,
@@ -30446,26 +30438,16 @@ var _hoisted_39 = {
   "class": "col-span-12 sm:col-span-6"
 };
 var _hoisted_40 = {
-  "class": "col-span-12"
-};
-
-var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-  "class": "text-gray-900"
-}, "Availablity", -1
-/* HOISTED */
-);
-
-var _hoisted_42 = {
   "class": "relative col-span-6 mt-2"
 };
-var _hoisted_43 = {
+var _hoisted_41 = {
   "class": "col-span-6 mt-2"
 };
-var _hoisted_44 = {
+var _hoisted_42 = {
   "class": "p-4"
 };
 
-var _hoisted_45 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Update");
+var _hoisted_43 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Update");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Disclosure"], {
@@ -30611,32 +30593,24 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     errors: $setup.form.errors.nationalId
   }, null, 8
   /* PROPS */
-  , ["modelValue", "errors"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [_hoisted_41, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
-      return $setup.form.available = $event;
-    }),
-    "class": "w-full mt-1",
-    ref: "availability"
-  }, null, 512
-  /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.form.available]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_42, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FileInput"], {
+  , ["modelValue", "errors"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FileInput"], {
     "class": "w-full",
     onChange: $setup.updateCv,
     type: "file",
     accept: "file/*",
     label: "CV"
-  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_43, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FileInput"], {
+  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_41, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FileInput"], {
     "class": "w-full",
     type: "file",
     onChange: $setup.updateRecommendation,
     model: "optional",
     accept: "file/*",
     label: "Recommendation Letter"
-  })])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_44, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["LoadingButton"], {
+  })])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_42, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["LoadingButton"], {
     loading: $setup.form.processing
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_45];
+      return [_hoisted_43];
     }),
     _: 1
     /* STABLE */

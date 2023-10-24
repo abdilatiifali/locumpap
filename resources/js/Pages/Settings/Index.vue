@@ -117,11 +117,6 @@
                     />
                   </div>
 
-                  <div class="col-span-12">
-                    <label class="text-gray-900">Availablity</label>
-                     <input v-model="form.available" class="w-full mt-1" ref="availability" />
-                  </div>
-
                   <div class="relative col-span-6 mt-2">
                       <file-input 
                         class="w-full"
@@ -187,9 +182,6 @@ import {
 import { usePage } from "@inertiajs/inertia-vue3";
 
 const qualifications = ['Phd', 'Masters', 'Bachelor', 'Diploma']
-// const experiences = ['1 year', '2 years', '3 years', '4 years', '10 years']
-const availability = ref(null)
-
 
 let props = defineProps({
   profile: Object,
@@ -207,18 +199,13 @@ const form = useForm({
     nationalId: props.profile.nationalId,
     recommendation_letter: null,
     cv: null,
-    available: props.profile.availability,
     job: localStorage.getItem("job"),
 });
 
 const submit = () => form.post('/profile');
 
 onMounted(() => {
-  flatpickr(availability.value, {
-    mode: 'range',
-    minDate: 'today',
-    dateFormat: "Y-m-d",
-  })
+  console.log(props.profile)
 })
 
 const updateAvatar = (e) => {
