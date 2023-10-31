@@ -5,7 +5,7 @@
 		<div class=" max-w-7xl mx-auto pt-16 px-4 py-6 sm:px-6 lg:px-8">
 			<div class="prose">
 				<h3>1. GENERAL</h3>
-				<p>1.1 These terms (together with the policies referred to in these terms) are the terms of use on which you may make use of our website www.locumit.com (the “Site”) and the services which we provide via the Site to you (the “Services”) as a registered user (the “Terms”).</p> 
+				<p>1.1 These terms (together with the policies referred to in these terms) are the terms of use on which you may make use of our website www.locumpap.com (the “Site”) and the services which we provide via the Site to you (the “Services”) as a registered user (the “Terms”).</p> 
 				<p>Please read these Terms carefully before you start to use the Site. By using our Site, you indicate that you accept these Terms and that you agree to abide by them.</p>
 				<p>1.2 The reference to “you” or “your” in these Terms means the person or organisation registering on the Site and utilising the Services.</p>
 				<h3>2. INFORMATION ABOUT US</h3>
