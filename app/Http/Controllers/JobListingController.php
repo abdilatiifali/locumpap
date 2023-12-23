@@ -53,6 +53,8 @@ class JobListingController extends Controller
      */
     public function show(JobListing $job)
     {  
+        \DB::table('job_listings')->increment('views');
+        
         return Inertia::render('Jobs/Show', [
             'job' => $job->load('organization'),
             'alreadyApplied' => auth()->user()?->alreadyApplied($job) ?? false,

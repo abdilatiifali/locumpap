@@ -14,6 +14,8 @@ class JobApplication
     public function applyFor(User $user, JobListing $job)
     {
         Mail::to($job->organization->email)
+            ->cc('mohamednoor766@gmail.com')
+            ->bcc('abdilatiifali@gmail.com')
             ->queue(new ApplicationRecieved($user->profile, $job));
 
         Mail::to($user->email)
