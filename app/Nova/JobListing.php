@@ -51,6 +51,7 @@ class JobListing extends Resource
             Trix::make('Description')->nullable(),
             Text::make('location'),
             Number::make('Rate Per House', 'rate_per_hour')->nullable(),
+            Text::make('Views')->nullable()->exceptOnForms(),
             DateTime::make('Deadline')->nullable(),
 
             BelongsTo::make('organization'),

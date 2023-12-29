@@ -53,7 +53,8 @@ class JobListingController extends Controller
      */
     public function show(JobListing $job)
     {  
-        \DB::table('job_listings')->increment('views');
+        \DB::table('job_listings')->where('id', $job->id)
+                    ->increment('views');
         
         return Inertia::render('Jobs/Show', [
             'job' => $job->load('organization'),
