@@ -209,22 +209,19 @@ onMounted(() => {
 })
 
 const updateAvatar = (e) => {
+  form.avatar = e.target.files[0]
+
   let image = document.getElementById('avatar')
   image.onLoad = () => URL.revokeObject(image.src)
   image.src = URL.createObjectURL(e.target.files[0])
-
-  Vapor.store(e.target.files[0], { visibility: 'public-read' })
-    .then(response => form.avatar = response.key)
 }
 
 const updateCv = e => {
-  Vapor.store(e.target.files[0], {visibility: 'public-read'})
-    .then(response => form.cv = response.key)
+  form.cv = e.target.files[0]
 }
 
 const updateRecommendation = e => {
-  Vapor.store(e.target.files[0], {visibility: 'public-read'})
-    .then(response => form.recommendation_letter = response.key)
+  form.recommendation_letter = e.target.files[0]
 }
 
 const subNavigation = [

@@ -18,8 +18,6 @@
         "laravel/nova": "~3.0",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "laravel/vapor-core": "^2.22",
-        "laravel/vapor-ui": "^1.5",
         "league/flysystem-aws-s3-v3": "^3.0",
         "predis/predis": "~1.0",
         "symfony/http-client": "^6.0",
@@ -77,6 +75,9 @@
     },
     "config": {
         "optimize-autoloader": true,
+        "platform": {
+            "php": "8.3.17"
+        },
         "preferred-install": "dist",
         "sort-packages": true
     },

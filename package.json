@@ -1,6 +1,7 @@
 {
     "private": true,
     "scripts": {
+        "build": "npm run production",
         "dev": "npm run development",
         "development": "mix",
         "watch": "mix watch",
@@ -14,7 +15,6 @@
         "autoprefixer": "^10.4.2",
         "axios": "^0.21",
         "laravel-mix": "^6.0.6",
-        "laravel-vapor": "^0.5.1",
         "lodash": "^4.17.19",
         "postcss": "^8.4.6",
         "tailwindcss": "^3.0.18",

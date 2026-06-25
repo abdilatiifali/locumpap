@@ -33,16 +33,22 @@ class ProfileControler extends Controller
             abort(403);
         }
         
-        request('avatar') 
-            ? auth()->user()->update(['profile_photo_path' => request('avatar')]) 
+        request()->hasFile('avatar')
+            ? auth()->user()->update([
+                'profile_photo_path' => request()->file('avatar')->storePublicly('avatars', 's3')
+            ])
             : null;
 
-        request('cv') 
-            ? $profile->update(['cv' => request('cv')]) 
+        request()->hasFile('cv')
+            ? $profile->update([
+                'cv' => request()->file('cv')->storePublicly('documents', 's3')
+            ])
             : null;
 
-        request('recommendation_letter')
-            ? $profile->update(['recommendation_letter' => request('recommendation_letter')])
+        request()->hasFile('recommendation_letter')
+            ? $profile->update([
+                'recommendation_letter' => request()->file('recommendation_letter')->storePublicly('documents', 's3')
+            ])
             : null;
        
         $profile->update([
