@@ -1,5 +1,9 @@
 {
     "private": true,
+    "engines": {
+        "node": "20.x",
+        "npm": "10.x"
+    },
     "scripts": {
         "build": "npm run production",
         "dev": "npm run development",
